@@ -1,0 +1,4 @@
+[20-Jul-2019 06:06:24 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Application' not found in /home/edenfort/public_html/edenfort.ae/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/edenfort/public_html/edenfort.ae/bootstrap/app.php on line 14
