@@ -1,7 +1,7 @@
 <?php
 
 
-Route::get('/','Pages\homeController@index')->name('home');
+Route::get('/','Pages\homeController@index');
 
 
 Route::get('projects','Pages\projectController@index');
@@ -20,9 +20,10 @@ Route::get('/agent{id}','Pages\agentsController@singleAgent');
 //Route::get('singleAgent','Pages\agentsController@singleAgent');
 //agentFilter
 
-// Route::get('index', function(){
-// 	 return view('Pages.index');
-// });
+Route::get('index', function(){
+	 return view('Pages.index');
+});
+
 Route::get('aboutUs','Pages\aboutUsController@index');
 
 //filter index page
@@ -38,6 +39,7 @@ Route::get('search','Pages\searchController@index');
 Route::get('contactAgent','Pages\contactUsController@contactAgent');
 //contactUs Page
 Route::get('contactUs','Pages\contactUsController@contactUs');
+Route::get('propManagement','Pages\aboutUsController@propManagement');
 //contactUs Form
 Route::get('contactUsForm','Pages\contactUsController@contactUsForm');
 Route::post('contactUsForm','Pages\contactUsController@contactUsForm');
@@ -62,3 +64,7 @@ Route::get('submitPropertyForm',function(){
 	return view('Pages.submitPropertyForm');
 });
 Route::get('submitProperty','Pages\homeController@submitProperty');
+
+Route::get('feeStructure', function(){
+	return view('Pages.feeStructure');
+});

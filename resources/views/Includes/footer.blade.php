@@ -1,7 +1,7 @@
 <!-- ====== FOOTER ====== -->
 	<footer id="footer">
 		<!-- Copyright -->
-				<a class="go-top"><i class="fa fa-angle-up"></i></a>
+		<a class="go-top"><i class="fa fa-angle-up"></i></a>
 		<div class="copyright">
 			<div class="container clearfix">
 				<div class="row">

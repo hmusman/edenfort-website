@@ -3,16 +3,23 @@ namespace App\Http\Controllers\Pages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\property;
-use App\Models\photo;
+use App\Models\user;
 use DB;
 use Mail;
 class homeController extends Controller {
     //
     public function index() {
-        $properties_sale = property::join('photo', 'property.reference_number', '=', 'photo.reference_number')->where('offering_type2','sale')->take(8)->get();
-        $properties_rent = property::join('photo', 'property.reference_number', '=', 'photo.reference_number')->where('offering_type2','rent')->take(8)->get();
-        // dd($properties);
-        return view('Pages.home', compact('properties_sale','properties_rent'));
+
+        $properties_sale_row1 = property::where('offering_type2','sale')->join('photo','photo.reference_number','=','property.reference_number')->take(3)->get();
+         $properties_sale_row2 = property::where('offering_type2','sale')->whereMonth('created_at','11')->join('photo','photo.reference_number','=','property.reference_number')->take(3)->get();
+         $properties_sale_row3 = property::where('offering_type2','sale')->whereMonth('created_at','10')->join('photo','photo.reference_number','=','property.reference_number')->take(3)->get();
+
+         $properties_rent_row1 = property::where('offering_type2','rent')->where('offering_type1','commercial')->join('photo','photo.reference_number','=','property.reference_number')->take(3)->get();
+         $properties_rent_row2 = property::where('offering_type2','rent')->where('offering_type1','commercial')->whereMonth('created_at','6')->join('photo','photo.reference_number','=','property.reference_number')->take(3)->get();
+         $properties_rent_row3 = property::where('offering_type2','rent')->where('offering_type1','commercial')->whereMonth('created_at','12')->join('photo','photo.reference_number','=','property.reference_number')->take(3)->get();
+         $agents = user::whereNotNull('image')->take(4)->get();
+         // dd($agents);
+        return view('Pages.home',compact('properties_sale_row1','properties_sale_row2','properties_sale_row3','properties_rent_row1','properties_rent_row2','properties_rent_row3','agents'));
     }
     //submit proerty by from home page
     public function submitProperty(Request $g) {

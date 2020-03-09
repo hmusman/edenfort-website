@@ -8,6 +8,7 @@ use App\Models\search;
 use App\Models\property;
 use App\Models\photo;
 use App\Models\user;
+use Carbon\Carbon;
 class searchController extends Controller
 {
     //
@@ -26,8 +27,10 @@ public function singleProperty($id){
       $agentName=explode(' ',$filter->agentName);
       //dd($agentName['0']);
      $agentPic=user::where('First_name', 'LIKE', "%{$agentName['0']}%")->get();
+     $current = Carbon::now();
+     $recent_properties = property::where('created_at','<=',$current)->join('photo','photo.reference_number','property.reference_number')->orderBy('created_at','DESC')->take(5)->get();
      
-     return view('Pages.singleProperty',compact('propertyDetail','filter','sameAreaProperties','agentPic'));
+     return view('Pages.singleProperty',compact('propertyDetail','filter','sameAreaProperties','agentPic','recent_properties'));
 }
 //View all properties of specific agent, from single proerty page
 public function agentPropertiesFilter()
@@ -79,7 +82,7 @@ $filtered = $filtered->orderBy('bedroom', 'DESC')->paginate(10);
 }
 
 }else{
-  $filtered = $filtered->paginate(12);
+  $filtered = $filtered->paginate(9);
 }
 
   //end sorting

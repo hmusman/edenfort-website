@@ -1,5 +1,4 @@
 @include('Includes.headernew')
-<body id="top">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDTWJ3Z"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -7,16 +6,21 @@
 <div class="page_loader"></div>
 
 <!-- main header start -->
-
+<style>
+    .property-box .property-img img {
+    width: 100%;
+    height: 300px !important;
+}
+</style>
 
 <!-- Sub banner start -->
 <div class="sub-banner overview-bgi">
     <div class="container">
         <div class="breadcrumb-area">
-            <h1>Properties Grid</h1>
+            <h1>Properties</h1>
             <ul class="breadcrumbs">
-                <li><a href="index.html">Home</a></li>
-                <li class="active">Properties Grid</li>
+                <li><a href="{{url('/')}}">Home</a></li>
+                <li class="active">Properties</li>
             </ul>
         </div>
     </div>
@@ -25,50 +29,50 @@
 
 <!-- Properties list fullwidth start -->
 <div class="properties-list-fullwidth content-area-2">
+
     <div class="container">
+    <h2>Properties in UAE</h2>
         <div class="option-bar d-none d-xl-block d-lg-block d-md-block d-sm-block">
             <div class="row clearfix">
                 <div class="col-xl-4 col-lg-5 col-md-5 col-sm-5">
                     <h4>
-                        <span class="heading-icon">
-                            <i class="fa fa-caret-right icon-design"></i>
+                        <span class="heading-icon" style="background-color: #0f6fb9;">
+                            <i class="fa fa-caret-right icon-design" style="color: #0f6fb9;"></i>
                             <i class="fa fa-th-large"></i>
                         </span>
                         <span class="heading">Properties Grid</span>
                     </h4>
                 </div>
                 <div class="col-xl-8 col-lg-7 col-md-7 col-sm-7">
-                    <div class="sorting-options clearfix">
-                        <a href="properties-list-fullwidth.html" class="change-view-btn"><i class="fa fa-th-list"></i></a>
-                        <a href="properties-grid-fullwidth.html" class="change-view-btn active-view-btn"><i class="fa fa-th-large"></i></a>
+                    <div class="sorting-options clearfix" style="background-color: #0f6fb9;">
+                        <a href="#" class="change-view-btn"><i class="fa fa-th-list" style="color: white;"></i></a>
+                        <a href="#" class="change-view-btn active-view-btn"><i class="fa fa-th-large"></i></a>
                     </div>
                     <div class="search-area">
                         <select class="selectpicker search-fields" name="location">
-                            <option class="sortBy" id="updated_at">Newest</option>
-                            <option class="sortBy" id="highestPrice">Highest Price</option>
-                            <option class="sortBy" id="lowestPrice">Lowest Price</option>
-                            <option id="lowestPrice">Beds (least)</option>
-                            <option id="lowestPrice">Beds (Most)</option>
+                            <option>High to Low</option>
+                            <option>Low to High</option>
                         </select>
                     </div>
                 </div>
             </div>
         </div>
         <div class="subtitle">
-            20 Result Found
+        @if(isset($filtered))
+        @if(count($filtered)>0) {{count($filtered)}}  results found @endif @endif 
         </div>
         <div class="row">
             @if(isset($filtered))
             @if(count($filtered)>0)
-            @foreach($filtered->sortByDesc('updated_at') as $filterResult)
+            @foreach($filtered->sortByDesc('updated_at') as $filter)
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="property-box">
                     <div class="property-thumbnail">
-                        <a href="properties-details.html" class="property-img">
-                            <!-- <div class="tag button alt featured">Featured</div> -->
+                        <a href="{{url('property'.$filter->id)}}" class="property-img">
+                            <div class="tag button alt featured">{{$filter->offering_type1}}</div>
                             <div class="price-ratings-box">
                                 <p class="price">
-                                    AED {{$filterResult->price_yearly}}
+                                    AED {{$filter->price_yearly}}
                                 </p>
                                 <div class="ratings">
                                     <i class="fa fa-star"></i>
@@ -78,7 +82,7 @@
                                     <i class="fa fa-star-o"></i>
                                 </div>
                             </div>
-                            <img src="{{$filterResult->photo->photo1}}" alt="property-2" class="img-fluid">
+                            <img src="{{$filter->photo->photo1}}" alt="property-2" class="img-fluid" >
                         </a>
                         <div class="property-overlay">
                             <a href="properties-details.html" class="overlay-link">
@@ -98,596 +102,57 @@
                     </div>
                     <div class="detail">
                         <h1 class="title">
-                            <a href="properties-details.html">{{$filterResult->title_en}}</a>
+                            <a href="{{url('property'.$filter->id)}}">{{$filter->title_en}}</a>
                         </h1>
                         <div class="location">
-                            <a href="properties-details.html">
-                                <i class="fa fa-map-marker"></i>{{$filterResult->location}}
+                            <a href="{{url('property'.$filter->id)}}">
+                                <i class="fa fa-map-marker"></i>{{$filter->location}}
                             </a>
                         </div>
                         <ul class="facilities-list clearfix">
                             <li>
-                                <i class="flaticon-bed"></i>Bedrooms: {{$filterResult->bedroom}}
+                                <i class="flaticon-bed"></i> {{$filter->bedroom}} Bedrooms
                             </li>
                             <li>
-                                <i class="flaticon-bath"></i>Bathrooms: {{$filterResult->bathroom}} 
+                                <i class="flaticon-bath"></i> {{$filter->bathroom}} Bathrooms
                             </li>
                             <li>
-                                <i class="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:{{$filterResult->size}}
+                                <i class="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:{{$filter->size}}
                             </li>
                             <li>
-                                <i class="flaticon-car-repair"></i>Furnished: {{$filterResult->furnished}}
+                                <i class="flaticon-car-repair"></i> Furnished:{{$filter->furnished}}
+                            </li>
+                            <li>
+                                <i class="fa fa-user"></i> Agent: {{$filter->agentName}}
+                            </li>
+                            <li>
+                                 <i class="fa fa-calendar-o"></i> Added: {{$filter->created_at->diffForHumans()}}
                             </li>
                         </ul>
                     </div>
                     <div class="footer">
-                        <a href="#">
-                            <i class="fa fa-user"></i>{{$filterResult->agentName}}
-                        </a>
-                        <span>
-                            <i class="fa fa-calendar-o"></i>{{$filterResult->created_at->diffForHumans()}}
-                        </span>
+                        <div class="row">
+                            <div class="col-md-6" style="width: 50%;">
+                                <button class="btn btn-success btn-action call-btn"  title="High Floor | Panoramic Sea And Marina View's" data-phone="{{$filter->contact_no}}" data-secphone="" data-companyphone="{{$filter->contact_no}}" data-referno="{{$filter->referenceNo}}" data-companyName="West Gate Real Estate" data-agentName="{{$filter->agentName}}" data-toggle="modal" data-target="#callModal">Call</button>
+                                 
+                            </div>
+                           <div class="col-md-6" style="width: 50%;">
+                                <button class="btn btn-primary  btn-action email-btn"  title="High Floor | Panoramic Sea And Marina View's" data-prop="83947" data-referno="{{$filter->referenceNo}}" data-companyName="West Gate Real Estate" data-agentName="{{$filter->agentName}}" data-agentEmail="{{$filter->agentEmail}}" data-toggle="modal" data-target="#emailModal" >Email</button>
+                           </div>
+                          
+                        </div>
+                        
                     </div>
                 </div>
             </div>
             @endforeach
             @else
-                <h1>No Record Found.</h1>
+            <div class="container">
+                <h5 class="property-price" align="center">No Record Found</h5>
+                
+            </div>
             @endif
             @endif
-            <!-- <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="property-box">
-                    <div class="property-thumbnail">
-                        <a href="properties-details.html" class="property-img">
-                            <div class="tag button alt featured">Featured</div>
-                            <div class="price-ratings-box">
-                                <p class="price">
-                                    $178,000
-                                </p>
-                                <div class="ratings">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                            </div>
-                            <img src="http://storage.googleapis.com/themevessel-products/xero/assets/img/property-3.jpg" alt="property-7" class="img-fluid">
-                        </a>
-                        <div class="property-overlay">
-                            <a href="properties-details.html" class="overlay-link">
-                                <i class="fa fa-link"></i>
-                            </a>
-                            <a class="overlay-link property-video" title="Test Title">
-                                <i class="fa fa-video-camera"></i>
-                            </a>
-                            <div class="property-magnify-gallery">
-                                <a href="assets/img/property-7.jpg" class="overlay-link">
-                                    <i class="fa fa-expand"></i>
-                                </a>
-                                <a href="assets/img/property-6.jpg" class="hidden"></a>
-                                <a href="assets/img/property-4.jpg" class="hidden"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="detail">
-                        <h1 class="title">
-                            <a href="properties-details.html">Relaxing Apartment</a>
-                        </h1>
-                        <div class="location">
-                            <a href="properties-details.html">
-                                <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                            </a>
-                        </div>
-                        <ul class="facilities-list clearfix">
-                            <li>
-                                <i class="flaticon-bed"></i> 3 Bedrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-bath"></i> 2 Bathrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                            </li>
-                            <li>
-                                <i class="flaticon-car-repair"></i> 1 Garage
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer">
-                        <a href="#">
-                            <i class="fa fa-user"></i> Jhon Doe
-                        </a>
-                        <span>
-                            <i class="fa fa-calendar-o"></i> 2 years ago
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="property-box">
-                    <div class="property-thumbnail">
-                        <a href="properties-details.html" class="property-img">
-                            <div class="tag button alt featured">Featured</div>
-                            <div class="price-ratings-box">
-                                <p class="price">
-                                    $178,000
-                                </p>
-                                <div class="ratings">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                            </div>
-                            <img src="http://storage.googleapis.com/themevessel-products/xero/assets/img/property-3.jpg" alt="property-4" class="img-fluid">
-                        </a>
-                        <div class="property-overlay">
-                            <a href="properties-details.html" class="overlay-link">
-                                <i class="fa fa-link"></i>
-                            </a>
-                            <a class="overlay-link property-video" title="Test Title">
-                                <i class="fa fa-video-camera"></i>
-                            </a>
-                            <div class="property-magnify-gallery">
-                                <a href="assets/img/property-4.jpg" class="overlay-link">
-                                    <i class="fa fa-expand"></i>
-                                </a>
-                                <a href="assets/img/property-6.jpg" class="hidden"></a>
-                                <a href="assets/img/property-1.jpg" class="hidden"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="detail">
-                        <h1 class="title">
-                            <a href="properties-details.html">Beautiful Single Home</a>
-                        </h1>
-                        <div class="location">
-                            <a href="properties-details.html">
-                                <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                            </a>
-                        </div>
-                        <ul class="facilities-list clearfix">
-                            <li>
-                                <i class="flaticon-bed"></i> 3 Bedrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-bath"></i> 2 Bathrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                            </li>
-                            <li>
-                                <i class="flaticon-car-repair"></i> 1 Garage
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer">
-                        <a href="#">
-                            <i class="fa fa-user"></i> Jhon Doe
-                        </a>
-                        <span>
-                            <i class="fa fa-calendar-o"></i> 2 years ago
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="property-box">
-                    <div class="property-thumbnail">
-                        <a href="properties-details.html" class="property-img">
-                            <div class="tag button alt featured">Featured</div>
-                            <div class="price-ratings-box">
-                                <p class="price">
-                                    $178,000
-                                </p>
-                                <div class="ratings">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                            </div>
-                            <img src="http://storage.googleapis.com/themevessel-products/xero/assets/img/property-3.jpg" alt="property-6" class="img-fluid">
-                        </a>
-                        <div class="property-overlay">
-                            <a href="properties-details.html" class="overlay-link">
-                                <i class="fa fa-link"></i>
-                            </a>
-                            <a class="overlay-link property-video" title="Test Title">
-                                <i class="fa fa-video-camera"></i>
-                            </a>
-                            <div class="property-magnify-gallery">
-                                <a href="assets/img/property-6.jpg" class="overlay-link">
-                                    <i class="fa fa-expand"></i>
-                                </a>
-                                <a href="assets/img/property-2.jpg" class="hidden"></a>
-                                <a href="assets/img/property-4.jpg" class="hidden"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="detail">
-                        <h1 class="title">
-                            <a href="properties-details.html">Masons Villas</a>
-                        </h1>
-                        <div class="location">
-                            <a href="properties-details.html">
-                                <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                            </a>
-                        </div>
-                        <ul class="facilities-list clearfix">
-                            <li>
-                                <i class="flaticon-bed"></i> 3 Bedrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-bath"></i> 2 Bathrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                            </li>
-                            <li>
-                                <i class="flaticon-car-repair"></i> 1 Garage
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer">
-                        <a href="#">
-                            <i class="fa fa-user"></i> Jhon Doe
-                        </a>
-                        <span>
-                            <i class="fa fa-calendar-o"></i> 2 years ago
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="property-box">
-                    <div class="property-thumbnail">
-                        <a href="properties-details.html" class="property-img">
-                            <div class="tag button alt featured">Featured</div>
-                            <div class="price-ratings-box">
-                                <p class="price">
-                                    $178,000
-                                </p>
-                                <div class="ratings">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                            </div>
-                            <img src="http://storage.googleapis.com/themevessel-products/xero/assets/img/property-3.jpg" alt="property-1" class="img-fluid">
-                        </a>
-                        <div class="property-overlay">
-                            <a href="properties-details.html" class="overlay-link">
-                                <i class="fa fa-link"></i>
-                            </a>
-                            <a class="overlay-link property-video" title="Test Title">
-                                <i class="fa fa-video-camera"></i>
-                            </a>
-                            <div class="property-magnify-gallery">
-                                <a href="assets/img/property-1.jpg" class="overlay-link">
-                                    <i class="fa fa-expand"></i>
-                                </a>
-                                <a href="assets/img/property-6.jpg" class="hidden"></a>
-                                <a href="assets/img/property-4.jpg" class="hidden"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="detail">
-                        <h1 class="title">
-                            <a href="properties-details.html">Sweet Family Home</a>
-                        </h1>
-                        <div class="location">
-                            <a href="properties-details.html">
-                                <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                            </a>
-                        </div>
-                        <ul class="facilities-list clearfix">
-                            <li>
-                                <i class="flaticon-bed"></i> 3 Bedrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-bath"></i> 2 Bathrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                            </li>
-                            <li>
-                                <i class="flaticon-car-repair"></i> 1 Garage
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer">
-                        <a href="#">
-                            <i class="fa fa-user"></i> Jhon Doe
-                        </a>
-                        <span>
-                            <i class="fa fa-calendar-o"></i> 2 years ago
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="property-box">
-                    <div class="property-thumbnail">
-                        <a href="properties-details.html" class="property-img">
-                            <div class="tag button alt featured">Featured</div>
-                            <div class="price-ratings-box">
-                                <p class="price">
-                                    $178,000
-                                </p>
-                                <div class="ratings">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                            </div>
-                            <img src="http://storage.googleapis.com/themevessel-products/xero/assets/img/property-3.jpg" alt="property-5" class="img-fluid">
-                        </a>
-                        <div class="property-overlay">
-                            <a href="properties-details.html" class="overlay-link">
-                                <i class="fa fa-link"></i>
-                            </a>
-                            <a class="overlay-link property-video" title="Test Title">
-                                <i class="fa fa-video-camera"></i>
-                            </a>
-                            <div class="property-magnify-gallery">
-                                <a href="assets/img/property-5.jpg" class="overlay-link">
-                                    <i class="fa fa-expand"></i>
-                                </a>
-                                <a href="assets/img/property-6.jpg" class="hidden"></a>
-                                <a href="assets/img/property-4.jpg" class="hidden"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="detail">
-                        <h1 class="title">
-                            <a href="properties-details.html">Real Luxury Villa</a>
-                        </h1>
-                        <div class="location">
-                            <a href="properties-details.html">
-                                <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                            </a>
-                        </div>
-                        <ul class="facilities-list clearfix">
-                            <li>
-                                <i class="flaticon-bed"></i> 3 Bedrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-bath"></i> 2 Bathrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                            </li>
-                            <li>
-                                <i class="flaticon-car-repair"></i> 1 Garage
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer">
-                        <a href="#">
-                            <i class="fa fa-user"></i> Jhon Doe
-                        </a>
-                        <span>
-                                <i class="fa fa-calendar-o"></i> 2 years ago
-                            </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="property-box">
-                    <div class="property-thumbnail">
-                        <a href="properties-details.html" class="property-img">
-                            <div class="tag button alt featured">Featured</div>
-                            <div class="price-ratings-box">
-                                <p class="price">
-                                    $178,000
-                                </p>
-                                <div class="ratings">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                            </div>
-                            <img src="http://storage.googleapis.com/themevessel-products/xero/assets/img/property-3.jpg" alt="property-8" class="img-fluid">
-                        </a>
-                        <div class="property-overlay">
-                            <a href="properties-details.html" class="overlay-link">
-                                <i class="fa fa-link"></i>
-                            </a>
-                            <a class="overlay-link property-video" title="Test Title">
-                                <i class="fa fa-video-camera"></i>
-                            </a>
-                            <div class="property-magnify-gallery">
-                                <a href="http://storage.googleapis.com/themevessel-products/xero/assets/img/property-3.jpg" class="overlay-link">
-                                    <i class="fa fa-expand"></i>
-                                </a>
-                                <a href="assets/img/property-2.jpg" class="hidden"></a>
-                                <a href="assets/img/property-4.jpg" class="hidden"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="detail">
-                        <h1 class="title">
-                            <a href="properties-details.html">Park avenue</a>
-                        </h1>
-                        <div class="location">
-                            <a href="properties-details.html">
-                                <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                            </a>
-                        </div>
-                        <ul class="facilities-list clearfix">
-                            <li>
-                                <i class="flaticon-bed"></i> 3 Bedrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-bath"></i> 2 Bathrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                            </li>
-                            <li>
-                                <i class="flaticon-car-repair"></i> 1 Garage
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer">
-                        <a href="#">
-                            <i class="fa fa-user"></i> Jhon Doe
-                        </a>
-                        <span>
-                                <i class="fa fa-calendar-o"></i> 2 years ago
-                            </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="property-box">
-                    <div class="property-thumbnail">
-                        <a href="properties-details.html" class="property-img">
-                            <div class="tag button alt featured">Featured</div>
-                            <div class="price-ratings-box">
-                                <p class="price">
-                                    $178,000
-                                </p>
-                                <div class="ratings">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                            </div>
-                            <img src="http://storage.googleapis.com/themevessel-products/xero/assets/img/property-3.jpg" alt="property-3" class="img-fluid">
-                        </a>
-                        <div class="property-overlay">
-                            <a href="properties-details.html" class="overlay-link">
-                                <i class="fa fa-link"></i>
-                            </a>
-                            <a class="overlay-link property-video" title="Test Title">
-                                <i class="fa fa-video-camera"></i>
-                            </a>
-                            <div class="property-magnify-gallery">
-                                <a href="assets/img/property-3.jpg" class="overlay-link">
-                                    <i class="fa fa-expand"></i>
-                                </a>
-                                <a href="assets/img/property-6.jpg" class="hidden"></a>
-                                <a href="assets/img/property-4.jpg" class="hidden"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="detail">
-                        <h1 class="title">
-                            <a href="properties-details.html">Luxury Villa</a>
-                        </h1>
-                        <div class="location">
-                            <a href="properties-details.html">
-                                <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                            </a>
-                        </div>
-                        <ul class="facilities-list clearfix">
-                            <li>
-                                <i class="flaticon-bed"></i> 3 Bedrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-bath"></i> 2 Bathrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                            </li>
-                            <li>
-                                <i class="flaticon-car-repair"></i> 1 Garage
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer">
-                        <a href="#">
-                            <i class="fa fa-user"></i> Jhon Doe
-                        </a>
-                        <span>
-                            <i class="fa fa-calendar-o"></i> 2 years ago
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="property-box">
-                    <div class="property-thumbnail">
-                        <a href="properties-details.html" class="property-img">
-                            <div class="tag button alt featured">Featured</div>
-                            <div class="price-ratings-box">
-                                <p class="price">
-                                    $178,000
-                                </p>
-                                <div class="ratings">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                            </div>
-                            <img src="http://storage.googleapis.com/themevessel-products/xero/assets/img/property-3.jpg" alt="property-1" class="img-fluid">
-                        </a>
-                        <div class="property-overlay">
-                            <a href="properties-details.html" class="overlay-link">
-                                <i class="fa fa-link"></i>
-                            </a>
-                            <a class="overlay-link property-video" title="Test Title">
-                                <i class="fa fa-video-camera"></i>
-                            </a>
-                            <div class="property-magnify-gallery">
-                                <a href="assets/img/property-9.jpg" class="overlay-link">
-                                    <i class="fa fa-expand"></i>
-                                </a>
-                                <a href="assets/img/property-6.jpg" class="hidden"></a>
-                                <a href="assets/img/property-4.jpg" class="hidden"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="detail">
-                        <h1 class="title">
-                            <a href="properties-details.html">Big Head House</a>
-                        </h1>
-                        <div class="location">
-                            <a href="properties-details.html">
-                                <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                            </a>
-                        </div>
-                        <ul class="facilities-list clearfix">
-                            <li>
-                                <i class="flaticon-bed"></i> 3 Bedrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-bath"></i> 2 Bathrooms
-                            </li>
-                            <li>
-                                <i class="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                            </li>
-                            <li>
-                                <i class="flaticon-car-repair"></i> 1 Garage
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer">
-                        <a href="#">
-                            <i class="fa fa-user"></i> Jhon Doe
-                        </a>
-                        <span>
-                                <i class="fa fa-calendar-o"></i> 2 years ago
-                            </span>
-                    </div>
-                </div>
-            </div> -->
-
             <div class="col-lg-12">
                 <div class="pagination-box text-center">
                     <nav aria-label="Page navigation example">
@@ -702,13 +167,7 @@
                     {{$filtered->appends(Request::only('for','location','type','minPrice','maxPrice','bed','furnish','minArea','maxArea','bath','keywords','agent','sortby'))->links()}}
                     
                     @endif
-                        <!-- <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="properties-grid-leftside.html"><span aria-hidden="true">«</span></a></li>
-                            <li class="page-item"><a class="page-link" href="properties-grid-rightside.html">1</a></li>
-                            <li class="page-item"><a class="page-link" href="properties-grid-leftside.html">2</a></li>
-                            <li class="page-item"><a class="page-link active" href="properties-grid-fullwidth.html">3</a></li>
-                            <li class="page-item"><a class="page-link" href="properties-grid-fullwidth.html"><span aria-hidden="true">»</span></a></li>
-                        </ul> -->
+                    
                     </nav>
                 </div>
             </div>

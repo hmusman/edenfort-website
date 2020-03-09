@@ -12,4 +12,9 @@ class aboutUsController extends Controller
 
     	return view('Pages.aboutUs');
     }
+
+    public function propManagement(){
+
+    	return view('Pages.PropertyManagement');
+    }
 }

@@ -3,142 +3,151 @@
 <footer class="footer">
     <div class="container footer-inner">
         <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+            <div class="col-md-4 col-sm-4">
                 <div class="footer-item">
-                    <h4>Contact Us</h4>
-
-                    <ul class="contact-info">
-                        <li>
-                            Address: 20/F Green Road, Dhanmondi, Dhaka
-                        </li>
-                        <li>
-                            Email: <a href="mailto:info@themevessel.com">info@themevessel.com</a>
-                        </li>
-                        <li>
-                            Phone: <a href="tel:+0477-85x6-552">+XXXX XXXX XXX</a>
-                        </li>
-                        <li>
-                            Fax: +XXXX XXXX XXX
-                        </li>
-                    </ul>
-
-                    <ul class="social-list clearfix">
-                        <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" class="google"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#" class="rss"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
-                <div class="footer-item">
-                    <h4>
-                        Useful Links
+                    <h4 style="border-bottom:1px solid;">
+                        Popular Searches For Sale
                     </h4>
-                    <ul class="links">
+                    <div class="container">
+                    <ul class="footer-menu">
                         <li>
-                            <a href="#"><i class="fa fa-angle-right"></i>About us</a>
+                            <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Apartment / Flat&offering_type2=sale&city=Dubai')}}" title="Apartments for sale  in  Dubai">Apartments for sale  in  Dubai</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-angle-right"></i>Service</a>
+                        <li> 
+                          <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Apartment / Flat&offering_type2=sale&city=Dubai Marina')}}" title="Apartments for sale  in  Dubai Marina">Apartments for sale  in  Dubai Marina</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-angle-right"></i>Properties Listing</a>
+                        <li> 
+                          <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Apartment / Flat&offering_type2=sale&city=Downtown Dubai')}}" title="Apartments for sale  in  Downtown Dubai">Apartments for sale  in  Downtown Dubai</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-angle-right"></i>Properties Grid</a>
+                        <li> 
+                          <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Villa / House&offering_type2=sale&city=Dubai')}}" title="Villas for sale  in  Dubai">Villas for sale  in  Dubai</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-angle-right"></i>Contact Us</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-angle-right"></i>Blog</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-angle-right"></i>Property Details</a>
+                        <li> 
+                          <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Villa / House&offering_type2=sale&city=Arabian Ranches')}}" title="Villas for sale  in  Arabian Ranches">Villas for sale  in  Arabian Ranches</a>
                         </li>
                     </ul>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                <!-- <div class="recent-posts footer-item">
-                    <h4>Recent Properties</h4>
-                    <div class="media mb-4">
-                        <a href="properties-details.html">
-                            <img src="assets/img/sub-property/sub-property.jpg" alt="sub-property">
-                        </a>
-                        <div class="media-body align-self-center">
-                            <h5>
-                                <a href="properties-details.html">Beautiful Single Home</a>
-                            </h5>
-                            <p>February 27, 2018</p>
-                            <p> <strong>$245,000</strong></p>
-                        </div>
-                    </div>
-                    <div class="media mb-4">
-                        <a href="properties-details.html">
-                            <img src="assets/img/sub-property/sub-property-2.jpg" alt="sub-property-2">
-                        </a>
-                        <div class="media-body align-self-center">
-                            <h5>
-                                <a href="properties-details.html">Sweet Family Home</a>
-                            </h5>
-                            <p>February 27, 2018</p>
-                            <p> <strong>$245,000</strong></p>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <a href="properties-details.html">
-                            <img src="assets/img/sub-property/sub-property-3.jpg" alt="sub-property-3">
-                        </a>
-                        <div class="media-body align-self-center">
-                            <h5>
-                                <a href="properties-details.html">Real Luxury Villa</a>
-                            </h5>
-                            <p>February 27, 2018</p>
-                            <p> <strong>$245,000</strong></p>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                <div class="footer-item clearfix">
-                    <h4>Subscribe</h4>
-                    <div class="Subscribe-box">
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
-                        <form action="#" method="GET">
-                            <p>
-                                <input type="text" class="form-contact" name="email" placeholder="Enter Address">
-                            </p>
-                            <p>
-                                <button type="submit" name="submitNewsletter" class="btn btn-block btn-color">
-                                    Subscribe
-                                </button>
-                            </p>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-xl-12">
-                <p class="copy">&copy;  2020 <a href="" target="_blank">Edenfort</a> Developed by Devsbeta.</p>
+        <div class="col-md-4 col-sm-4">
+                <div class="footer-item">
+                    <h4 style="border-bottom:1px solid;">
+                        Popular Searches For Rent</h4>
+                    <ul class="footer-menu">
+                        <li> 
+                            <a style="border-bottom:1px solid" href="{{url('footerFilter?propertyType=Apartment / Flat&offering_type2=rent&city=Dubai')}}" title="Apartments for rent  in  Dubai">Apartments for rent  in  Dubai</a>
+                        </li>
+                        <li> 
+                          <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Apartment / Flat&offering_type2=rent&city=Dubai Marina')}}" title="Apartments for rent  in  Dubai Marina">Apartments for rent  in  Dubai Marina</a>
+                        </li>
+                        <li> 
+                          <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Apartment / Flat&offering_type2=rent&city=Downtown Dubai')}}" title="Apartments for rent  in  Downtown Dubai">Apartments for rent  in  Downtown Dubai</a>
+                        </li>
+                        <li> 
+                          <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Villa / House&offering_type2=rent&city=Dubai')}}" title="Villas for rent  in  Dubai">Villas for rent  in  Dubai</a>
+                        </li>
+                        <li> 
+                          <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Villa / House&offering_type2=rent&city=Arabian Ranches')}}" title="Villas for rent  in  Arabian Ranches">Villas for rent  in  Arabian Ranches</a>
+                        </li>
+                        
+                        <!-- <li> 
+                          <a href="http://www.edenforthomes.com/search?for=rent&city=Ng%3D%" title="Apartments for rent  in  Abu Dhabi">Apartments for rent  in  Abu Dhabi</a>
+                        </li>
+                        <li> 
+                          <a href="http://www.edenforthomes.com/search?for=rent&city=Ng%3D%3D&area=NT" title="Apartments for rent  in  Al Reem Island">Apartments for rent  in  Al Reem Island</a>
+                        </li>
+                        <li> 
+                          <a href="http://www.edenforthomes.com/search?for=rent&city=Ng%3D%3D&area=NT" title="Apartments for rent  in  Al Raha Beach">Apartments for rent  in  Al Raha Beach</a>
+                        </li> -->
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="footer-item">
+                    <h4  style="border-bottom:1px solid;">Other Popular Searches</h4>
+                    <ul class="footer-menu">
+                        <!-- <li> 
+                          <a href="http://www.edenforthomes.com/search?for=sale&city=Mw%3D%3D" title="Properties for sale  in  Ajman">Properties for sale  in  Ajman</a>
+                        </li> -->
+                        <li> 
+                          <a  style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Office space&offering_type2=sale&city=Dubai')}}" title="Offices for sale  in  Dubai">Offices for sale  in  Dubai</a>
+                        </li>
+                        <!-- <li> 
+                          <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D" title="Properties for rent  in  Ajman">Properties for rent  in  Ajman</a>
+                        </li>
+                        <li> 
+                          <a href="http://www.edenforthomes.com/search?for=rent&city=Mg%3D%3D" title="Properties for rent  in  Sharjah">Properties for rent  in  Sharjah</a>
+                        </li> -->
+                        <li> 
+                          <a  style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Office space&offering_type2=rent&city=Dubai')}}" title="Offices for rent  in  Dubai">Offices for rent  in  Dubai</a>
+                        </li>
+                        <li> 
+                          <a  style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Shop&offering_type2=sale&city=Dubai')}}" title="Shops for rent  in  Dubai">Shops for rent  in  Dubai</a>
+                        </li>
+                        <!-- <li> 
+                          <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D&type=Commercial-office" title="Offices for rent  in  Ajman">Offices for rent  in  Ajman</a>
+                        </li>
+                        <li> 
+                          <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D&type=Commercial-shop" title="Shops for rent  in  Ajman">Shops for rent  in  Ajman</a>
+                        </li> -->
+                        <li> 
+                            <a  style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Apartment / Flat&offering_type2=rent&city=Dubai Sports City')}}" title="Apartments for rent  in  Dubai Sports City">Apartments for rent  in  Dubai Sports City</a>
+                        </li>
+                        <li> 
+                          <a  style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Apartment / Flat&offering_type2=rent&city=Greens')}}" title="Apartments for rent  in  Greens">Apartments for rent  in  Greens</a>
+                        </li>
+                    </ul>
+                    
+                </div>
             </div>
         </div>
     </div>
-</footer>
-<!-- Footer end -->
+    <div class="conatiner footer-inner col-md-4 company" style="margin-left: 100px;">
+         <h4  style="border-bottom:1px solid;">Edenfort Real Estate</h4>
+            <ul class="footer-menu">
+                <!-- <li> 
+                  <a href="http://www.edenforthomes.com/search?for=sale&city=Mw%3D%3D" title="Properties for sale  in  Ajman">Properties for sale  in  Ajman</a>
+                </li> -->
+                <li><strong>Address: </strong>Office 411, Churchill Executive Towers, Bussines Bay, P.O Box 124874,Dubai,UAE.</li>
+                <!-- <li> 
+                  <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D" title="Properties for rent  in  Ajman">Properties for rent  in  Ajman</a>
+                </li>
+                <li> 
+                  <a href="http://www.edenforthomes.com/search?for=rent&city=Mg%3D%3D" title="Properties for rent  in  Sharjah">Properties for rent  in  Sharjah</a>
+                </li> -->
+                <li><strong>Email: </strong>info@youcanbuyindubai.com</li>
+                <li>Phone: +0987654321</li>
+                <!-- <li> 
+                  <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D&type=Commercial-office" title="Offices for rent  in  Ajman">Offices for rent  in  Ajman</a>
+                </li>
+                <li> 
+                  <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D&type=Commercial-shop" title="Shops for rent  in  Ajman">Shops for rent  in  Ajman</a>
+                </li> -->
+                <li><strong>Fax: </strong> xxxx-xxxxxx-xxxxxxx</li>
+            </ul>
+    </div>
 
-<!-- Full Page Search -->
-<div id="full-page-search">
-    <button type="button" class="close">×</button>
-    <form action="#">
-        <input type="search" value="" placeholder="type keyword(s) here" />
-        <button type="button" class="btn btn-sm btn-color">Search</button>
-    </form>
+</footer>
+<div class="copyright">
+    <div class="container clearfix">
+        <div class="row">
+            <div class="col-md-6 mt-4 f_copyright">
+                <p>Copyright &copy; 2019 - All Rights Reserved By Eden Fort Home Real Estate</p>
+            </div>
+            
+            <div class="col-md-6 footer_nav">
+                <ul class="row mt-4 f_links">
+                    <li class="mr-2"><a href="public/edenfortDocs/assets/sitemap.xml" target="_blank" title="SiteMap">SiteMap</a></li> | 
+                    <li class="pr-2 mr-2 ml-2"><a href="#" title="">Terms & Policy</a></li> | 
+                    <li class="pr-2 mr-2 ml-2"><a href="{{url('aboutUs')}}" title="About">About</a></li> | 
+                    <li class="pr-2 mr-2 ml-2"><a href="{{url('contactUs')}}" title="Contact Us">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
+<!-- Footer end -->
 
 <!-- Property Video Modal -->
 <div class="modal property-modal fade" id="propertyModal" tabindex="-1" role="dialog" aria-labelledby="propertyModalLabel" aria-hidden="true">
@@ -261,15 +270,15 @@
         </div>
     </div>
 </div>
+<!-- External JS libraries -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="{{url('public/assets/js/jquery-2.2.0.min.js')}}"></script> -->
+<script src="{{url('public/assets/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
 
-<!-- External JS libraries --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="{{url('public/assets/js/jquery-2.2.0.min.js')}}"></script>
-<script  src="{{url('public/assets/js/app.js')}}"></script>
 <script src="{{url('public/assets/js/popper.min.js')}}"></script>
 <script src="{{url('public/assets/js/bootstrap.min.js')}}"></script>
 <script src="{{url('public/assets/js/rangeslider.js')}}"></script>
-<!-- <script src="{{url('public/assets/js/jquery.selectBox.js')}}"></script> -->
-
+<script src="{{url('public/assets/js/jquery.selectBox.js')}}"></script>
 <script src="{{url('public/assets/js/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{url('public/assets/js/jquery.filterizr.js')}}"></script>
 <script src="{{url('public/assets/js/wow.min.js')}}"></script>
@@ -278,23 +287,61 @@
 <script src="{{url('public/assets/js/jquery.scrollUp.js')}}"></script>
 <script src="{{url('public/assets/js/particles.min.js')}}"></script>
 <script src="{{url('public/assets/js/typed.min.js')}}"></script>
-<script src="{{url('public/assets/js/dropzone.js')}}"></script>
+
 <script src="{{url('public/assets/js/jquery.mb.YTPlayer.js')}}"></script>
 <script src="{{url('public/assets/js/leaflet.js')}}"></script>
 <script src="{{url('public/assets/js/leaflet-providers.js')}}"></script>
 <script src="{{url('public/assets/js/leaflet.markercluster.js')}}"></script>
 <script src="{{url('public/assets/js/slick.min.js')}}"></script>
 <script src="{{url('public/assets/js/maps.js')}}"></script>
-<script src="{{url('public/assets/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0N5pbJN10Y1oYFRd0MJ_v2g8W2QT74JE"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0N5pbJN10Y1oYFRd0MJ_v2g8W2QT74JE"></script> -->
 <script src="{{url('public/assets/js/ie-emulation-modes-warning.js')}}"></script>
-    <script type="text/javascript" src="public/edenfortDocs/assets/js/slick.min.js"></script>
-
-    <script type="text/javascript"> var base_url = 'index.html'; var site_url = 'index.html';</script>
-
-    <script src="{{url('public/jQuery-autoComplete-master/jquery.auto-complete.js')}}"></script>
+<!-- <script src="{{url('public/assets/js/dropzone.js')}}"></script> -->
+<script  src="{{url('public/assets/js/app.js')}}"></script>
 
 <!-- Custom JS Script -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0DaKGlV-AAL09UAREeyUD_DOgEEyLwnU&amp;callback=initMap"></script>
+
+<script>
+        var latitude = '25.05045775';
+    var longitude = '55.21278994';
+
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 16,
+                scrollwheel: false,
+                //center: new google.maps.LatLng(25.181195, 55.262857),
+                center: new google.maps.LatLng(latitude, longitude),
+            });
+
+            var iconBase = '../assets/images/index.html';
+            var icons = {
+                property: {
+                    icon: iconBase + 'icon_marker.png'
+                },
+            };
+
+            function addMarker(feature) {
+                var marker = new google.maps.Marker({
+                    position: feature.position,
+                    icon: icons[feature.type].icon,
+                    map: map
+                });
+            }
+
+            var features = [
+                {
+                
+                    position: new google.maps.LatLng(latitude, longitude),
+                    type: 'property'
+                }
+            ];
+
+            for (var i = 0, feature; feature = features[i]; i++) {
+                addMarker(feature);
+            }
+        }
+    </script>
 <script type="text/javascript">
     $(document).ready(function(){
            $('.for-show-hide').click(function(){
@@ -329,6 +376,7 @@
 
 $(window).scroll(function() {
    if ($(this).scrollTop() > 650){
+    
       $('.search-tabmenu').hide();
    } else {
       $('.search-tabmenu').show();
@@ -340,15 +388,18 @@ $(window).scroll(function() {
 
 
 </script>
-	<!-- <script type="text/javascript" src="public/edenfortDocs/assets/js/jquery-2.1.3-min.js"></script> -->
-	<!-- <script type="text/javascript" src="public/edenfortDocs/assets/css/bootstrap-3.3/js/bootstrap.min.js"></script> -->
-	<!-- <script type="text/javascript" src="assets/packeges/magicsuggest/magicsuggest-min.js"></script> -->
-	<!-- <script type="text/javascript" src="public/edenfortDocs/assets/js/apps.min.js"></script> -->
-   
+    <!-- <script type="text/javascript" src="public/edenfortDocs/assets/js/jquery-2.1.3-min.js"></script> -->
+   <!--  <script type="text/javascript" src="public/edenfortDocs/assets/css/bootstrap-3.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/packeges/magicsuggest/magicsuggest-min.js"></script>
+    <script type="text/javascript" src="public/edenfortDocs/assets/js/slick.min.js"></script> -->
+    <script type="text/javascript"> var base_url = 'index.html'; var site_url = 'index.html';</script>
+    <script type="text/javascript" src="public/edenfortDocs/assets/js/apps.min.js"></script>
    <!-- script added by abul-->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+   
+    <script src="{{url('public/jQuery-autoComplete-master/jquery.auto-complete.js')}}"></script>
+    
        
-	<script>
+    <script>
  $(document).ready(function () {
      $(document).ready(function() {
       $(window).keydown(function(event){
@@ -389,14 +440,14 @@ $(window).scroll(function() {
     // search();
     // function search(){
     // }
-		
+        
     //             // keyup function looks at the keys typed on the search box
     //             $('.location').on('keyup',function() {
-				//   // the text typed in the input field is assigned to a variable 
+                //   // the text typed in the input field is assigned to a variable 
     //                 var query = $(this).val();
-					
+                    
     //                 // call to an ajax function
-					
+                    
     //                 $.ajax({
     //                     // assign a controller function to perform search action - route name is search
     //                     url:"{{ route('ajaxLocation') }}",
@@ -406,10 +457,10 @@ $(window).scroll(function() {
     //                     data:{'location':query},
     //                     // if search is succcessfully done, this callback function is called
     //                     success:function (data) {
-						
+                        
     //                         // print the search results in the div called country_list(id)
                            
-				// 			 $('.locationList').html(data);
+                //           $('.locationList').html(data);
     //                     }
     //                 })
     //                 // end of ajax call
@@ -425,6 +476,26 @@ $(window).scroll(function() {
                 //     $('.locationList').html("");
                 // });
             });
+</script>
+<script>
+    // Page scroller initialization.
+    $.scrollUp({
+        scrollName: 'page_scroller',
+        scrollDistance: 300,
+        scrollFrom: 'top',
+        scrollSpeed: 500,
+        easingType: 'linear',
+        animation: 'fade',
+        animationSpeed: 200,
+        scrollTrigger: false,
+        scrollTarget: false,
+        scrollText: '<i class="fa fa-chevron-up"></i>',
+        scrollTitle: false,
+        scrollImg: false,
+        activeOverlay: false,
+        zIndex: 2147483647
+    });
+
 </script>
 </body>
 

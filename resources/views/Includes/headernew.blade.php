@@ -5,13 +5,13 @@
 <!-- Mirrored from storage.googleapis.com/themevessel-products/xero/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Feb 2020 09:33:29 GMT -->
 <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        '../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PDTWJ3Z');</script>
-    <!-- End Google Tag Manager -->
-    <title>XERO - Real Estate HTML Template</title>
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-XXXX');</script>
+<!-- End Google Tag Manager -->
+    <title>Edenfort Real Estate</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <!-- External CSS libraries -->
@@ -30,7 +30,7 @@
     <link type="text/css" rel="stylesheet" href="{{url('public/assets/fonts/flaticon/font/flaticon.css')}}">
 
     <!-- Favicon icon -->
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" >
+    <link rel="shortcut icon" href="{{url('public/edenfortDocs/assets/images/fav.jpg')}}" type="image/x-icon" >
 
     <!-- Google fonts -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPoppins:400,500,700,800,900%7CRoboto:100,300,400,400i,500,700">
@@ -39,7 +39,37 @@
     <link type="text/css" rel="stylesheet" href="{{url('public/assets/css/style.css')}}">
     <link rel="stylesheet" type="text/css" id="style_sheet" href="{{url('assets/css/skins/default.css')}}">
 <link rel="stylesheet" href="{{url('public/jQuery-autoComplete-master/jquery.auto-complete.css')}}">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
    <style type="text/css">
+@media (max-width: 768px){
+    .company{
+        margin-left: 0% !important;
+    }
+    .f_copyright{
+        
+    }
+    .f_links{
+
+    }
+    .main-title h1 {
+        font-size: 21px;
+    }
+    .main-title p {
+        font-size: 15px;
+    }
+    .mbl-img{
+        width: 316px !important;
+        height: 283px !important;
+    }
+    .service-tools table {
+        width: 105% !important;
+    }
+
+}
+.footer h4 {
+    margin-bottom: 20px;
+}
+    
    .btn-success {
     color: #fff;
     background-color: #f6911d;
@@ -242,22 +272,192 @@ display: grid;
     left: 0px;
     z-index: 1000;
 }
+.footer_nav{
+    margin-left: 10% !important;
+    margin-top: -39px;
+}
+.f_slide_ind_l{
+        margin-left: -36px;
+}
+.f_slide_ind_r{
+        margin-right: 33px;
+}
+.slide_heading{
+    font-size: 18px;
+}
 }
 .blue:hover{
-        background: #0e6fb7;
+    background: #0e6fb7;
     color: #fff;
 
 } 
-
-
+    
+.call-btn{
+    background: transparent;
+    color: black;
+    border:1px solid gray;
+}
+.call-btn:hover{
+    color: #fff;
+    background-color: #0f6fb9;
+    border-color: #0f6fb9;
+}
+.email-btn{
+    background: transparent;
+    color: black;
+    border:1px solid gray;
+}
+.email-btn:hover{
+    color: #fff;
+    background-color: #0f6fb9;
+    border-color: #0f6fb9;
+}
+.bdr{
+    border-bottom: 1px solid #f3f0f0 !important;
+    padding-top: 20px;
+}
+.ref-info{
+    padding-top: 20px;
+}
+.left{
+    font-weight: 900;
+}
+.right{
+    margin-left: 20px;
+}
+a:hover{
+    color: rgb(15, 111, 185);
+}
+#page_scroller{
+    background-color: rgb(15, 111, 185) !important;
+}
+body{
+    overflow-x: hidden;
+}
+.w-100 {
+    width: 167% !important;
+}
+.footer-item ul li a:hover{
+    color: rgb(15, 111, 185);
+}
+.breadcrumb-area ul li a:hover{
+    color: darkblue;
+}
+.navbar-collapse ul li a:hover{
+    color: darkblue;
+}
 </style> 
 </head>
 
 <body id="top">
 <!-- Google Tag Manager (noscript) -->
-
+<div class="page_loader"></div>
 <!-- End Google Tag Manager (noscript) -->
 <!-- <div class="page_loader"></div> -->
+<div id="callModal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="myCallModalLabel">
+  <div class="modal-dialog contact_modals">
+
+    <!-- Modal content-->
+    <div class="modal-content"  style="border-radius: 0px;border-top: 4px solid #0071bc;">
+        <div>
+            <button type="button" class="close" data-dismiss="modal" style="opacity: 1; font-size: 30px;  color: #F7931E; padding: 3px 6px;">&times;</button>
+        </div>
+            <div class="modal-body" style="margin-top:30px; padding: 0 30px;">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2>Contact Detail</h2>
+                        <p class="company_name ucfirst">Edenfort Estate</p>
+                    </div>
+                    <div class="col-md-12">
+                        <ul class="mt10">
+                            <li class="bdr"><label class="left bld">Phone</label><a href="tel:+971-12345678" class="sec_phone">+971-12345678</a></li>
+                            <li class="bdr"><label class="left bld">Mobile</label><a href="tel:+971-55-12345678" class="phone">+971-55-12345678</a></li>
+                            <li class="bdr"><label class="left bld">Refer#</label><span class="right refer_no ucfirst">Reference not found</span></li>
+                            <li class="bdr"><label class="left bld">Agent</label><span class="right agentName ucfirst">Jon Deo - Core Real Estate</span></li>
+                            <li class="ref-info" style="margin-left: 12%;">Please quote property reference<span class="bold block refer_no">Core -  317-Ha-R-2942</span>when calling us.</li><br>
+                        </ul>
+                    </div>
+                </div>
+               
+            </div>
+      
+    </div>
+
+  </div>
+</div>
+<div id="emailModal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="myEmailModalLabel">
+  <div class="modal-dialog contact_modals">
+
+    <!-- Modal content-->
+    <div class="modal-content"  style="border-radius: 0px;border-top: 4px solid #0071bc;">
+        <div>
+            <button type="button" class="close" data-dismiss="modal" style="opacity: 1; font-size: 30px;  color: #F7931E; padding: 3px 6px;">&times;</button>
+        </div>
+            <div class="modal-body" style="margin-top:30px; padding: 0 30px;">
+                <div class="row">
+                    <input type="hidden" id="prop" value="">
+                    <input type="hidden" id="refer_no" value="">
+                    <div class="col-md-12 text-center">
+                        <div class="alert alert-success text-center lead_success" style="display:none;">
+                            Email Sended Successfully!
+                        </div>
+                        <div class="alert alert-danger text-center lead_fail" style="display:none;">
+                            Sorry! Please try again.
+                        </div>
+                        <div class="alert alert-danger text-center lead_dublicate" style="display:none;">
+                            <strong>Alert!</strong> Email already sended to agent for this property.
+                        </div>
+                        <h2>Contact Agent</h2>
+                        <p class="company_name ucfirst">Core Real Estate</p>
+                        <p class="refer_no">Core - 317-Ha-R-2942</p>
+                        <p class="agentEmail" style="display:none;">Email</p>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="text" name="name" id="name" placeholder="Name" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <input type="Email" name="email" id="email" placeholder="Email" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" id="urphone" class="form-control" placeholder="Phone*"  >
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="type" id="type" >
+                                <option value="tenant">Tenant</option>
+                                <option value="agent">Agent</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" id="message" placeholder="Message" class="form-control"></textarea>
+                        </div>
+                        <input type="hidden" name="agentEmail" id="agentEmail"  placeholder="Email" class="form-control agentEmail" />
+                        <div class="form-group">
+                            <input type="checkbox" id="robot" name="robot">
+                            <label class="chkbox_label">I am not a robot &nbsp;<span class="robot-error text-danger"></span></label>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-submit" id="send" > <i class="fa fa-refresh fa-spin" style="display:none;"></i>&nbsp; Send Email</button>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="sendnotification" checked="checked" >
+                            <label class="chkbox_label">Keep me Informed about similar properties</label>
+                        </div>
+                        <div class="form-group text-center">
+                            <p>By sending an enquiry, you agree to our Terms of use.</p>
+                        </div>
+
+                    </div>
+                </div>
+               
+            </div>
+      
+    </div>
+
+  </div>
+</div>
 
 <!-- main header start -->
 <header class="main-header sticky-header header-shrink" id="main-header-2">
@@ -268,7 +468,7 @@ display: grid;
                 <div class="top-bar-right  houzez-top-bar-full">
                     <div class="top-contact">
                         <ul class="top" style="display: flex;f">
-                            <li class="top-bar-phone"><a href="tel:+34696662164"><i class="fa fa-phone"></i> <span style="font-size: 14px;">+34696662164</span></a>
+                            <li class="top-bar-phone"><a href="tel:+34696662164"><i class="fa fa-phone"></i> <span style="font-size: 14px;">+971 50 229 6559</span></a>
                             </li>
                             <li class="top-bar-contact"><a href="mailto:info@edenfort.com"><i class="fa fa-envelope-o"></i>  <span style="font-size: 14px;">info@edenfort.com</span></a>
                             </li>    
@@ -279,20 +479,21 @@ display: grid;
                 </div>
             </div>
               <div class="col-md-3" style="display: flex;">
-                  <a class="btn blue br" style="border:1px solid;" href="{{url('submitPropertyForm')}}">Listing Your Property</a>
-        
-       
-                  <a class="btn blue br" style="border:1px solid" href="#">Enquire Now</a>
-              </div>
+                       
+                              <a class="btn blue br" style="border:1px solid;" href="{{url('submitPropertyForm')}}">List Your Property</a>
+                    
+                   
+                              <a class="btn blue br" style="border:1px solid" href="{{url('contactUs')}}">Enquire Now</a>
+                          </div>
         </div>
 
     </div>
   </div>
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-left: -16px;">
             <div class="col-12">
                 <nav class="navbar navbar-expand-lg navbar-light rounded">
-                    <a class="navbar-brand logo  navbar-brand d-flex w-50 mr-auto" href="{{route('home')}}">
+                    <a class="navbar-brand logo  navbar-brand d-flex w-50 mr-auto" href="{{url('/')}}">
                         <img src="{{url('public/assets/img/logos/logo.jpg')}}" alt="logo">
                     </a>
                          <i class="for-show-hide fa fa-search "></i>
@@ -307,7 +508,7 @@ display: grid;
                     <div class="navbar-collapse collapse w-100" id="navbar">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="{{route('home')}}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" href="{{url('/')}}">
                                     Home
                                 </a>
                             </li>
@@ -329,20 +530,27 @@ display: grid;
                                     <a class="dropdown-item" href="{{url('menuFilter?propertyType=Commercial&offering_type2=rent')}}">Rent</a>
                                 </div>
                             </li>
+                            <li class="nav-item dropdown ">
+                                <a class="nav-link" href="{{url('propManagement')}}">
+                                 Property Management
+                                </a>
+                            
+                            </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle"  href="{{url('agents')}}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link"  href="{{url('agents')}}">
                                   Find agent
                                 </a>
                             </li>                   
                         </li>
                          <li class="nav-item dropdown ">
-                                <a class="nav-link dropdown-toggle" href="{{url('projects')}}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" href="{{url('projects')}}">
                                  New projects
                                 </a>
                             
                             </li>
+                            
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" href="{{url('contactUs')}}" >
                                     Contact
                                 </a>
                             </li>
@@ -373,7 +581,7 @@ display: grid;
                        <div class="fa fa-times form-toggle2 class" ></div>
                         <!-- Tabmenu Content 1 / Property For SALE -->
                         <div role="tabpanel" class="tab-pane active" id="for-rent">
-                            <form action="https://localhost/edenfort.ae/edenfort.ae/FilterIndex" method="GET">
+                            <form action="https://localhost/edenfort-website/FilterIndex"    id="rentfor" method="GET">
                                 <div class="form-body" style="padding-bottom: 10px">
                                     <!-- Property for Sale Content Row 1 -->
                                     <div class="row">
@@ -540,14 +748,14 @@ display: grid;
                                             </select>
                                         </div>
                                         <div class="col-md-3 col-sm-3 col-xs-6 form-group">
-                                            <button class="btn btn-success btn-submit" name="Filter" type="submit"><i class="fa fa-search"></i> Search</button>
+                                            <button class="btn btn-success btn-submit" name="Filter" id="rentforbtn" type="submit"><i class="fa fa-search"></i> Search</button>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="for-sale">
-                            <form action="https://localhost/edenfort.ae/edenfort.ae/FilterIndex" method="GET">
+                            <form action="https://localhost/edenfort-website/FilterIndex" method="GET">
                                 <div class="form-body" style="padding-bottom: 10px">
                                     <!-- Property for Sale Content Row 1 -->
                                     <div class="row">
@@ -732,3 +940,5 @@ display: grid;
                     </div>
                 </div>
 </div>
+
+
