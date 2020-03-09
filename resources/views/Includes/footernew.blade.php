@@ -8,7 +8,6 @@
                     <h4 style="border-bottom:1px solid;">
                         Popular Searches For Sale
                     </h4>
-                    <div class="container">
                     <ul class="footer-menu">
                         <li>
                             <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Apartment / Flat&offering_type2=sale&city=Dubai')}}" title="Apartments for sale  in  Dubai">Apartments for sale  in  Dubai</a>
@@ -26,7 +25,6 @@
                           <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Villa / House&offering_type2=sale&city=Arabian Ranches')}}" title="Villas for sale  in  Arabian Ranches">Villas for sale  in  Arabian Ranches</a>
                         </li>
                     </ul>
-                </div>
             </div>
         </div>
         <div class="col-md-4 col-sm-4">
@@ -116,8 +114,8 @@
                 <li> 
                   <a href="http://www.edenforthomes.com/search?for=rent&city=Mg%3D%3D" title="Properties for rent  in  Sharjah">Properties for rent  in  Sharjah</a>
                 </li> -->
-                <li><strong>Email: </strong>info@youcanbuyindubai.com</li>
-                <li>Phone: +0987654321</li>
+                <li><strong>Email: </strong>info@edenfort.com</li>
+                <li>Phone: +971 50 229 6559</li>
                 <!-- <li> 
                   <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D&type=Commercial-office" title="Offices for rent  in  Ajman">Offices for rent  in  Ajman</a>
                 </li>

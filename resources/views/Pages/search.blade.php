@@ -32,7 +32,7 @@
 
     <div class="container">
     <h2>Properties in UAE</h2>
-        <div class="option-bar d-none d-xl-block d-lg-block d-md-block d-sm-block">
+        <div class="option-bar d-xl-block d-lg-block d-md-block d-sm-block">
             <div class="row clearfix">
                 <div class="col-xl-4 col-lg-5 col-md-5 col-sm-5">
                     <h4>
@@ -40,26 +40,30 @@
                             <i class="fa fa-caret-right icon-design" style="color: #0f6fb9;"></i>
                             <i class="fa fa-th-large"></i>
                         </span>
-                        <span class="heading">Properties Grid</span>
+                        <span class="heading">@if(isset($filtered))
+                            @if(count($filtered)>0) {{count($filtered)}}  results found @endif @endif </span>
                     </h4>
                 </div>
                 <div class="col-xl-8 col-lg-7 col-md-7 col-sm-7">
-                    <div class="sorting-options clearfix" style="background-color: #0f6fb9;">
+                    <!-- <div class="sorting-options clearfix" style="background-color: #0f6fb9;">
                         <a href="#" class="change-view-btn"><i class="fa fa-th-list" style="color: white;"></i></a>
                         <a href="#" class="change-view-btn active-view-btn"><i class="fa fa-th-large"></i></a>
-                    </div>
+                    </div> -->
                     <div class="search-area">
-                        <select class="selectpicker search-fields" name="location">
-                            <option>High to Low</option>
-                            <option>Low to High</option>
-                        </select>
+                        <div id="dd" class="dropdown" tabindex="1">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Sort By</a>
+                            <ul class="dropdown dropdown-menu">
+                                <li><a  class="sortBy dropdown-item" id="updated_at" href="#">Newest</a></li>
+                            <!--    <li><a   class="sortBy" id="#">Popular</a></li>-->
+                                <li><a  class="sortBy dropdown-item" id="highestPrice" href="#">Highest Price</a></li>
+                                <li><a class="sortBy dropdown-item" id="lowestPrice" href="#">Lowest Price</a></li>
+                                <li><a class="dropdown-item" href="#">Beds (least)</a></li>
+                                <li><a class="dropdown-item" href="#">Beds (Most)</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="subtitle">
-        @if(isset($filtered))
-        @if(count($filtered)>0) {{count($filtered)}}  results found @endif @endif 
         </div>
         <div class="row">
             @if(isset($filtered))
@@ -310,5 +314,61 @@
 <!-- External JS libraries -->
 
 @include('includes.footernew')
+<!-- <script>
+    $('.sortBy').click(function(){
+        var id = this.id;
+        alert(this.id);
+        });
+    </script> -->
+<script type="text/javascript">
+        
+    function DropDown(el) {
+        this.dd = el;
+        this.placeholder = this.dd.children('span');
+        this.opts = this.dd.find('ul.dropdown > li');
+        this.val = '';
+        this.index = -1;
+        this.initEvents();
+    }
+    DropDown.prototype = {
+        initEvents : function() {
+            var obj = this;
+            obj.dd.on('click', function(event){
+                $(this).toggleClass('active');
+                return false;
+            });
 
+            obj.opts.on('click',function(){
+                var opt = $(this);
+                obj.val = opt.text();
+                obj.index = opt.index();
+                obj.placeholder.text(obj.val);
+                var currenturl = window.location.href;
+                var n = currenturl.indexOf('&sortby');
+                currenturl = currenturl.substring(0, n != -1 ? n : currenturl.length);
+                
+                var n = currenturl.indexOf('&per_page');
+                currenturl = currenturl.substring(0, n != -1 ? n : currenturl.length);
+                //currenturl = currenturl.substring(0, currenturl.indexOf('&sortby'));
+                currenturl +='&sortby='+obj.val.replace(' ', '-');
+                //alert(currenturl);
+                window.location.href =  currenturl;
+            });
+        },
+        getValue : function() {
+            return this.val;
+        },
+        getIndex : function() {
+            return this.index;
+        }
+    };
+
+    $(function() {
+        var dd = new DropDown( $('#dd') );
+        $(document).click(function() {
+            $('.wrapper-dropdown-3').removeClass('active');
+        });
+    });
+
+</script>
 <!-- Mirrored from storage.googleapis.com/themevessel-products/xero/properties-grid-fullwidth.html by HTTrack Website 

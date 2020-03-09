@@ -16,20 +16,26 @@
 .slick-slide-item{
     padding:0px !important;
 }
+.services-info-3{
+    width: 50%;
+}
+.s-brd-3{
+    border-bottom: 1px solid #f1f2f3 !important;
+}
 </style>
 <div class="banner" id="banner">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="{{url('public/edenfortDocs/assets/images/d185dd.jpg')}}" height="" alt="banner" style="height: 1000px;width: 100%;">
+                <img class="d-block w-100" src="{{url('public/edenfortDocs/assets/images/d185dd.jpg')}}" height="" alt="banner" style="height: 900px;width: 100%;">
  
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{url('public/assets/img/banner-2.jpg')}}" height=""  alt="banner" style="height: 1000px;width: 100%;">
+                <img class="d-block w-100" src="{{url('public/assets/img/banner-2.jpg')}}" height=""  alt="banner" style="height: 900px;width: 100%;">
              
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{url('public/assets/img/banner-3.jpg')}}" height=""  alt="banner" style="height: 1000px;width: 100%;">
+                <img class="d-block w-100" src="{{url('public/assets/img/banner-3.jpg')}}" height=""  alt="banner" style="height: 900px;width: 100%;">
               
             </div>
         </div>
@@ -641,34 +647,66 @@
     <div class="container">
         <div class="main-title">
             <h1>What Are you Looking For?</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>We are here for you.</p>
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 services-info-3 s-brd-2 wow fadeInLeft delay-04s">
-                <i class="flaticon-hotel-building"></i>
-                <h5>Apartments Clean</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                <i class="flaticon-hotel-building" style="color: #0f6fb9;"></i>
+                <h5 style="color: #0f6fb9;">Apartments Clean</h5>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p> -->
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 services-info-3 s-brd-1 wow fadeInUp delay-04s">
-                <i class="flaticon-house"></i>
-                <h5>Houses</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                <i class="flaticon-house" style="color: #f6911d;"></i>
+                <h5 style="color: #f6911d;">Houses</h5>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p> -->
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 services-info-3 s-brd-3 wow fadeInDown delay-04s">
-                <i class="flaticon-call-center-agent"></i>
-                <h5>Support 24/7</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                <i class="flaticon-call-center-agent" style="color: #0f6fb9;"></i>
+                <h5 style="color: #0f6fb9;">Support 24/7</h5>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p> -->
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 services-info-3 wow fadeInRight delay-04s">
-                <i class="flaticon-office-block"></i>
-                <h5>Commercial</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                <i class="flaticon-office-block" style="color: #f6911d;"></i>
+                <h5 style="color: #f6911d;">Commercial</h5>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p> -->
             </div>
         </div>
     </div>
 </div>
 <!-- services end -->
 
+<!-- we exit ti keep -->
+<div class="services content-area-20 bg-white" style="margin-top: -10%">
+    <div class="container">
+        <div class="main-title">
+            <h1>We Exit to Keep</h1>
+            <p>Satisfaction is a key to build trust.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 services-info-3 s-brd-2 wow fadeInLeft delay-04s">
+                <img src="public/edenfortDocs/icons/deal.png" alt="deal.png" style="height: 75px;">
+                <h5 style="color: #0f6fb9;">Our Clients Satisfied</h5>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p> -->
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 services-info-3 s-brd-1 wow fadeInUp delay-04s">
+                <img src="public/edenfortDocs/icons/agreement.png" alt="agreement.png" style="height: 75px;">
+                <h5 style="color: #f6911d;">Our Affiliates Happy</h5>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p> -->
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 services-info-3 s-brd-3 wow fadeInDown delay-04s">
+                <img src="public/edenfortDocs/icons/diamond.png" alt="diamond.png" style="height: 75px;">
+                <h5 style="color: #0f6fb9;">Our Brand Competitive</h5>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p> -->
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 services-info-3 wow fadeInRight delay-04s">
+                <img src="public/edenfortDocs/icons/winner.png" alt="winner.png" style="height: 75px;">
+                <h5 style="color: #f6911d;">Our Staff Motivated</h5>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p> -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- we exit ti keep -->
 
 <!-- intro section start -->
 <div class="intro-section" style="background-color: #f1f1f1;">

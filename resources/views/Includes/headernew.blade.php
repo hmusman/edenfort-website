@@ -42,6 +42,15 @@
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
    <style type="text/css">
 @media (max-width: 768px){
+    .banner img {
+        height: 270px !important;
+    }
+    .option-bar .search-area {
+        width: 170px;
+        margin-top: -47px;
+        float: right;
+        margin-right: -15%;
+    }
     .company{
         margin-left: 0% !important;
     }
