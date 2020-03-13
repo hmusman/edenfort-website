@@ -313,7 +313,7 @@
 
 <!-- External JS libraries -->
 
-@include('includes.footernew')
+@include('Includes.footernew')
 <!-- <script>
     $('.sortBy').click(function(){
         var id = this.id;

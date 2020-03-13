@@ -727,4 +727,4 @@
     </div>
 </div>
 <!-- intro section end -->
-@include('includes.footernew')
+@include('Includes.footernew')
