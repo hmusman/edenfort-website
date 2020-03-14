@@ -590,7 +590,7 @@ body{
                        <div class="fa fa-times form-toggle2 class" ></div>
                         <!-- Tabmenu Content 1 / Property For SALE -->
                         <div role="tabpanel" class="tab-pane active" id="for-rent">
-                            <form action="https://localhost/edenfort-website/FilterIndex"    id="rentfor" method="GET">
+                            <form action="https://beta.edenfort.ae/FilterIndex"    id="rentfor" method="GET">
                                 <div class="form-body" style="padding-bottom: 10px">
                                     <!-- Property for Sale Content Row 1 -->
                                     <div class="row">
@@ -764,7 +764,7 @@ body{
                             </form>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="for-sale">
-                            <form action="https://localhost/edenfort-website/FilterIndex" method="GET">
+                            <form action="https://beta.edenfort.ae/FilterIndex" method="GET">
                                 <div class="form-body" style="padding-bottom: 10px">
                                     <!-- Property for Sale Content Row 1 -->
                                     <div class="row">
