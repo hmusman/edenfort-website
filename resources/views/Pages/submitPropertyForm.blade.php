@@ -79,8 +79,8 @@
                                     </div>
                                     <div class="col-lg-4 col-md-6">
                                         <div class="form-group">
-                                            <label for="landloard">Landlord</label> 
-                                            <input id="landloard" name="LandLord" placeholder="LandLord" class="form-control " type="text" value="{{old('LandLord')}}">
+                                            <label for="landloard">Name</label> 
+                                            <input id="landloard" name="LandLord" placeholder="Name" class="form-control " type="text" value="{{old('LandLord')}}">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6">
@@ -132,7 +132,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="form-group">
                                              <label>Type</label>  
-                                             <select name="type" class="form-control" required>
+                                             <select name="type" class="form-control" required style="color: black !important">
                                                 <option value="For Rent">Rent</option>
                                                 <option value="For Sale">Sale</option>
                                              </select>

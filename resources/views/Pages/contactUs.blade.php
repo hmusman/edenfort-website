@@ -20,6 +20,9 @@
         background-color: #0e6fb7;
         border: 1px solid #0e6fb7;
     }
+    .mrg-btn-0 {
+	    margin-bottom: 20px !important;
+	}
 </style>
 <!-- Sub banner start -->
 <div class="sub-banner overview-bgi">
@@ -123,6 +126,14 @@
                             <h5 class="mt-0">Email Address</h5>
                             <p><a href="#">info@edenfort.ae</a></p>
                             <p><a href="#">info@youcanbuyindubai.com</a></p>
+                        </div>
+                    </div>
+                     <div class="media mrg-btn-0">
+                        <i class="fa fa-whatsapp"></i>
+                        <div class="media-body">
+                            <h5 class="mt-0">WhatsApp</h5>
+                            <p><a href="#">+971502296968</a></p>
+                            <!-- <p><a href="#">info@youcanbuyindubai.com</a></p> -->
                         </div>
                     </div>
                 </div>
