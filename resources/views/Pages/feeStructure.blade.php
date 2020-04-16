@@ -18,20 +18,20 @@
 <!-- Sub banner end -->
 
 <!-- Pricing tables start -->
-<div class="pricing-tables content-area-2">
+<!-- <div class="pricing-tables content-area-2">
     <div class="container">
         <div class="main-title">
             <h1>Payments Plan</h1>
             <p>We offer most easiest payments plan.</p>
-        </div>
+        </div> -->
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-lg-4" >
                 <div class="pricing">
                     <div class="price-header">
                         <div class="title">On Booking</div>
                         <div class="price">5%</div>
-                    </div>
+                    </div> -->
                     <!-- <div class="content">
                         <ul>
                             <li>20 Projects</li>
@@ -42,17 +42,17 @@
                         </ul>
                         <div class="button"><a href="#" class="btn btn-border btn-sm">Get started</a></div>
                     </div> -->
-                </div>
+                <!-- </div>
             </div>
             <div class="col-lg-4" >
-                <div class="pricing featured">
+                <div class="pricing featured"> -->
                     <!-- <div class="listing-badges">
                         <span class="featured">Featured</span>
                     </div> -->
-                    <div class="price-header price-header-2">
+                   <!--  <div class="price-header price-header-2">
                         <div class="title">During Construction</div>
                         <div class="price">35%</div>
-                    </div>
+                    </div> -->
                     <!-- <div class="content">
                         <ul>
                             <li>20 Projects</li>
@@ -63,14 +63,14 @@
                         </ul>
                         <div class="button"><a href="#" class="btn btn-color btn-sm">Get started</a></div>
                     </div> -->
-                </div>
+               <!--  </div>
             </div>
             <div class="col-lg-4" >
                 <div class="pricing">
                     <div class="price-header">
                         <div class="title">Upon Handover</div>
                         <div class="price">60%</div>
-                    </div>
+                    </div> -->
                     <!-- <div class="content">
                         <ul>
                             <li>20 Projects</li>
@@ -81,16 +81,16 @@
                         </ul>
                         <div class="button"><a href="#" class="btn btn-border btn-sm">Get started</a></div>
                     </div> -->
-                </div>
+                <!-- </div>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Pricing tables end -->
 
 
 <!-- Pricing tables start -->
-<div class="pricing-tables content-area-2" style="margin-top: -10%;">
+<div class="pricing-tables content-area-2 mt-3" style="margin-top: -10%;">
     <div class="container">
         <div class="main-title">
             <h1>Sale Prices</h1>
