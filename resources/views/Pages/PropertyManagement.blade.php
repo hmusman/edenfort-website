@@ -163,7 +163,7 @@
                 		</tbody>
                 	</table>
                 	<div style="border: 5px solid #fafafa;width: 108%;margin-left: -13px;    background-color: #293848; color: ">
-                		<a href="{{url('feeStructure')}}" title=""><h3 class="pt-5 pb-5" style="text-align: center; color: white;">Our Fees ></h3></a>
+                		<a href="#" title=""><h3 class="pt-5 pb-5" style="text-align: center; color: white;">Our Fees ></h3></a>
                 	</div>
                 </div>
             </div>

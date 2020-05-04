@@ -173,7 +173,7 @@
 									<img src="public/edenfortDocs/assets/images/logo1.png" alt="eden fort real estate" style="    height: 100px;">
 								</div><hr>
 								<p class="view-profile mt-2" style="text-align: center;font-size: 17px;font-weight: bold;">
-									<a href="../companies/1.html"> View Profile</a>
+									<a href="#"> View Profile</a>
 								</p>
                             </div>
                         </div>

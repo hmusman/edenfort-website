@@ -30,7 +30,7 @@
     <link type="text/css" rel="stylesheet" href="{{url('public/assets/fonts/flaticon/font/flaticon.css')}}">
 
     <!-- Favicon icon -->
-    <link rel="shortcut icon" href="{{url('public/edenfortDocs/assets/images/smallLogo.png')}}" type="image/x-icon" >
+    <link rel="shortcut icon" href="{{url('public/logo.png')}}" type="image/x-icon" >
 
     <!-- Google fonts -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPoppins:400,500,700,800,900%7CRoboto:100,300,400,400i,500,700">
@@ -477,7 +477,7 @@ body{
                 <div class="top-bar-right  houzez-top-bar-full">
                     <div class="top-contact">
                         <ul class="top" style="display: flex;f">
-                            <li class="top-bar-phone"><a href="tel:+34696662164"><i class="fa fa-phone"></i> <span style="font-size: 14px;">+971 50 229 6559</span></a>
+                            <li class="top-bar-phone"><a href="tel:+34696662164"><i class="fa fa-phone"></i> <span style="font-size: 14px;">+971 52 229 6559</span></a>
                             </li>
                             <li class="top-bar-contact"><a href="mailto:info@edenfort.com"><i class="fa fa-envelope-o"></i>  <span style="font-size: 14px;">info@edenfort.com</span></a>
                             </li>    

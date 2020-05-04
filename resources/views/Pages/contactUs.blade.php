@@ -109,14 +109,14 @@
                         <i class="fa fa-map-marker"></i>
                         <div class="media-body">
                             <h5 class="mt-0">Office Address</h5>
-                            <p>Office 411, Churchill Executive Towers, Bussines Bay, P.O Box 124874,Dubai,UAE.</p>
+                            <p>Office 105- Blue Matrix buisness center, floor 27, prime tower, buisness bay.</p>
                         </div>
                     </div>
                     <div class="media">
                         <i class="fa fa-phone"></i>
                         <div class="media-body">
                             <h5 class="mt-0">Phone Number</h5>
-                            <p>Office<a href="tel:0477-0477-8556-552">: XXXX XXXX XXX</a> </p>
+                            <!-- <p>Office<a href="tel:0477-0477-8556-552">: XXXX XXXX XXX</a> </p> -->
                             <p>Mobile<a href="tel:+0477-85x6-552">: +971 43 230688</a> </p>
                         </div>
                     </div>
@@ -124,8 +124,8 @@
                         <i class="fa fa-envelope"></i>
                         <div class="media-body">
                             <h5 class="mt-0">Email Address</h5>
-                            <p><a href="#">info@edenfort.ae</a></p>
-                            <p><a href="#">info@youcanbuyindubai.com</a></p>
+                            <p><a href="#">info@edenfort.com</a></p>
+                            <!-- <p><a href="#">info@youcanbuyindubai.com</a></p> -->
                         </div>
                     </div>
                      <div class="media mrg-btn-0">

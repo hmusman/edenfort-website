@@ -65,6 +65,6 @@ Route::get('submitPropertyForm',function(){
 });
 Route::get('submitProperty','Pages\homeController@submitProperty');
 
-Route::get('feeStructure', function(){
-	return view('Pages.feeStructure');
-});
+// Route::get('feeStructure', function(){
+// 	return view('Pages.feeStructure');
+// });

@@ -107,7 +107,7 @@
                 <!-- <li> 
                   <a href="http://www.edenforthomes.com/search?for=sale&city=Mw%3D%3D" title="Properties for sale  in  Ajman">Properties for sale  in  Ajman</a>
                 </li> -->
-                <li><strong>Address: </strong>Office 411, Churchill Executive Towers, Bussines Bay, P.O Box 124874,Dubai,UAE.</li>
+                <li><strong>Address: </strong>Office 105- Blue Matrix buisness center, floor 27, prime tower, buisness bay.</li>
                 <!-- <li> 
                   <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D" title="Properties for rent  in  Ajman">Properties for rent  in  Ajman</a>
                 </li>
@@ -116,7 +116,7 @@
                 </li> -->
                 <li><strong>Email: </strong>info@edenfort.com</li>
                 <li><strong>Phone:</strong> +971 50 229 6559</li>
-                <li><strong>Landline:</strong> +97143230688</li>
+                <!-- <li><strong>Landline:</strong> +97143230688</li> -->
                 <!-- <li> 
                   <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D&type=Commercial-office" title="Offices for rent  in  Ajman">Offices for rent  in  Ajman</a>
                 </li>
