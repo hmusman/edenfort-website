@@ -39,7 +39,7 @@
 		        	<div class="col-md-12">
 		        		<ul class="mt10">
 		        			<li><label class="left">Phone</label><a href="tel:+971-12345678" class="sec_phone">+971-12345678</a></li>
-		        			<li><label class="left">Mobile</label><a href="tel:+971-55-12345678" class="phone">+971-55-12345678</a></li>
+		        			<li><label class="left">Mobile</label><a href="tel:+971-55-12345678" class="phone">+971 43 230688</a></li>
 		        			<li><label class="left">Refer#</label><span class="right refer_no ucfirst">Reference not found</span></li>
 		        			<li><label class="left">Agent</label><span class="right agentName ucfirst">Jon Deo - Core Real Estate</span></li>
 		        			<li class="ref-info">Please quote property reference<span class="bold block refer_no">Core -  317-Ha-R-2942</span>when calling us.</li>

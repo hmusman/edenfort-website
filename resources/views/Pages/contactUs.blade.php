@@ -124,7 +124,7 @@
                         <i class="fa fa-envelope"></i>
                         <div class="media-body">
                             <h5 class="mt-0">Email Address</h5>
-                            <p><a href="#">info@edenfort.com</a></p>
+                            <p><a href="#">info@edenfort.ae</a></p>
                             <!-- <p><a href="#">info@youcanbuyindubai.com</a></p> -->
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                         <i class="fa fa-whatsapp"></i>
                         <div class="media-body">
                             <h5 class="mt-0">WhatsApp</h5>
-                            <p><a href="#">+971502296968</a></p>
+                            <p><a href="#">+971 43 230688</a></p>
                             <!-- <p><a href="#">info@youcanbuyindubai.com</a></p> -->
                         </div>
                     </div>
