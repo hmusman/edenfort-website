@@ -477,8 +477,8 @@ body{
                 <div class="top-bar-right  houzez-top-bar-full">
                     <div class="top-contact">
                         <ul class="top" style="display: flex;f">
-                            <li class="top-bar-phone"><a href="tel:+971 43 230688"><i class="fa fa-phone"></i> <span style="font-size: 14px;">+971 43 230688</span></a>
-                            </li>
+                            <!-- <li class="top-bar-phone"><a href="tel:+971 43 230688"><i class="fa fa-phone"></i> <span style="font-size: 14px;">+971 43 230688</span></a>
+                            </li> -->
                             <li class="top-bar-contact"><a href="mailto:info@edenfort.ae"><i class="fa fa-envelope-o"></i>  <span style="font-size: 14px;">info@edenfort.ae</span></a>
                             </li>    
                                              
