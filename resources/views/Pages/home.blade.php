@@ -724,11 +724,18 @@
             <p>We are working with.</p>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6 services-info-3 s-brd-2 wow fadeInLeft delay-04s partner">
-                <img src="public/assets/images/logo.png" alt="deal.png" style="height: 75px;">
-                <h5 style="color: #0f6fb9;">Hitech Integrity Technical Services <small>L.L.C</small></h5>
-                <p>HiTech FM offers home & office maintenance services all around, including AC Servicing & Maintenance, Electrical faults rectification, Plumbing Services, Tiling & Painting Works, Civil works, and more. We employ only expert professionals, ensuring the highest quality home & office maintenance services.</p>
-                <a class="link_partner" href="#" title="about" data-toggle="modal" data-target=".bd-example-modal-lg">About</a>&nbsp;&nbsp;<a class="link_partner" href="https://hitechfm.com/" title="hitechfm.com" target="_blank">More Info</a>
+            <div class="col-lg-12 col-md-6 col-sm-6 services-info-3 s-brd-2 wow fadeInLeft delay-04s partner">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="public/assets/images/logo.png" alt="deal.png" style="height: 150px;"> 
+                    </div>
+                    <div class="col-md-6">
+                        <h5 style="color: #0f6fb9;">Hitech Integrity Technical Services <small>L.L.C</small></h5>
+                        <p>HiTech FM offers home & office maintenance services all around, including AC Servicing & Maintenance, Electrical faults rectification, Plumbing Services, Tiling & Painting Works, Civil works, and more. We employ only expert professionals, ensuring the highest quality home & office maintenance services.</p>
+                        <a class="link_partner" href="#" title="about" data-toggle="modal" data-target=".bd-example-modal-lg">About</a>&nbsp;&nbsp;<a class="link_partner" href="https://hitechfm.com/" title="hitechfm.com" target="_blank">More Info</a>
+                    </div>
+                </div>
+                
             </div>
             <!-- <div class="col-lg-3 col-md-6 col-sm-6 services-info-3 s-brd-1 wow fadeInUp delay-04s">
                 <img src="public/edenfortDocs/icons/agreement.png" alt="agreement.png" style="height: 75px;">
