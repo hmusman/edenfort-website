@@ -2,7 +2,7 @@
 <!-- Banner start -->
 
 <style type="text/css">
-@media (min-width: 990px) {
+@media only screen and (max-width: 600px) {
 	.show-hide,.form-toggle {
 		display: none ;
 			}
@@ -12,6 +12,9 @@
 			.search-tabmenu{
 				width: 70%;
 			}
+            .partner{
+                width: 100% !important;
+            }
 		}
 .slick-slide-item{
     padding:0px !important;
@@ -21,6 +24,10 @@
 }
 .s-brd-3{
     border-bottom: 1px solid #f1f2f3 !important;
+}
+.link_partner{
+    text-decoration: underline;
+    color: #0f6fb9;
 }
 </style>
 <div class="banner" id="banner">
@@ -707,6 +714,73 @@
     </div>
 </div>
 <!-- we exit ti keep -->
+
+<!-- ------------------------------------------------------------------------------ -->
+<!-- we exit ti keep -->
+<div class="services content-area-20 bg-white" style="margin-top: -10%">
+    <div class="container">
+        <div class="main-title">
+            <h1>Our Partners</h1>
+            <p>We are working with.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6 services-info-3 s-brd-2 wow fadeInLeft delay-04s partner">
+                <img src="public/assets/images/logo.png" alt="deal.png" style="height: 75px;">
+                <h5 style="color: #0f6fb9;">Hitech Integrity Technical Services <small>L.L.C</small></h5>
+                <p>HiTech FM offers home & office maintenance services all around, including AC Servicing & Maintenance, Electrical faults rectification, Plumbing Services, Tiling & Painting Works, Civil works, and more. We employ only expert professionals, ensuring the highest quality home & office maintenance services.</p>
+                <a class="link_partner" href="#" title="about" data-toggle="modal" data-target=".bd-example-modal-lg">About</a>&nbsp;&nbsp;<a class="link_partner" href="https://hitechfm.com/" title="hitechfm.com" target="_blank">More Info</a>
+            </div>
+            <!-- <div class="col-lg-3 col-md-6 col-sm-6 services-info-3 s-brd-1 wow fadeInUp delay-04s">
+                <img src="public/edenfortDocs/icons/agreement.png" alt="agreement.png" style="height: 75px;">
+                <h5 style="color: #f6911d;">Our Affiliates Happy</h5>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 services-info-3 s-brd-3 wow fadeInDown delay-04s">
+                <img src="public/edenfortDocs/icons/diamond.png" alt="diamond.png" style="height: 75px;">
+                <h5 style="color: #0f6fb9;">Our Brand Competitive</h5>
+                
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 services-info-3 wow fadeInRight delay-04s">
+                <img src="public/edenfortDocs/icons/winner.png" alt="winner.png" style="height: 75px;">
+                <h5 style="color: #f6911d;">Our Staff Motivated</h5>
+                
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<!-- model -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+     <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">About Hitech Integrity Technical Services</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            
+            <p>
+                HiTech FM offers services across all trade disciplines, including maintenance of ACƒHVAC, electrical, plumbing system installations and provide additional services like; carpentry, internal & external painting, civil work, carpentry work, we also providing complete fit−out solutions for retail units, spa, restaurants etc. We employ only expert trades people, ensuring the highest quality service no matter what your maintenance & fit−out requirements.
+                <br><br>
+                We offer the convenience of utilising one company to handle all of your property maintenance and refurbishment works from start to finish. We eliminate the need to shop around and waste time on under qualified trades people and guarantee the job is done properly the first time around.
+                <br><br>
+                HiTech FM can also provide scheduled routine maintenance catered to suit your property requirements. We have plenty of options for annual maintenance contract focusing on PPM (Planned Preventive Maintenance ) to avoid complete detrition of your property’s expensive assets, plus 24ƒ7 emergency maintenance (Max response time is 1 hour).
+                <br><br>
+                From beginning to end, ensuring well organised, timely and cost−effective results for all our services.
+
+            </p>  
+            <p>For more detail Contact#</p>
+            <img src="public/assets/images/Capture.PNG" alt="Contact info..." style="width: 100%;">
+            <br><br>
+                Or click on this.
+             <a class="link_partner" href="public/assets/docs/Compnay%20Profile.pdf" target="_blank">More Detailed About Hitech Integrity Technical Services</a>
+             <br><br>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ------------------------------------------------------------------------------ -->
 
 <!-- intro section start -->
 <div class="intro-section" style="background-color: #f1f1f1;">
