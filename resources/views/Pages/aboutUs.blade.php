@@ -79,7 +79,7 @@
 	<div class="row">
 		<div class="col-md-5" style="border-right: 2px solid white;">
 			<span class="fa fa-map-marker ico"></span>
-			<p class="item-text address">Office No. 107, Churchill Executive Towers, Bussines Bay P.O. Box: 124874, Dubai, UAE</p>		
+			<p class="item-text address">Office 05- Blue Matrix buisness center, floor 27, prime tower, buisness bay.</p>		
 		</div>
 		<div class="col-md-3" style="border-right: 2px solid white;">
 			<span class="item-icon fa fa-thumb-tack thumb" style=""></span>

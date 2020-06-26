@@ -109,7 +109,7 @@
                         <i class="fa fa-map-marker"></i>
                         <div class="media-body">
                             <h5 class="mt-0">Office Address</h5>
-                            <p>Office 105- Blue Matrix buisness center, floor 27, prime tower, buisness bay.</p>
+                            <p>Office 05- Blue Matrix buisness center, floor 27, prime tower, buisness bay.</p>
                         </div>
                     </div>
                     <div class="media">
@@ -117,7 +117,7 @@
                         <div class="media-body">
                             <h5 class="mt-0">Phone Number</h5>
                             <!-- <p>Office<a href="tel:0477-0477-8556-552">: XXXX XXXX XXX</a> </p> -->
-                            <p>Mobile<a href="tel:+0477-85x6-552">: +971 43 230688</a> </p>
+                            <p>Mobile<a href="tel:+0477-85x6-552">: +971502296968</a> </p>
                         </div>
                     </div>
                     <div class="media mrg-btn-0">
@@ -132,7 +132,7 @@
                         <i class="fa fa-whatsapp"></i>
                         <div class="media-body">
                             <h5 class="mt-0">WhatsApp</h5>
-                            <p><a href="#">+971 43 230688</a></p>
+                            <p><a href="#">+971502296968</a></p>
                             <!-- <p><a href="#">info@youcanbuyindubai.com</a></p> -->
                         </div>
                     </div>
