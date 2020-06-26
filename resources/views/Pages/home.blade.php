@@ -720,7 +720,7 @@
 <div class="services content-area-20 bg-white" style="margin-top: -10%">
     <div class="container">
         <div class="main-title">
-            <h1>Our Partners</h1>
+            <h1>Our Partners</h1> 
             <p>We are working with.</p>
         </div>
         <div class="row">
@@ -737,20 +737,6 @@
                 </div>
                 
             </div>
-            <!-- <div class="col-lg-3 col-md-6 col-sm-6 services-info-3 s-brd-1 wow fadeInUp delay-04s">
-                <img src="public/edenfortDocs/icons/agreement.png" alt="agreement.png" style="height: 75px;">
-                <h5 style="color: #f6911d;">Our Affiliates Happy</h5>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 services-info-3 s-brd-3 wow fadeInDown delay-04s">
-                <img src="public/edenfortDocs/icons/diamond.png" alt="diamond.png" style="height: 75px;">
-                <h5 style="color: #0f6fb9;">Our Brand Competitive</h5>
-                
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 services-info-3 wow fadeInRight delay-04s">
-                <img src="public/edenfortDocs/icons/winner.png" alt="winner.png" style="height: 75px;">
-                <h5 style="color: #f6911d;">Our Staff Motivated</h5>
-                
-            </div> -->
         </div>
     </div>
 </div>
@@ -760,12 +746,12 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">About Hitech Integrity Technical Services</h5>
+        <h5 class="modal-title"  id="exampleModalLongTitle">About Hitech Integrity Technical Services</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body ">
             
             <p>
                 HiTech FM offers services across all trade disciplines, including maintenance of ACƒHVAC, electrical, plumbing system installations and provide additional services like; carpentry, internal & external painting, civil work, carpentry work, we also providing complete fit−out solutions for retail units, spa, restaurants etc. We employ only expert trades people, ensuring the highest quality service no matter what your maintenance & fit−out requirements.
@@ -783,6 +769,7 @@
                 Or click on this.
              <a class="link_partner" href="public/assets/docs/Compnay%20Profile.pdf" target="_blank">More Detailed About Hitech Integrity Technical Services</a>
              <br><br>
+             
       </div>
     </div>
   </div>
