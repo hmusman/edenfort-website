@@ -85,19 +85,19 @@
                     <!-- main slider carousel items -->
                     <div class="carousel-inner">
                         <div class="active item carousel-item" data-slide-number="0">
-                            <img src="public/edenfortDocs/assets/images/project.jpg" class="img-fluid" alt="property-4">
+                            <img src="{{url('public/edenfortDocs/assets/images/project.jpg')}}" class="img-fluid" alt="property-4">
                         </div>
                         <div class="item carousel-item" data-slide-number="1">
-                            <img src="public/edenfortDocs/assets/images/project.jpg" class="img-fluid" alt="property-6">
+                            <img src="{{url('public/edenfortDocs/assets/images/project.jpg')}}" class="img-fluid" alt="property-6">
                         </div>
                         <div class="item carousel-item" data-slide-number="2">
-                            <img src="public/edenfortDocs/assets/images/project.jpg" class="img-fluid" alt="property-1">
+                            <img src="{{url('public/edenfortDocs/assets/images/project.jpg')}}" class="img-fluid" alt="property-1">
                         </div>
                         <div class="item carousel-item" data-slide-number="4">
-                            <img src="public/edenfortDocs/assets/images/project.jpg" class="img-fluid" alt="property-5">
+                            <img src="{{url('public/edenfortDocs/assets/images/project.jpg')}}" class="img-fluid" alt="property-5">
                         </div>
                         <div class="item carousel-item" data-slide-number="5">
-                            <img src="public/edenfortDocs/assets/images/project.jpg" class="img-fluid" alt="property-8">
+                            <img src="{{url('public/edenfortDocs/assets/images/project.jpg')}}" class="img-fluid" alt="property-8">
                         </div>
 
                         <a class="carousel-control left" href="#propertiesDetailsSlider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
@@ -108,27 +108,27 @@
                     <ul class="carousel-indicators smail-properties list-inline nav nav-justified">
                         <li class="list-inline-item active">
                             <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#propertiesDetailsSlider">
-                                <img src="public/edenfortDocs/assets/images/project.jpg" class="img-fluid" alt="property-4">
+                                <img src="{{url('public/edenfortDocs/assets/images/project.jpg')}}" class="img-fluid" alt="property-4">
                             </a>
                         </li>
                         <li class="list-inline-item">
                             <a id="carousel-selector-1" data-slide-to="1" data-target="#propertiesDetailsSlider">
-                                <img src="public/edenfortDocs/assets/images/project.jpg" class="img-fluid" alt="property-6">
+                                <img src="{{url('public/edenfortDocs/assets/images/project.jpg')}}" class="img-fluid" alt="property-6">
                             </a>
                         </li>
                         <li class="list-inline-item">
                             <a id="carousel-selector-2" data-slide-to="2" data-target="#propertiesDetailsSlider">
-                                <img src="public/edenfortDocs/assets/images/project.jpg" class="img-fluid" alt="property-1">
+                                <img src="{{url('public/edenfortDocs/assets/images/project.jpg')}}" class="img-fluid" alt="property-1">
                             </a>
                         </li>
                         <li class="list-inline-item">
                             <a id="carousel-selector-3" data-slide-to="3" data-target="#propertiesDetailsSlider">
-                                <img src="public/edenfortDocs/assets/images/project.jpg" class="img-fluid" alt="property-5">
+                                <img src="{{url('public/edenfortDocs/assets/images/project.jpg')}}" class="img-fluid" alt="property-5">
                             </a>
                         </li>
                         <li class="list-inline-item">
                             <a id="carousel-selector-4" data-slide-to="4" data-target="#propertiesDetailsSlider">
-                                <img src="public/edenfortDocs/assets/images/project.jpg" class="img-fluid" alt="property-8">
+                                <img src="{{url('public/edenfortDocs/assets/images/project.jpg')}}" class="img-fluid" alt="property-8">
                             </a>
                         </li>
                     </ul>
@@ -279,7 +279,8 @@
 						</div>
                         <div class="search-area-inner">
                             <div class="search-contents ">
-                                <form method="GET">
+                               <form action="{{url('contactUsForm')}}" method="post" accept-charset="utf-8">
+                                @csrf
                                     <div class="form-group">
                                         <label>Name*:</label>
                                        <input type="text" name="name" class="form-control" placeholder="Name*" value="" required>
@@ -539,27 +540,27 @@
                     <div class="property-box-4">
                         <!-- Property Img -->
                         <div class="property-thumbnail">
-                            <a href="properties-details.html" class="property-img">
-                                <img src="public/edenfortDocs/assets/images/project.jpg" alt="property-3" class="img-fluid">
+                            <a href="#" class="property-img">
+                                <img src="{{url('public/edenfortDocs/assets/images/project.jpg')}}" alt="property-3" class="img-fluid">
                             </a>
                             <div class="property-overlay">
-                                <a href="properties-details.html" class="overlay-link">
+                                <a href="#" class="overlay-link">
                                     <i class="fa fa-link"></i>
                                 </a>
                                 <a class="overlay-link property-video" title="Test Title">
                                     <i class="fa fa-video-camera"></i>
                                 </a>
                                 <div class="property-magnify-gallery">
-                                    <a href="assets/img/property-3.jpg" class="overlay-link">
+                                    <a href="{{url('assets/img/property-3.jpg')}}" class="overlay-link">
                                         <i class="fa fa-expand"></i>
                                     </a>
-                                    <a href="assets/img/property-1.jpg" class="hidden"></a>
-                                    <a href="assets/img/property-4.jpg" class="hidden"></a>
+                                    <a href="{{url('assets/img/property-1.jpg')}}" class="hidden"></a>
+                                    <a href="{{url('assets/img/property-4.jpg')}}" class="hidden"></a>
                                 </div>
                             </div>
                             <div class="text">
                                 <div class="pull-left">
-                                    <a href="properties-details.html">VILLA NOVA</a>
+                                    <a href="#">VILLA NOVA</a>
                                 </div>
                                 <div class="pull-right price">
                                     Dubai Land, Dubai
@@ -572,27 +573,27 @@
                     <div class="property-box-4">
                         <!-- Property Img -->
                         <div class="property-thumbnail">
-                            <a href="properties-details.html" class="property-img">
-                                <img src="public/edenfortDocs/assets/images/project.jpg" alt="property-3" class="img-fluid">
+                            <a href="#" class="property-img">
+                                <img src="{{url('public/edenfortDocs/assets/images/project.jpg')}}" alt="property-3" class="img-fluid">
                             </a>
                             <div class="property-overlay">
-                                <a href="properties-details.html" class="overlay-link">
+                                <a href="#" class="overlay-link">
                                     <i class="fa fa-link"></i>
                                 </a>
                                 <a class="overlay-link property-video" title="Test Title">
                                     <i class="fa fa-video-camera"></i>
                                 </a>
                                 <div class="property-magnify-gallery">
-                                    <a href="assets/img/property-3.jpg" class="overlay-link">
+                                    <a href="{{url('assets/img/property-3.jpg')}}" class="overlay-link">
                                         <i class="fa fa-expand"></i>
                                     </a>
-                                    <a href="assets/img/property-1.jpg" class="hidden"></a>
-                                    <a href="assets/img/property-4.jpg" class="hidden"></a>
+                                    <a href="{{url('assets/img/property-1.jpg')}}" class="hidden"></a>
+                                    <a href="{{url('assets/img/property-4.jpg')}}" class="hidden"></a>
                                 </div>
                             </div>
                             <div class="text">
                                 <div class="pull-left">
-                                    <a href="properties-details.html">CASA VIVA</a>
+                                    <a href="#">CASA VIVA</a>
                                 </div>
                                 <div class="pull-right price">
                                     Dubai Land, Dubai
@@ -605,27 +606,27 @@
                     <div class="property-box-4">
                         <!-- Property Img -->
                         <div class="property-thumbnail">
-                            <a href="properties-details.html" class="property-img">
-                                <img src="public/edenfortDocs/assets/images/project.jpg" alt="property-3" class="img-fluid">
+                            <a href="#" class="property-img">
+                                <img src="{{url('public/edenfortDocs/assets/images/project.jpg')}}" alt="property-3" class="img-fluid">
                             </a>
                             <div class="property-overlay">
-                                <a href="properties-details.html" class="overlay-link">
+                                <a href="#" class="overlay-link">
                                     <i class="fa fa-link"></i>
                                 </a>
                                 <a class="overlay-link property-video" title="Test Title">
                                     <i class="fa fa-video-camera"></i>
                                 </a>
                                 <div class="property-magnify-gallery">
-                                    <a href="assets/img/property-3.jpg" class="overlay-link">
+                                    <a href="{{url('assets/img/property-3.jpg')}}" class="overlay-link">
                                         <i class="fa fa-expand"></i>
                                     </a>
-                                    <a href="assets/img/property-1.jpg" class="hidden"></a>
-                                    <a href="assets/img/property-4.jpg" class="hidden"></a>
+                                    <a href="{{url('assets/img/property-1.jpg')}}" class="hidden"></a>
+                                    <a href="{{url('assets/img/property-4.jpg')}}" class="hidden"></a>
                                 </div>
                             </div>
                             <div class="text">
                                 <div class="pull-left">
-                                    <a href="properties-details.html">RIVERSIDE</a>
+                                    <a href="#">RIVERSIDE</a>
                                 </div>
                                 <div class="pull-right price">
                                     Business Bay, Dubai
@@ -638,27 +639,27 @@
                     <div class="property-box-4">
                         <!-- Property Img -->
                         <div class="property-thumbnail">
-                            <a href="properties-details.html" class="property-img">
-                                <img src="public/edenfortDocs/assets/images/project.jpg" alt="property-3" class="img-fluid">
+                            <a href="#" class="property-img">
+                                <img src="{{url('public/edenfortDocs/assets/images/project.jpg')}}" alt="property-3" class="img-fluid">
                             </a>
                             <div class="property-overlay">
-                                <a href="properties-details.html" class="overlay-link">
+                                <a href="#" class="overlay-link">
                                     <i class="fa fa-link"></i>
                                 </a>
                                 <a class="overlay-link property-video" title="Test Title">
                                     <i class="fa fa-video-camera"></i>
                                 </a>
                                 <div class="property-magnify-gallery">
-                                    <a href="assets/img/property-3.jpg" class="overlay-link">
+                                    <a href="{{url('assets/img/property-3.jpg')}}" class="overlay-link">
                                         <i class="fa fa-expand"></i>
                                     </a>
-                                    <a href="assets/img/property-1.jpg" class="hidden"></a>
-                                    <a href="assets/img/property-4.jpg" class="hidden"></a>
+                                    <a href="{{url('assets/img/property-1.jpg')}}" class="hidden"></a>
+                                    <a href="{{url('assets/img/property-4.jpg')}}" class="hidden"></a>
                                 </div>
                             </div>
                             <div class="text">
                                 <div class="pull-left">
-                                    <a href="properties-details.html">VILLA NOVA</a>
+                                    <a href="#">VILLA NOVA</a>
                                 </div>
                                 <div class="pull-right price">
                                     Dubai Land, Dubai

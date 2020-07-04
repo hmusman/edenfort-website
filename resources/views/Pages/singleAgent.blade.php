@@ -1,5 +1,6 @@
 @include('Includes.headernew')
 <!-- Global site tag (gtag.js) - Google Analytics -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110654029-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -20,9 +21,7 @@
 	    float: left;
 	}
 </style>
-@if(isset($filtered))
-    @if(count($filtered)>0)
-        @foreach($filtered->sortByDesc('updated_at') as $filter)
+@if(!empty($filtered))
 <!-- Sub banner start -->
 <div class="sub-banner overview-bgi">
     <div class="container">
@@ -30,7 +29,7 @@
             <h1>Agent Detail</h1>
             <ul class="breadcrumbs">
                 <li><a href="{{url('/')}}">Home</a></li>
-                <li class="active">{{$filter->agentName}}</li>
+                <li class="active">{{$filtered->First_name}} {{$filtered->Last_name}}</li>
             </ul>
         </div>
     </div>
@@ -49,7 +48,11 @@
                     <div class="row agent-4 agent-6">
                         <div class="col-lg-5 col-md-5 col-pad">
                             <div class="photo">
-                                <img src="public/edenfortDocs/assets/profile_img/231e3480c31a0f82d79a93365adb2302.png" alt="avatar-16" class="img-fluid">
+                                @if($filtered->image != NULL || !empty($filtered->image))
+                                <img src="{{url('/')}}/{{$filtered->image}}" alt="avatar-16" class="img-fluid">
+                                @else
+                                <img src="{{url('public/edenfortDocs/assets/profile_img/default.png.png')}}" alt="avatar-16" class="img-fluid">
+                                @endif
                                 <div class="social-list">
                                     <ul>
                                         <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
@@ -62,8 +65,8 @@
                         </div>
                         <div class="col-lg-7 col-md-7 col-pad align-self-center">
                             <div class="details">
-                                <h6>Agent</h6>
-                                <h3><a href="#">{{$filter->agentName}}</a></h3>
+                                <h6 class="mt-2">@if($filtered->role == 1) ADMIN @elseif($filtered->role == 2) Owner @elseif($filtered->role == 3) AGENT @elseif($filtered->role == 4) SuperAgent @endif</h6>
+                                <h3><a href="#">{{$filtered->First_name}} {{$filtered->Last_name}}</a></h3>
                                 <div class="contact clearfix">
                                     <ul>
                                         <!-- <li>
@@ -161,19 +164,19 @@
                             <h5 class="sidebar-title">Contact Agent</h5>
                             <div class="row">
                             	<div class="col-md-6" style="width: 50%;">
-                            		<button class="btn btn-success btn-action"  title="High Floor | Panoramic Sea And Marina View's" data-phone="{{$filter->contact_no}}" data-secphone="" data-companyphone="{{$filter->contact_no}}" data-referno="{{$filter->referenceNo}}" data-companyName="West Gate Real Estate" data-agentName="{{$filter->agentName}}" data-toggle="modal" data-target="#callModal">Call</button>
+                            		<button class="btn btn-success btn-action"  title="Call This Agent" data-phone="{{$filtered->Phone}}" data-secphone="" data-companyphone="{{$filtered->Phone}}" data-referno="{{$filtered->reference}}" data-companyName="Edenfort Real Estate" data-agentName="{{$filtered->uaer_name}}" data-toggle="modal" data-target="#AgentcallModal">Call</button>
 									
                             	</div>
                             	<div class="col-md-6" style="width: 50%;">
-                            		<button class="btn btn-primary  btn-action"  title="High Floor | Panoramic Sea And Marina View's" data-prop="83947" data-referno="{{$filter->referenceNo}}" data-companyName="West Gate Real Estate" data-agentName="{{$filter->agentName}}" data-agentEmail="{{$filter->agentEmail}}" data-toggle="modal" data-target="#emailModal" >Email</button>
+                            		<button class="btn btn-primary  btn-action agentMail"  title="High Floor | Panoramic Sea And Marina View's" data-prop="83947" data-referno="{{$filtered->reference}}" data-companyName="West Gate Real Estate" data-agentName="{{$filtered->user_name}}" data-agentEmail="{{$filtered->Email}}" data-toggle="modal" data-target="#AgentemailModal" >Email</button>
                             	</div>
                             </div><hr>
                             <div>
                             	<div class="image text-center">
-									<img src="public/edenfortDocs/assets/images/logo1.png" alt="eden fort real estate" style="    height: 100px;">
+									<img src="{{url('public/edenfortDocs/assets/images/smallLogo.png')}}" alt="eden fort real estate" style="    height: 100px;">
 								</div><hr>
 								<p class="view-profile mt-2" style="text-align: center;font-size: 17px;font-weight: bold;">
-									<a href="#"> View Profile</a>
+									<!-- <a href="#"> View Profile</a> -->
 								</p>
                             </div>
                         </div>
@@ -183,68 +186,213 @@
         </div>
     </div>
     <!-- Agent detail end -->
-@endforeach
-	@endif
-	@endif
-    <!-- Featured properties start -->
-    <div class="featured-properties">
-        <div class="container">
-            <h3 class="heading">@if(isset($filtered))
-                @if(count($filtered)>0) {{count($filtered)}}  Properties results found @endif @endif</h3>
-            <div class="row">
-            	@if(isset($filtered))
-                @if(count($filtered)>0)
-                @foreach($filtered->sortByDesc('updated_at') as $filter)
-                <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInLeft delay-04s">
-                    <div class="card property-box-2">
-                        <!-- property img -->
-                        <div class="property-thumbnail">
-                            <a href="public/edenfortDocs/assets/images/d185dd.jpg" title="High Floor | Panoramic Sea And Marina View's" class="property-img">
-                                <img src="public/edenfortDocs/assets/images/d185dd.jpg" alt="property-3" class="img-fluid">
-                            </a>
-                            <!-- <div class="property-overlay">
-                                <a href="properties-details.html" class="overlay-link">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <a class="overlay-link property-video" title="Test Title">
-                                    <i class="fa fa-video-camera"></i>
-                                </a>
-                                <div class="property-magnify-gallery">
-                                    <a href="assets/img/property-3.jpg" class="overlay-link">
-                                        <i class="fa fa-expand"></i>
-                                    </a>
-                                    <a href="assets/img/property-7.jpg" class="hidden"></a>
-                                    <a href="assets/img/property-6.jpg" class="hidden"></a>
-                                </div>
-                            </div> -->
-                        </div>
-                        <!-- detail -->
-                        <div class="detail">
-                            <h5 class="title"><a href="properties-details.html">High Floor | Panoramic Sea And Marina View's</a></h5>
-                            <h4 class="price">
-                                AED {{$filter->price}}
-                            </h4>
-                            <p>{{$filter->location}}</p>
-                        </div>
+    <!-- models -->
+<div id="AgentcallModal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="myCallModalLabel">
+  <div class="modal-dialog contact_modals">
+
+    <!-- Modal content-->
+    <div class="modal-content"  style="border-radius: 0px;border-top: 4px solid #0071bc;">
+        <div>
+            <button type="button" class="close" data-dismiss="modal" style="opacity: 1; font-size: 30px;  color: #F7931E; padding: 3px 6px;">&times;</button>
+        </div>
+            <div class="modal-body" style="margin-top:30px; padding: 0 30px;">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2>Contact Detail</h2>
+                        <p class="company_name ucfirst">Edenfort Estate</p>
+                    </div>
+                    <div class="col-md-12">
+                        <ul class="mt10">
+                            <li class="bdr"><label class="left bld">Phone: </label><a href="tel:+971-12345678" class="sec_phone"> {{$filtered->Phone}}</a></li>
+                            <li class="bdr"><label class="left bld">Mobile: </label><a href="tel:+971-55-12345678" class="phone"> {{$filtered->Phone}}</a></li>
+                            <li class="bdr"><label class="left bld">Refer#</label><span class="right refer_no ucfirst"> {{$filtered->refrence}}</span></li>
+                            <li class="bdr"><label class="left bld">Agent</label><span class="right agentName ucfirst">{{$filtered->First_name}} {{$filtered->Last_name}} - At Edenfort Real Estate</span></li>
+                            <!-- <li class="ref-info" style="margin-left: 12%;">Please quote property reference<span class="bold block refer_no"> Core -  317-Ha-R-2942</span>when calling us.</li> -->
+                            <br>
+                        </ul>
                     </div>
                 </div>
-        	  	@endforeach
-    		  	@else
-            	<div class="item property-item property-archive col-xs-4 col-lg-4 list-group-item">
-		            <div class="row thumbnail">
-						<div class="property-content">
-							<h1 class="property-price" align="center"><a href="detail/83947.html" title="High Floor | Panoramic Sea And Marina View's">No Record Found<small></small> </a></h1>
-						</div>
-					</div>
-		        </div>
-                @endif
-                @endif
-                
+               
             </div>
-        </div>
+      
     </div>
-    <!-- Featured properties end -->
+
+  </div>
 </div>
-<!-- Agent page end -->
+
+<div class="modal fade AgentemailModal" id="AgentemailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="myform" id="myform">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Your Name:</label>
+            <input type="text" class="form-control" placeholder="Your Name" id="sender-name">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Your Email:</label>
+            <input type="email" class="form-control" placeholder="Your Email" id="sender-email">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Your Phone Number:</label>
+            <input type="tel" class="form-control" placeholder="Your Phone Number" id="sender-phone">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Select Type:</label>
+
+             <select class="form-control" name="type" id="sender-type" >
+                <option value="null">-- Select Option --</option>
+                <option value="tenant">Tenant</option>
+                <option value="agent">Agent</option>
+                <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Your Message:</label>
+            <textarea class="form-control" placeholder="Your Message" id="sender-message"></textarea>
+          </div>
+          <div class="form-group" id="check-robot">
+              <input type="checkbox" id="sender-robot" name="robot" required="">
+              <label class="chkbox_label">I am not a robot &nbsp;<span class="robot-error text-danger"></span></label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" name="sendnotification" checked="checked" >
+            <label class="chkbox_label">Keep me Informed about similar properties</label>
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary sendmail">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+	@endif
 
 @include('Includes.footernew')
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+
+<script>
+    var agetRefno;
+    var agetName;
+    var agetEmail; 
+    $('.agentMail').on('click', function(){
+
+         agetRefno = $(this).attr('data-referno');
+         agetName = $(this).attr('data-agentName');
+         agetEmail = $(this).attr('data-agentEmail');
+
+        // console.log(agetRefno);
+        // console.log(agetName);
+        // console.log(agetEmail);
+
+    })
+      $("input").keyup(function(){
+        $(this).css('border', '1px solid #ced4da');
+      });
+      $("select").on('change',function(){
+        $(this).css('border', '1px solid #ced4da');
+      });
+      $("textarea").keyup(function(){
+        $(this).css('border', '1px solid #ced4da');
+      });
+    $('.sendmail').on('click', function(){
+        // console.log(agetRefno);
+        // console.log(agetName);
+        // console.log(agetEmail);
+        var name = $("#sender-name").val();
+        var email = $("#sender-email").val();
+        var phone = $("#sender-phone").val();
+        var message = $("#sender-message").val();
+        $('select').change(function(){
+            $(this).find(':selected').addClass('selected')
+                .siblings('option').removeClass('selected');
+        })
+        var type = $( "#sender-type option:selected" ).val();
+
+
+        if(name == '' || typeof name == 'undefined'){
+            $("#sender-name").css('border', '1px solid red');
+        }
+        if(email == '' || typeof email == 'undefined'){
+            $("#sender-email").css('border', '1px solid red');
+        }
+        if(phone == '' || typeof phone == 'undefined'){
+            $("#sender-phone").css('border', '1px solid red');
+        }
+        if(type == '' || typeof type === 'undefined' || type == 'null'){
+            $("#sender-type").css('border', '1px solid red');
+        }
+        if(message == '' || typeof message == 'undefined'){
+            $("#sender-message").css('border', '1px solid red');
+        }
+
+        if ($('#sender-robot').is(":checked"))
+        {
+            var checkbox = document.getElementById('sender-robot').value;
+
+        }else{
+            var checkbox = null;
+        }
+        
+        if(checkbox == null || typeof checkbox == 'null' || typeof checkbox == 'undefined'){
+            $( ".error" ).remove();
+            $('#check-robot').append('<p class="alert alert-danger error">Please check the checkbox to make sure you are not a robot.');
+        }
+
+        if(name == '' || typeof name == 'undefined' || email == '' || typeof email == 'undefined' || phone == '' || typeof phone == 'undefined' || type == '' || typeof type === 'undefined' || type == 'null' || message == '' || typeof message == 'undefined' || checkbox == null || typeof checkbox == 'null' || typeof checkbox == 'undefined'){
+
+            $.toast({
+                heading: 'Error',
+                text: 'Please fill all required fields to submit form.',
+                icon: 'error',
+                position: 'top-right',
+                loader: true,        // Change it to false to disable loader
+                loaderBg: '#9EC600',  // To change the background
+                showHideTransition: 'slide',
+                hideAfter: 5000,
+                allowToastClose: true, 
+
+            })
+        }else{
+            $.ajax({
+                url: "<?php echo url('contactAgent') ?>",
+                type: "POST",
+                data:{
+                    "_token" : "{{ csrf_token() }}",
+                    'agetRefno' : agetRefno,
+                    'agetName' : agetName,
+                    'agetEmail' : agetEmail,
+                    'name' : name,
+                    'email' : email,
+                    'phone' : phone,
+                    'type' : type,
+                    'message' : message,
+                },
+                success:function(data){
+                    $('.AgentemailModal').modal('hide'); 
+                    $('#myform')[0].reset();
+                    $.toast({
+                        heading: 'Success',
+                        text: 'Your email is received. Agent will get you back soon.',
+                        icon: 'success',
+                        position: 'top-right',
+                        loader: true,        // Change it to false to disable loader
+                        loaderBg: '#9EC600',  // To change the background
+                        showHideTransition: 'slide',
+                        hideAfter: 5000,
+                        allowToastClose: true, 
+
+                    })
+                }
+            })
+        }
+    })
+</script>

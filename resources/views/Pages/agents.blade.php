@@ -1,5 +1,6 @@
 @include('Includes.headernew')
 <!-- Global site tag (gtag.js) - Google Analytics -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110654029-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -9,6 +10,36 @@
   gtag('config', 'UA-110654029-1');
 </script>   <!-- ====== END HEADER ====== -->
 <style>
+    jq-toast-single jq-has-icon jq-icon-info{
+        font-size: 18px !important;
+    }
+    .jq-icon-info {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII=);
+        background-color: #31708f;
+        color: #d9edf7;
+        border-color: #bce8f1;
+        font-size: 15px !important;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .jq-toast-wrap {
+        display: block;
+        position: fixed;
+        width: 450px;
+        pointer-events: none!important;
+        letter-spacing: normal;
+        z-index: 9000!important;
+    }
+    .jq-toast-single h2 {
+        font-family: arial,sans-serif;
+        font-size: 20px;
+        margin: 0 0 7px;
+        background: 0 0;
+        color: inherit;
+        line-height: inherit;
+        letter-spacing: normal;
+        padding-bottom: 8px;
+    }
     @media (max-width: 768px){
         .agent-details{
             margin-top: -6% !important;
@@ -44,6 +75,13 @@
             margin-top: -15% !important;
         }
     }
+    .agent-img{
+        height: 270px !important;
+        width: 255px !important;
+    }
+    .search-agent::hover{
+
+    }
 </style>
 <!-- Sub banner start -->
 <div class="sub-banner overview-bgi">
@@ -52,7 +90,7 @@
              <h1>Agents Team</h1>
             <ul class="breadcrumbs">
                 <li><a href="{{url('/')}}">Home</a></li>
-                <li class="active"><a href="#">Agents</a></li>
+                <li class="active"><a href="{{url('agents')}}">Agents</a></li>
             </ul>
         </div>
     </div>
@@ -64,32 +102,51 @@
     <div class="container">
         <div class="main-title">
             <h1>Meet Our Agents</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. {{$agentname}}</p>
         </div>
-        <div>
-			<h4>>@if(isset($filtered))
-                @if(count($filtered)>0) {{count($filtered)}}  results found @endif @endif</h4>
-             <hr>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>@if(isset($total)>0) {{$total}}  Total @endif >@if(isset($agentPic))
+                        @if(count($agentPic)>0) {{count($agentPic)}}  results found @endif @endif</h4>
+                </div>
+                <div class="col-md-6">
+                    <form action="{{url('agentFilter')}}" method="get" accept-charset="utf-8">
+                    <div class="row" style="float: right;">
+                        <div class="">
+                            <input class="form-control" type="text" name="agent-name" placeholder="Search Agent By Name" value="{{$agentname, ''}}" style="height: 39px;width: 445px;">
+                        </div>
+                        <div class="">
+                            <button class="btn btn-success search-agent" type="submit">Search</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <hr><br>
         </div>
         <div class="row">
-        	@if(isset($filtered))
-            @if(count($filtered)>0)
-            @foreach($filtered->sortByDesc('updated_at') as $filter)
+        	@if(isset($agentPic))
+            @if(count($agentPic)>0)
+            @foreach($agentPic as $agent)
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                 <div class="agent-2">
                     <div class="agent-photo">
-                        <a href="{{url('agent'.$filter->id)}}">
-                            <img src="public/edenfortDocs/assets/profile_img/231e3480c31a0f82d79a93365adb2302.png" alt="{{$filter->agentName}}" class="img-fluid">
+                        @if($agent->image != NULL || !empty($agent->image))
+                        <a href="{{url('agent/'.$agent->id)}}">
+                            <img class="agent-img" src="{{url('/')}}/{{$agent->image}}" alt="{{$agent->user_name}}" class="img-fluid">
                         </a>
-                        <img class="img-responsive" alt="Eden Fort Real Estate" src="public/edenfortDocs/assets/images/logo1.png" style="height: 43px;
-    width: 85px;
-    margin-left: 67%;
-    margin-top: -27%;
-    background-color: #ffffffb5;" >
+                        <img class="img-responsive" alt="Eden Fort Real Estate" src="public/edenfortDocs/assets/images/smallLogo.png" style="height: 43px;width: 85px;margin-left: 67%;margin-top: -27%;background-color: #ffffff00;" >
+                        @else
+                        <a href="{{url('agent/'.$agent->id)}}">
+                            <img class="agent-img" src="{{url('public/edenfortDocs/assets/profile_img/default.png.png')}}" alt="{{$agent->user_name}}" class="img-fluid">
+                        </a>
+                        <img class="img-responsive" alt="Eden Fort Real Estate" src="public/edenfortDocs/assets/images/smallLogo.png" style="height: 43px;width: 85px;margin-left: 67%;margin-top: -27%;background-color: #ffffff00;">
+                        @endif
                     </div>
                     <div class="agent-details" style="margin-top: -11%;">
-                        <h5 style="font-weight: 900;"><a href="agent-detail.html">{{$filter->agentName}}</a></h5>
-                        <p class="position" style="margin-top: -5%;">AGENT</p>
+                        <h5 style="font-weight: 900;"><a href="{{url('agent/'.$agent->id)}}">{{$agent->First_name}} {{$agent->Last_name}}</a></h5>
+                        <p class="position" style="margin-top: -5%;">@if($agent->role == 1) ADMIN @elseif($agent->role == 2) Owner @elseif($agent->role == 3) AGENT @elseif($agent->role == 4) SuperAgent @endif</p>
                         <!-- <ul class="social-list clearfix">
                             <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
@@ -143,7 +200,7 @@
 		<div class=" col-md-12 text-right">
 						
 						<nav aria-label="Page navigation">
-					 {{$filtered->links()}}
+					 {{$agentPic->links()}}
 				</nav>
 			</div>
 		</div>
@@ -154,3 +211,22 @@
 
 
 @include('Includes.footernew')
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+<script>
+   $( document ).ready(function() {
+        setTimeout(function(){
+            $.toast({
+                heading: 'Important Notice!',
+                text: 'Sheharyar Ahsen and Ali Ahmed Abbasi are not working with us',
+                icon: 'info',
+                position: 'top-right',
+                loader: false,        // Change it to false to disable loader
+                loaderBg: '#9EC600',  // To change the background
+                showHideTransition: 'slide',
+                hideAfter: false,
+                allowToastClose: true, 
+
+            })
+        },4000);
+    })
+</script>

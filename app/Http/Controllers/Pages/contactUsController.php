@@ -32,14 +32,21 @@ public function contactUs(){
 //contact Us Form
 public function contactUsForm(Request $r){
 
+    $r->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'subject' => 'required',
+            'message' => 'required',
+        ]);
+
 $name=$r->name;
 $email=$r->email;
 $phone=$r->phone;
 $subject=$r->subject;
 $message=$r->message;
-$emailFromEnvFile= env("MAIL_USERNAME", "email Not Found");
-//dd($emailFromEnvFile);
-//dd($name,$email,$phone,$subject,$msg);
+$emailFromEnvFile= 'info@edenfort.ae';
+// dd($emailFromEnvFile);
+// dd($name,$email,$phone,$subject,$message);
 try{
 	  $done=Mail::send('email.contactUsData', ['msg' => $message,'name'=>$name,'phone'=>$phone,'email'=>$email], function ($m) use ($subject,$email,$emailFromEnvFile) {
             $m->from($email, 'Edenfort Contact');
@@ -56,14 +63,16 @@ try{
 }
 
 //contactAgent  From Search Page. client send mail to particular agent
-public function	contactAgent(){
+public function	contactAgent(Request $request){
+// dd($request->all());
 
-$name=input::get('name');
-$email=input::get('email');
-$phone=input::get('phone');
-$type=input::get('type');
-$message=input::get('message');
-$agentEmail=input::get('agentEmail');
+
+$name=$request->name;
+$email=$request->email;
+$phone=$request->phone;
+$type=$request->type;
+$message=$request->message;
+$agentEmail=$request->agetEmail;
 //test::create(['category'=>$name,'agentName'=>$email,'type'=>$phone,'beds'=>$type,'referenceNo'=>$message,'agentEmail'=>$agentEmail]);
 
 //sending Mail

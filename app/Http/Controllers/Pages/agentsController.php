@@ -5,27 +5,32 @@ namespace App\Http\Controllers\Pages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\search;
+use App\Models\user;
+
 class agentsController extends Controller
 {
     //
 
        public function index(Request $r){
-      $language= $r->get('language');
-      $nationality= $r->get('nationality');
-      $name= $r->get('name');
-     if($language!="" and $nationality!="" and $name!="")
-      {
-      dd($name,$language,$nationality);
-       }
-       
-       	$filtered=search::paginate(12);
 
-    	return view('Pages.agents',compact('filtered')); 
+      $query=user::query();
+
+      $total=user::count();
+      // dd($total);
+      // dd($agentPic);
+      $agentname = $r->get('agent-name');
+
+      if(isset($agentname)){
+        $agentPic = $query->where('user_name', 'like', '%' . $agentname . '%')->paginate(12);
+      }else{
+        $agentPic = $query->orderBy('updated_at', 'DESC')->paginate(12);
+      }
+    	return view('Pages.agents',compact('agentPic','total', 'agentname')); 
     }
 
     public function singleAgent($id){
 
-    $filtered=search::where(['id'=>$id])->paginate(10);
+    $filtered=user::where(['id'=>$id])->first();
 
     //dd($filtered);
     return view('Pages.singleAgent',compact('filtered'));

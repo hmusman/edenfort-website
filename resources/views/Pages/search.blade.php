@@ -72,7 +72,7 @@
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="property-box">
                     <div class="property-thumbnail">
-                        <a href="{{url('property'.$filter->id)}}" class="property-img">
+                        <a href="{{url('property/'.$filter->id)}}" class="property-img">
                             <div class="tag button alt featured">{{$filter->offering_type1}}</div>
                             <div class="price-ratings-box">
                                 <p class="price">
@@ -106,10 +106,10 @@
                     </div>
                     <div class="detail">
                         <h1 class="title">
-                            <a href="{{url('property'.$filter->id)}}">{{$filter->title_en}}</a>
+                            <a href="{{url('property/'.$filter->id)}}">{{$filter->title_en}}</a>
                         </h1>
                         <div class="location">
-                            <a href="{{url('property'.$filter->id)}}">
+                            <a href="{{url('property/'.$filter->id)}}">
                                 <i class="fa fa-map-marker"></i>{{$filter->location}}
                             </a>
                         </div>

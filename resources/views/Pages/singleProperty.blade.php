@@ -1,4 +1,5 @@
 @include('Includes.headernew')
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css">
 
 
 <style>
@@ -90,7 +91,7 @@
         <div class="breadcrumb-area">
             <h1>Property Detail</h1>
             <ul class="breadcrumbs">
-            	<li><a href="{{url('footerFilter?propertyType=&category=&city=Dubai')}}"> {{$filter->city}}</a></li>
+            	<li><a href="{{url('footerFilter?propertyType=&category=&city=')}}"> {{$filter->city}}</a></li>
                 <li class="active"><a href="#">{{$filter->community}}</a></li>
                 <li class="active">{{$filter->sub_community}}</li>
                 <li class="active"><a href="#">{{$filter->property_name}}</a></li>
@@ -340,13 +341,48 @@
                              <div class="widget search-area d-none d-xl-block d-lg-block">
                         @if(isset($agentPic))                              
                             @foreach($agentPic as $aP)
-                                @if($aP->image !== "NULL")
-                                <img src="{{$aP->image}}" alt="{{$aP->user_name}}" style="height: 275px; width: 288px; border: 1px solid gainsboro;">
-                                <span class="compnay_img"><img src="public/edenfortDocs/assets/images/smallLogo.png" alt="eden fort real estate" style="margin-top: -25%; margin-left: 1px; background-color: #f1f1f1; height: 45px;"></span>
+                                @if($aP->image == NULL || !empty($aP->image))
+                                <p>here</p>
+                                    <img src="{{url('/')}}/{{$aP->image}}" alt="{{$aP->user_name}}" style="height: 275px; width: 288px; border: 1px solid gainsboro;">
                                 @else
-                                <img src="{{$aP->image}}" alt="{{$aP->user_name}}" style="height: 275px; width: 288px; border: 1px solid gainsboro;">
-                                @endif
+                                
 
+                                <img src="{{url('public/edenfortDocs/assets/profile_img/default.png.png')}}" alt="{{$aP->user_name}}" style="height: 275px; width: 288px; border: 1px solid gainsboro;">
+                                <span class="compnay_img"><img src="{{url('/public/edenfortDocs/assets/images/smallLogo.png')}}" alt="eden fort real estate" style="margin-top: -25%; margin-left: 1px; background-color: #f1f1f1; height: 45px;"></span><br>
+                                @endif
+                                    <!-- models -->
+                                    <div id="AgentcallModal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="myCallModalLabel">
+                                      <div class="modal-dialog contact_modals">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content"  style="border-radius: 0px;border-top: 4px solid #0071bc;">
+                                            <div>
+                                                <button type="button" class="close" data-dismiss="modal" style="opacity: 1; font-size: 30px;  color: #F7931E; padding: 3px 6px;">&times;</button>
+                                            </div>
+                                                <div class="modal-body" style="margin-top:30px; padding: 0 30px;">
+                                                    <div class="row">
+                                                        <div class="col-md-12 text-center">
+                                                            <h2>Agent Contact Detail</h2>
+                                                            <p class="company_name ucfirst">Edenfort Estate</p>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <ul class="mt10">
+                                                                <li class="bdr"><label class="left bld">Phone: </label><a href="tel:+971-12345678" class="sec_phone"> {{$aP->Phone}}</a></li>
+                                                                <li class="bdr"><label class="left bld">Mobile: </label><a href="tel:+971-55-12345678" class="phone"> {{$aP->Phone}}</a></li>
+                                                                <li class="bdr"><label class="left bld">Refer#</label><span class="right refer_no ucfirst"> {{$aP->refrence}}</span></li>
+                                                                <li class="bdr"><label class="left bld">Agent</label><span class="right agentName ucfirst">{{$aP->First_name}} {{$aP->Last_name}} - At Edenfort Real Estate</span></li>
+                                                                <li class="ref-info" style="margin-left: 12%;">Please quote property reference<span class="bold block refer_no"> Core -  317-Ha-R-2942</span>when calling us.</li>
+                                                                <br>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </div>
+                                          
+                                        </div>
+
+                                      </div>
+                                    </div>
                            @endforeach
                        @endif
                     </div>
@@ -374,8 +410,8 @@
                     </div>
                     <div class="row ">
                     
-                    <div class="col-md-6 col-sm-6 paddingTop-20"><button class="btn btn-success btn-submit call-btn" data-phone="{{$filter->agentPhone}}" data-secphone="" data-companyphone="" data-referno="{{$filter->reference_number}}" data-companyName="West Gate Real Estate" data-agentName="{{$filter->agentName}}" data-toggle="modal" data-target="#callModal">Call</button></div>
-                        <div class="col-md-6 col-sm-6 paddingTop-20"><button class="btn btn-email btn-submit email-btn" data-prop="" data-referno="{{$filter->reference_number}}" data-companyName="West Gate Real Estate" data-agentName="{{$filter->agentName}}" data-agentEmail="{{$filter->agentEmail}}" data-toggle="modal" data-target="#emailModal" >Email</button></div>
+                    <div class="col-md-6 col-sm-6 paddingTop-20"><button class="btn btn-success btn-submit call-btn" data-phone="{{$filter->agentPhone}}" data-secphone="" data-companyphone="" data-referno="{{$filter->reference_number}}" data-companyName="West Gate Real Estate" data-agentName="{{$filter->agentName}}" data-toggle="modal" data-target="#AgentcallModal">Call</button></div>
+                        <div class="col-md-6 col-sm-6 paddingTop-20"><button class="btn btn-email btn-submit email-btn agentMail" data-prop="" data-referno="{{$filter->reference_number}}" data-companyName="West Gate Real Estate" data-agentName="{{$filter->agentName}}" data-agentEmail="{{$filter->agentEmail}}" data-toggle="modal" data-target="#AgentemailModal" >Email</button></div>
                         
                     </div>
                     </div>
@@ -447,102 +483,10 @@
                         <div class="col-md-4 col-sm-6">
                             <ul>
                                 <li><span><i class="flaticon-draw-check-mark"></i>within a compound</span></li>
-                                <!-- <li><span><i class="flaticon-draw-check-mark"></i> 2 Bathroom</span></li> -->
                             </ul>
                         </div>
-                        <!-- <div class="col-md-4 col-sm-6">
-                            <ul>
-                                <li><span><i class="flaticon-draw-check-mark"></i> 1 Garage</span></li>
-                                <li><span><i class="flaticon-draw-check-mark"></i> 1 Balcony</span></li>
-                            </ul>
-                        </div -->
-                        <!-- <div class="col-md-4 col-sm-6">
-                            <ul>
-                                <li><span><i class="flaticon-draw-check-mark"></i> 4800 sq ft</span></li>
-                                <li><span><i class="flaticon-draw-check-mark"></i> TV</span></li>
-                            </ul>
-                        </div> -->
                     </div>
                 </div>
-
-                <!-- Features opions start -->
-                <!-- <div class="features-opions af mb-60">
-                    <h3 class="heading">Features</h3>
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6">
-                            <ul>
-                                <li>
-                                    <i class="flaticon-draw-check-mark"></i>
-                                    Air conditioning
-                                </li>
-                                <li>
-                                    <i class="flaticon-draw-check-mark"></i>
-                                    Wifi
-                                </li>
-                                <li>
-                                    <i class="flaticon-draw-check-mark"></i>
-                                    Swimming Pool
-                                </li>
-                                <li>
-                                    <i class="flaticon-draw-check-mark"></i>
-                                    Double Bed
-                                </li>
-                                <li>
-                                    <i class="flaticon-draw-check-mark"></i>
-                                    Balcony
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <ul>
-                                <li>
-                                    <i class="flaticon-draw-check-mark"></i>
-                                    Telephone
-                                </li>
-                                <li>
-                                    <i class="flaticon-draw-check-mark"></i>
-                                    Garage
-                                </li>
-                                <li>
-                                    <i class="flaticon-draw-check-mark"></i>
-                                    Parking
-                                </li>
-                                <li>
-                                    <i class="flaticon-draw-check-mark"></i>
-                                    TV
-                                </li>
-                                <li>
-                                    <i class="flaticon-draw-check-mark"></i>
-                                    Home Theater
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <ul>
-                                <li>
-                                    <i class="flaticon-draw-check-mark"></i>
-                                    Alarm
-                                </li>
-                                <li>
-                                    <i class="flaticon-draw-check-mark"></i>
-                                    Garage
-                                </li>
-                                <li>
-                                    <i class="flaticon-draw-check-mark"></i>
-                                    Gym
-                                </li>
-                                <li>
-                                    <i class="flaticon-draw-check-mark"></i>
-                                    Electric Range
-                                </li>
-                                <li>
-                                    <i class="flaticon-draw-check-mark"></i>
-                                    Private space
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div> -->
 
                 <!-- Section Location start -->
                 <div class="section-location mb-60">
@@ -551,79 +495,6 @@
                         <div id="map" class="contact-map"></div>
                     </div>
                 </div>
-                    
-                <!-- Related properties start -->
-                <!-- <div class="related-properties hedin-mb-30">
-                    <h3 class="heading">Related Properties</h3>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="property-box-4"> -->
-                                <!-- Property Img -->
-                                <!-- <div class="property-thumbnail">
-                                    <a href="properties-details.html" class="property-img">
-                                        <img src="{{url('public/assets/img/property-3.jpg')}}" alt="property-3" class="img-fluid">
-                                    </a>
-                                    <div class="property-overlay">
-                                        <a href="properties-details.html" class="overlay-link">
-                                            <i class="fa fa-link"></i>
-                                        </a>
-                                        <a class="overlay-link property-video" title="Test Title">
-                                            <i class="fa fa-video-camera"></i>
-                                        </a>
-                                        <div class="property-magnify-gallery">
-                                            <a href="assets/img/property-3.jpg" class="overlay-link">
-                                                <i class="fa fa-expand"></i>
-                                            </a>
-                                            <a href="assets/img/property-1.jpg" class="hidden"></a>
-                                            <a href="assets/img/property-4.jpg" class="hidden"></a>
-                                        </div>
-                                    </div>
-                                    <div class="text">
-                                        <div class="pull-left">
-                                            <a href="properties-details.html">Beautiful Single Home</a>
-                                        </div>
-                                        <div class="pull-right price">
-                                            $320.00
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="property-box-4"> -->
-                                <!-- Property Img -->
-                                <!-- <div class="property-thumbnail">
-                                    <a href="properties-details.html" class="property-img">
-                                        <img src="{{url('public/assets/img/property-6.jpg')}}" alt="property-6" class="img-fluid">
-                                    </a>
-                                    <div class="property-overlay">
-                                        <a href="properties-details.html" class="overlay-link">
-                                            <i class="fa fa-link"></i>
-                                        </a>
-                                        <a class="overlay-link property-video" title="Test Title">
-                                            <i class="fa fa-video-camera"></i>
-                                        </a>
-                                        <div class="property-magnify-gallery">
-                                            <a href="assets/img/property-6.jpg" class="overlay-link">
-                                                <i class="fa fa-expand"></i>
-                                            </a>
-                                            <a href="assets/img/property-8.jpg" class="hidden"></a>
-                                            <a href="assets/img/property-4.jpg" class="hidden"></a>
-                                        </div>
-                                    </div>
-                                    <div class="text">
-                                        <div class="pull-left">
-                                            <a href="properties-details.html">Modern Family Home</a>
-                                        </div>
-                                        <div class="pull-right price">
-                                            $320.00
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
             <div class="col-lg-4 col-md-12">
                 <div class="sidebar mbl">
@@ -635,13 +506,45 @@
                                  <div class="widget search-area d-none d-xl-block d-lg-block">
                         @if(isset($agentPic))                              
                             @foreach($agentPic as $aP)
-                                @if($aP->image !== "NULL")
-                                <img src="{{$aP->image}}" alt="{{$aP->user_name}}" style="height: 275px; width: 288px; border: 1px solid gainsboro;">
-                                <span class="compnay_img"><img src="public/edenfortDocs/assets/images/smallLogo.png" alt="eden fort real estate" style="margin-top: -25%; margin-left: 1px; background-color: #f1f1f1; height: 45px;"></span>
+                                @if($aP->image !== NULL || !empty($aP->image) )
+                                <img src="{{url('/')}}/{{$aP->image}}" alt="{{$aP->user_name}}" style="height: 275px; width: 288px; border: 1px solid gainsboro;">
+                                <span class="compnay_img"><img src="{{url('/public/edenfortDocs/assets/images/smallLogo.png')}}" alt="eden fort real estate" style="margin-top: -25%; margin-left: 1px; background-color: #f1f1f100; height: 45px;"></span>
                                 @else
-                                <img src="{{$aP->image}}" alt="{{$aP->user_name}}" style="height: 275px; width: 288px; border: 1px solid gainsboro;">
+                                <img src="{{url('public/edenfortDocs/assets/profile_img/default.png.png')}}" alt="{{$aP->user_name}}" style="height: 275px; width: 288px; border: 1px solid gainsboro;"><span class="compnay_img"><img src="{{url('/public/edenfortDocs/assets/images/smallLogo.png')}}" alt="eden fort real estate" style="margin-top: -25%; margin-left: 1px; background-color: #f1f1f100; height: 45px;"></span><br>
                                 @endif
+                                     <!-- models -->
+                                    <div id="AgentcallModal1" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="myCallModalLabel">
+                                      <div class="modal-dialog contact_modals">
 
+                                        <!-- Modal content-->
+                                        <div class="modal-content"  style="border-radius: 0px;border-top: 4px solid #0071bc;">
+                                            <div>
+                                                <button type="button" class="close" data-dismiss="modal" style="opacity: 1; font-size: 30px;  color: #F7931E; padding: 3px 6px;">&times;</button>
+                                            </div>
+                                                <div class="modal-body" style="margin-top:30px; padding: 0 30px;">
+                                                    <div class="row">
+                                                        <div class="col-md-12 text-center">
+                                                            <h2>Agent Contact Detail</h2>
+                                                            <p class="company_name ucfirst">Edenfort Estate</p>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <ul class="mt10">
+                                                                <li class="bdr"><label class="left bld">Phone: </label><a href="tel:+971-12345678" class="sec_phone"> {{$aP->Phone}}</a></li>
+                                                                <li class="bdr"><label class="left bld">Mobile: </label><a href="tel:+971-55-12345678" class="phone"> {{$aP->Phone}}</a></li>
+                                                                <li class="bdr"><label class="left bld">Refer#</label><span class="right refer_no ucfirst"> {{$aP->refrence}}</span></li>
+                                                                <li class="bdr"><label class="left bld">Agent</label><span class="right agentName ucfirst">{{strtoupper($aP->First_name)}} {{strtoupper($aP->Last_name)}} - At Edenfort Real Estate</span></li>
+                                                                <li class="ref-info" style="    font-size: 14px;">Please quote property reference<span class="bold block refer_no"> Core -  317-Ha-R-2942 </span>when calling us.</li>
+                                                                <br>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </div>
+                                          
+                                        </div>
+
+                                      </div>
+                                    </div>
                            @endforeach
                        @endif
                     </div>
@@ -669,8 +572,9 @@
                     </div>
                     <div class="row ">
                     
-                    <div class="col-md-6 col-sm-6 paddingTop-20"><button class="btn btn-success btn-submit call-btn" data-phone="{{$filter->agentPhone}}" data-secphone="" data-companyphone="" data-referno="{{$filter->reference_number}}" data-companyName="West Gate Real Estate" data-agentName="{{$filter->agentName}}" data-toggle="modal" data-target="#callModal">Call</button></div>
-                        <div class="col-md-6 col-sm-6 paddingTop-20"><button class="btn btn-email btn-submit email-btn" data-prop="" data-referno="{{$filter->reference_number}}" data-companyName="West Gate Real Estate" data-agentName="{{$filter->agentName}}" data-agentEmail="{{$filter->agentEmail}}" data-toggle="modal" data-target="#emailModal" >Email</button></div>
+                    <div class="col-md-6 col-sm-6 paddingTop-20"><button class="btn btn-success btn-submit call-btn" data-phone="{{$filter->agentPhone}}" data-secphone="" data-companyphone="" data-referno="{{$filter->reference_number}}" data-companyName="West Gate Real Estate" data-agentName="{{$filter->agentName}}" data-toggle="modal" data-target="#AgentcallModal1">Call</button></div>
+                        <div class="col-md-6 col-sm-6 paddingTop-20">
+                            <button class="btn btn-email btn-submit email-btn agentMail" data-prop="" data-referno="{{$filter->reference_number}}" data-companyName="West Gate Real Estate" data-agentName="{{$filter->agentName}}" data-agentEmail="{{$filter->agentEmail}}" data-toggle="modal" data-target="#AgentemailModal" >Email</button></div>
                         
                     </div>
                     </div>
@@ -709,7 +613,63 @@
         </div>
     </div>
 </div>
+<div class="modal fade AgentemailModal" id="AgentemailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Conatct Agent </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="myform" id="myform">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Name:</label>
+            <input type="text" class="form-control" placeholder="Name" id="sender-name">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Email:</label>
+            <input type="email" class="form-control" placeholder="Email" id="sender-email">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Phone Number:</label>
+            <input type="tel" class="form-control" placeholder="Phone Number" id="sender-phone">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Select Type:</label>
 
+             <select class="form-control" name="type" id="sender-type" >
+                <option value="null">-- Select Option --</option>
+                <option value="tenant">Tenant</option>
+                <option value="agent">Agent</option>
+                <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" placeholder="Message" id="sender-message"></textarea>
+          </div>
+          <div class="form-group" id="check-robot">
+              <input type="checkbox" id="sender-robot" name="robot" required="">
+              <label class="chkbox_label">I am not a robot &nbsp;<span class="robot-error text-danger"></span></label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" name="sendnotification" checked="checked" >
+            <label class="chkbox_label">Keep me Informed about similar properties</label>
+        </div>
+        <div class="form-group">
+            <label>By sending an enquiry, you agree to our Terms of use.</label>
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <button type="button" class="btn btn-primary sendmail">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
 <section id="best-offer" class="page-section paddingTop-10">
     <div class="container">
         <!-- Section Header / Title with Column Slider Control / Add 'header-column' to use this style -->
@@ -921,3 +881,122 @@
 
 
 @include('Includes.footernew')
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+
+<script>
+    var agetRefno;
+    var agetName;
+    var agetEmail; 
+    $('.agentMail').on('click', function(){
+
+         agetRefno = $(this).attr('data-referno');
+         agetName = $(this).attr('data-agentName');
+         agetEmail = $(this).attr('data-agentEmail');
+
+        console.log(agetRefno);
+        console.log(agetName);
+        console.log(agetEmail);
+
+    })
+      $("input").keyup(function(){
+        $(this).css('border', '1px solid #ced4da');
+      });
+      $("select").on('change',function(){
+        $(this).css('border', '1px solid #ced4da');
+      });
+      $("textarea").keyup(function(){
+        $(this).css('border', '1px solid #ced4da');
+      });
+    $('.sendmail').on('click', function(){
+        // console.log(agetRefno);
+        // console.log(agetName);
+        // console.log(agetEmail);
+        var name = $("#sender-name").val();
+        var email = $("#sender-email").val();
+        var phone = $("#sender-phone").val();
+        var message = $("#sender-message").val();
+        $('select').change(function(){
+            $(this).find(':selected').addClass('selected')
+                .siblings('option').removeClass('selected');
+        })
+        var type = $( "#sender-type option:selected" ).val();
+
+
+        if(name == '' || typeof name == 'undefined'){
+            $("#sender-name").css('border', '1px solid red');
+        }
+        if(email == '' || typeof email == 'undefined'){
+            $("#sender-email").css('border', '1px solid red');
+        }
+        if(phone == '' || typeof phone == 'undefined'){
+            $("#sender-phone").css('border', '1px solid red');
+        }
+        if(type == '' || typeof type === 'undefined' || type == 'null'){
+            $("#sender-type").css('border', '1px solid red');
+        }
+        if(message == '' || typeof message == 'undefined'){
+            $("#sender-message").css('border', '1px solid red');
+        }
+
+        if ($('#sender-robot').is(":checked"))
+        {
+            var checkbox = document.getElementById('sender-robot').value;
+
+        }else{
+            var checkbox = null;
+        }
+        
+        if(checkbox == null || typeof checkbox == 'null' || typeof checkbox == 'undefined'){
+            $( ".error" ).remove();
+            $('#check-robot').append('<p class="alert alert-danger error">Please check the checkbox to make sure you are not a robot.');
+        }
+
+        if(name == '' || typeof name == 'undefined' || email == '' || typeof email == 'undefined' || phone == '' || typeof phone == 'undefined' || type == '' || typeof type === 'undefined' || type == 'null' || message == '' || typeof message == 'undefined' || checkbox == null || typeof checkbox == 'null' || typeof checkbox == 'undefined'){
+
+            $.toast({
+                heading: 'Error',
+                text: 'Please fill all required fields to submit form.',
+                icon: 'error',
+                position: 'top-right',
+                loader: true,        // Change it to false to disable loader
+                loaderBg: '#9EC600',  // To change the background
+                showHideTransition: 'slide',
+                hideAfter: 5000,
+                allowToastClose: true, 
+
+            })
+        }else{
+            $.ajax({
+                url: "<?php echo url('contactAgent') ?>",
+                type: "POST",
+                data:{
+                    "_token" : "{{ csrf_token() }}",
+                    'agetRefno' : agetRefno,
+                    'agetName' : agetName,
+                    'agetEmail' : agetEmail,
+                    'name' : name,
+                    'email' : email,
+                    'phone' : phone,
+                    'type' : type,
+                    'message' : message,
+                },
+                success:function(data){
+                    $('.AgentemailModal').modal('hide'); 
+                    $('#myform')[0].reset();
+                    $.toast({
+                        heading: 'Success',
+                        text: 'Your email is received. Agent will get you back soon.',
+                        icon: 'success',
+                        position: 'top-right',
+                        loader: true,        // Change it to false to disable loader
+                        loaderBg: '#9EC600',  // To change the background
+                        showHideTransition: 'slide',
+                        hideAfter: 5000,
+                        allowToastClose: true, 
+
+                    })
+                }
+            })
+        }
+    })
+</script>

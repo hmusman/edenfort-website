@@ -1,17 +1,11 @@
-<div class="well col-sm-8">
-<h2><b>From:</b> </h2>
-<p> {{$email}}</p>
 
-<h2><b>Cient Name:</b> </h2>
-<p> {{$name}}</p> 
+<p> <h5><b>From: </b> </h5>  {{$email}}</p>
 
-<h2><b>Cient Phone:</b> </h2>
-<p> {{$phone}}</p> 
+<p> <h5><b>Cient Name: </b> </h5>  {{$name}}</p> 
 
-<h2><b>Cient Type:</b> </h2>
-<p> {{$type}}</p> 
+<p> <h5><b>Cient Phone: </b> </h5>  {{$phone}}</p> 
 
-<h2><b>Message:</b> </h2>
-<p> {{$msg}}</p> 
+<p> <h5><b>Cient Type: </b> </h5>  {{$type}}</p> 
 
-</div>
+<p> <h5><b>Message: </b> </h5>  {{$msg}}</p> 
+

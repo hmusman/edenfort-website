@@ -27,6 +27,7 @@ public function singleProperty($id){
       $agentName=explode(' ',$filter->agentName);
       //dd($agentName['0']);
      $agentPic=user::where('First_name', 'LIKE', "%{$agentName['0']}%")->get();
+     // dd($agentPic);
      $current = Carbon::now();
      $recent_properties = property::where('created_at','<=',$current)->join('photo','photo.reference_number','property.reference_number')->orderBy('created_at','DESC')->take(5)->get();
      

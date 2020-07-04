@@ -5,18 +5,18 @@ Route::get('/','Pages\homeController@index');
 
 
 Route::get('projects','Pages\projectController@index');
-Route::get('/project{id}','Pages\projectController@singleProject');
+Route::get('/project/{id}','Pages\projectController@singleProject');
 //View all properties of specific agent, from single proerty page
 Route::get('agentPropertiesFilter','Pages\searchController@agentPropertiesFilter');
 
 
-Route::get('/property{id}','Pages\searchController@singleProperty');
+Route::get('/property/{id}','Pages\searchController@singleProperty');
 
 //always use this form route before the index route other wise form will not work
 Route::get('agentFilter','Pages\agentsController@index')->name('agentFilter');
 Route::get('agents','Pages\agentsController@index');
 //single Agent Page
-Route::get('/agent{id}','Pages\agentsController@singleAgent');
+Route::get('/agent/{id}','Pages\agentsController@singleAgent');
 //Route::get('singleAgent','Pages\agentsController@singleAgent');
 //agentFilter
 
@@ -36,12 +36,12 @@ Route::get('menuFilter','Pages\searchController@menuSearch');
 Route::get('footerFilter','Pages\searchController@footerSearch');
 Route::get('search','Pages\searchController@index');
 //emailSening on search page
-Route::get('contactAgent','Pages\contactUsController@contactAgent');
+Route::post('contactAgent','Pages\contactUsController@contactAgent');
 //contactUs Page
 Route::get('contactUs','Pages\contactUsController@contactUs');
 Route::get('propManagement','Pages\aboutUsController@propManagement');
 //contactUs Form
-Route::get('contactUsForm','Pages\contactUsController@contactUsForm');
+// Route::get('contactUsForm','Pages\contactUsController@contactUsForm');
 Route::post('contactUsForm','Pages\contactUsController@contactUsForm');
 
 Route::get('companyFilter','Pages\companiesController@index')->name('agentFilter');

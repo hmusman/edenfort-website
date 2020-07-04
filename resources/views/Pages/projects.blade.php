@@ -63,15 +63,15 @@
         	@foreach($filtered->sortByDesc('updated_at') as $filter)
             <div class="col-lg-4 col-md-6">
                 <div class="card services-info-4">
-                	<a href="{{url('project'.$filter->id)}}" title="">
+                	<a href="{{url('project/'.$filter->id)}}" title="">
                     	<img class="card-img-top" src="public/edenfortDocs/assets/images/project.jpg" alt="service-2">
                 	</a>
                     <div class="card-body detail">
                         <h5 class="project_title" style="float: left;">
-                            <a href="{{url('project'.$filter->id)}}" style="color: #0f6fb9;">villa nova</a>
+                            <a href="{{url('project/'.$filter->id)}}" style="color: #0f6fb9;">villa nova</a>
                         </h5><br>
                         <h5 class="sec_heading" style="font-size: 13px;">
-                            <a href="{{url('project'.$filter->id)}}" style="margin-left: -100%;">villa Starting</a>
+                            <a href="{{url('project/'.$filter->id)}}" style="margin-left: -100%;">villa Starting</a>
                         </h5><br>
                         <div class="" style="float: left;margin-top: -14%;">
                         <span class="text-muted">from</span>  
@@ -80,7 +80,7 @@
                         </div><br><br><br>
                         
                         <p style="margin-top: -45px;">Villa Nova is located in DUBAI LAND near the intersection of Emirates Road and Al Ain Road, in close proximity to Sheikh Mohammed Bin Zayed Road.</p>
-                        <a href="{{url('project'.$filter->id)}}" class="btn btn-sm btn-border read-more">Read more</a>
+                        <a href="{{url('project/'.$filter->id)}}" class="btn btn-sm btn-border read-more">Read more</a>
                     </div>
                 </div>
             </div>
