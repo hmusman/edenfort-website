@@ -10,13 +10,24 @@ class homeController extends Controller {
     //
     public function index() {
 
-        $properties_sale_row1 = property::where('offering_type2','sale')->join('photo','photo.reference_number','=','property.reference_number')->take(3)->get();
-         $properties_sale_row2 = property::where('offering_type2','sale')->whereMonth('created_at','11')->join('photo','photo.reference_number','=','property.reference_number')->take(3)->get();
-         $properties_sale_row3 = property::where('offering_type2','sale')->whereMonth('created_at','10')->join('photo','photo.reference_number','=','property.reference_number')->take(3)->get();
+        // $properties = query();
 
-         $properties_rent_row1 = property::where('offering_type2','rent')->where('offering_type1','commercial')->join('photo','photo.reference_number','=','property.reference_number')->take(3)->get();
-         $properties_rent_row2 = property::where('offering_type2','rent')->where('offering_type1','commercial')->whereMonth('created_at','6')->join('photo','photo.reference_number','=','property.reference_number')->take(3)->get();
-         $properties_rent_row3 = property::where('offering_type2','rent')->where('offering_type1','commercial')->whereMonth('created_at','12')->join('photo','photo.reference_number','=','property.reference_number')->take(3)->get();
+        $properties_sale_row1 = property::where('offering_type2','sale')->join('photo','photo.reference_number','=','property.reference_number')->orderBy('created_at', 'DESC')->take(3)->get();
+        // dd($properties_sale_row1);
+         $properties_sale_row2 = property::where('offering_type2','sale')->join('photo','photo.reference_number','=','property.reference_number')->orderBy('created_at', 'DESC')->skip(3)->take(3)->get();
+        // dd($properties_sale_row2);
+
+         $properties_sale_row3 = property::where('offering_type2','sale')->join('photo','photo.reference_number','=','property.reference_number')->orderBy('created_at', 'DESC')->skip(6)->take(3)->get();
+        // dd($properties_sale_row3);
+
+         $properties_rent_row1 = property::where('offering_type2','rent')->join('photo','photo.reference_number','=','property.reference_number')->orderBy('created_at', 'DESC')->take(3)->get();
+         // dd($properties_rent_row1);
+         $properties_rent_row2 = property::where('offering_type2','rent')->join('photo','photo.reference_number','=','property.reference_number')->orderBy('created_at', 'DESC')->skip(3)->take(3)->get();
+         // dd($properties_rent_row2);
+
+         $properties_rent_row3 = property::where('offering_type2','rent')->join('photo','photo.reference_number','=','property.reference_number')->orderBy('created_at', 'DESC')->skip(6)->take(3)->get();
+         // dd($properties_rent_row3);
+
          $agents = user::whereNotNull('image')->take(4)->get();
          // dd($agents);
         return view('Pages.home',compact('properties_sale_row1','properties_sale_row2','properties_sale_row3','properties_rent_row1','properties_rent_row2','properties_rent_row3','agents'));

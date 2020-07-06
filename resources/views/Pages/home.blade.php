@@ -92,7 +92,7 @@
                  <div class="slick-slide-item">
                 <div class="property-box">
                     <div class="property-thumbnail">
-                        <a href="{{url('/property')}}/{{$property_sale_row1->id}}" class="property-img" style="height: 233px;">
+                        <a href="{{url('/property')}}/{{$property_sale_row1->id - 2}}" class="property-img" style="height: 233px;">
                             <div class="tag button alt featured">{{$property_sale_row1->offering_type1}}</div>
                             <div class="price-ratings-box">
                                 <p class="price">
@@ -109,7 +109,7 @@
                             <img src="{{$property_sale_row1->photo1}}" alt="property-1" class="img-fluid">
                         </a>
                         <div class="property-overlay">
-                            <a href="{{url('/property')}}/{{$property_sale_row1->id}}" class="overlay-link">
+                            <a href="{{url('/property')}}/{{$property_sale_row1->id - 2}}" class="overlay-link">
                                 <i class="fa fa-link"></i>
                             </a>
                             <a class="overlay-link property-video" title="Test Title">
@@ -126,10 +126,10 @@
                     </div>
                     <div class="detail">
                         <h1 class="title">
-                            <a href="{{url('/property')}}/{{$property_sale_row1->id}}">{{$property_sale_row1->title_en}}</a>
+                            <a href="{{url('/property')}}/{{$property_sale_row1->id - 2}}">{{$property_sale_row1->title_en}}</a>
                         </h1>
                         <div class="location">
-                            <a href="{{url('/property')}}/{{$property_sale_row1->id}}">
+                            <a href="{{url('/property')}}/{{$property_sale_row1->id - 2}}">
                                 <i class="flaticon-facebook-placeholder-for-locate-places-on-maps"></i>{{$property_sale_row1->location}}
                             </a>
                         </div>
@@ -173,7 +173,7 @@
                  <div class="slick-slide-item">
                 <div class="property-box">
                     <div class="property-thumbnail">
-                        <a href="{{url('/property')}}/{{$property_sale_row2->id}}" class="property-img" style="height: 233px;">
+                        <a href="{{url('/property')}}/{{$property_sale_row2->id - 2}}" class="property-img" style="height: 233px;">
                             <div class="tag button alt featured">{{$property_sale_row2->offering_type1}}</div>
                             <div class="price-ratings-box">
                                 <p class="price">
@@ -190,7 +190,7 @@
                             <img src="{{$property_sale_row2->photo1}}" alt="property-1" class="img-fluid">
                         </a>
                         <div class="property-overlay">
-                            <a href="{{url('/property')}}/{{$property_sale_row2->id}}" class="overlay-link">
+                            <a href="{{url('/property')}}/{{$property_sale_row2->id - 2}}" class="overlay-link">
                                 <i class="fa fa-link"></i>
                             </a>
                             <a class="overlay-link property-video" title="Test Title">
@@ -207,10 +207,10 @@
                     </div>
                     <div class="detail">
                         <h1 class="title">
-                            <a href="{{url('/property')}}/{{$property_sale_row2->id}}">{{$property_sale_row2->title_en}}</a>
+                            <a href="{{url('/property')}}/{{$property_sale_row2->id - 2}}">{{$property_sale_row2->title_en}}</a>
                         </h1>
                         <div class="location">
-                            <a href="{{url('/property')}}/{{$property_sale_row2->id}}">
+                            <a href="{{url('/property')}}/{{$property_sale_row2->id - 2}}">
                                 <i class="flaticon-facebook-placeholder-for-locate-places-on-maps"></i>{{$property_sale_row2->location}}
                             </a>
                         </div>
@@ -255,7 +255,7 @@
                  <div class="slick-slide-item">
                 <div class="property-box">
                     <div class="property-thumbnail">
-                        <a href="{{url('/property')}}/{{$property_sale_row3->id}}" class="property-img" style="height: 233px;">
+                        <a href="{{url('/property')}}/{{$property_sale_row3->id - 2}}" class="property-img" style="height: 233px;">
                             <div class="tag button alt featured">{{$property_sale_row3->offering_type1}}</div>
                             <div class="price-ratings-box">
                                 <p class="price">
@@ -272,7 +272,7 @@
                             <img src="{{$property_sale_row3->photo1}}" alt="property-1" class="img-fluid">
                         </a>
                         <div class="property-overlay">
-                            <a href="{{url('/property')}}/{{$property_sale_row3->id}}" class="overlay-link">
+                            <a href="{{url('/property')}}/{{$property_sale_row3->id - 2}}" class="overlay-link">
                                 <i class="fa fa-link"></i>
                             </a>
                             <a class="overlay-link property-video" title="Test Title">
@@ -289,10 +289,10 @@
                     </div>
                     <div class="detail">
                         <h1 class="title">
-                            <a href="{{url('/property')}}/{{$property_sale_row3->id}}">{{$property_sale_row3->title_en}}</a>
+                            <a href="{{url('/property')}}/{{$property_sale_row3->id - 2}}">{{$property_sale_row3->title_en}}</a>
                         </h1>
                         <div class="location">
-                            <a href="{{url('/property')}}/{{$property_sale_row3->id}}">
+                            <a href="{{url('/property')}}/{{$property_sale_row3->id - 2}}">
                                 <i class="flaticon-facebook-placeholder-for-locate-places-on-maps"></i>{{$property_sale_row3->location}}
                             </a>
                         </div>
@@ -370,7 +370,7 @@
                  <div class="slick-slide-item">
                 <div class="property-box">
                     <div class="property-thumbnail">
-                        <a href="{{url('/property')}}/{{$property_rent_row1->id}}" class="property-img">
+                        <a href="{{url('/property')}}/{{$property_rent_row1->id - 2}}" class="property-img">
                             <div class="tag button alt featured">{{$property_rent_row1->offering_type1}}</div>
                             <div class="price-ratings-box">
                                 <p class="price">
@@ -387,7 +387,7 @@
                             <img src="{{$property_rent_row1->photo1}}" alt="property-1" class="img-fluid" style="height: 233px;">
                         </a>
                         <div class="property-overlay">
-                            <a href="{{url('/property')}}/{{$property_rent_row1->id}}" class="overlay-link">
+                            <a href="{{url('/property')}}/{{$property_rent_row1->id - 2}}" class="overlay-link">
                                 <i class="fa fa-link"></i>
                             </a>
                             <a class="overlay-link property-video" title="Test Title">
@@ -404,10 +404,10 @@
                     </div>
                     <div class="detail">
                         <h1 class="title">
-                            <a href="{{url('/property')}}/{{$property_rent_row1->id}}">{{$property_rent_row1->title_en}}</a>
+                            <a href="{{url('/property')}}/{{$property_rent_row1->id - 2}}">{{$property_rent_row1->title_en}}</a>
                         </h1>
                         <div class="location">
-                            <a href="{{url('/property')}}/{{$property_rent_row1->id}}">
+                            <a href="{{url('/property')}}/{{$property_rent_row1->id - 2}}">
                                 <i class="flaticon-facebook-placeholder-for-locate-places-on-maps"></i>{{$property_rent_row1->location}}
                             </a>
                         </div>
@@ -451,7 +451,7 @@
                  <div class="slick-slide-item">
                 <div class="property-box">
                     <div class="property-thumbnail">
-                        <a href="{{url('/property')}}/{{$property_rent_row2->id}}" class="property-img">
+                        <a href="{{url('/property')}}/{{$property_rent_row2->id - 2}}" class="property-img">
                             <div class="tag button alt featured">{{$property_rent_row2->offering_type1}}</div>
                             <div class="price-ratings-box">
                                 <p class="price">
@@ -468,7 +468,7 @@
                             <img src="{{$property_rent_row2->photo1}}" alt="property-1" class="img-fluid" style="height: 233px;">
                         </a>
                         <div class="property-overlay">
-                            <a href="{{url('/property')}}/{{$property_rent_row2->id}}" class="overlay-link">
+                            <a href="{{url('/property')}}/{{$property_rent_row2->id - 2}}" class="overlay-link">
                                 <i class="fa fa-link"></i>
                             </a>
                             <a class="overlay-link property-video" title="Test Title">
@@ -485,10 +485,10 @@
                     </div>
                     <div class="detail">
                         <h1 class="title">
-                            <a href="{{url('/property')}}/{{$property_rent_row2->id}}">{{$property_rent_row2->title_en}}</a>
+                            <a href="{{url('/property')}}/{{$property_rent_row2->id - 2}}">{{$property_rent_row2->title_en}}</a>
                         </h1>
                         <div class="location">
-                            <a href="{{url('/property')}}/{{$property_rent_row2->id}}">
+                            <a href="{{url('/property')}}/{{$property_rent_row2->id - 2}}">
                                 <i class="flaticon-facebook-placeholder-for-locate-places-on-maps"></i>{{$property_rent_row2->location}}
                             </a>
                         </div>
@@ -533,7 +533,7 @@
                  <div class="slick-slide-item">
                 <div class="property-box">
                     <div class="property-thumbnail">
-                        <a href="{{url('/property')}}/{{$property_rent_row3->id}}" class="property-img">
+                        <a href="{{url('/property')}}/{{$property_rent_row3->id - 2}}" class="property-img">
                             <div class="tag button alt featured">{{$property_rent_row3->offering_type1}}</div>
                             <div class="price-ratings-box">
                                 <p class="price">
@@ -550,7 +550,7 @@
                             <img src="{{$property_rent_row3->photo1}}" alt="property-1" class="img-fluid" style="height: 233px;">
                         </a>
                         <div class="property-overlay">
-                            <a href="{{url('/property')}}/{{$property_rent_row3->id}}" class="overlay-link">
+                            <a href="{{url('/property')}}/{{$property_rent_row3->id - 2}}" class="overlay-link">
                                 <i class="fa fa-link"></i>
                             </a>
                             <a class="overlay-link property-video" title="Test Title">
@@ -567,10 +567,10 @@
                     </div>
                     <div class="detail">
                         <h1 class="title">
-                            <a href="{{url('/property')}}/{{$property_rent_row3->id}}">{{$property_rent_row3->title_en}}</a>
+                            <a href="{{url('/property')}}/{{$property_rent_row3->id - 2}}">{{$property_rent_row3->title_en}}</a>
                         </h1>
                         <div class="location">
-                            <a href="{{url('/property')}}/{{$property_rent_row3->id}}">
+                            <a href="{{url('/property')}}/{{$property_rent_row3->id - 2}}">
                                 <i class="flaticon-facebook-placeholder-for-locate-places-on-maps"></i>{{$property_rent_row3->location}}
                             </a>
                         </div>

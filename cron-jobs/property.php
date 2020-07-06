@@ -1,13 +1,13 @@
 <?php
     $server   = "localhost";
-    $username = "edenfort_web";
-    $pass     = "4[zQev}L9#z)";
-    $dbname   = "edenfort_web";
+    $username = "root";
+    $pass     = "";
+    $dbname   = "eden_web";
 
     $con = mysqli_connect($server,$username,$pass,$dbname);
     
    
-	$xml = simplexml_load_file('https://edenfort.mycrm.com/feed/privatesite/3e9d4c952d93c6ed55548f161375ef61');
+	$xml = simplexml_load_file('https://app.airlist.com/v1.1/website.asmx/Generic?ac=20200226090618662&gc=12688');
   //print_r($xml);
   $count = count($xml);
   echo $count;

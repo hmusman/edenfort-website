@@ -228,7 +228,7 @@
 
                     </div>
                     <!-- main slider carousel nav controls -->
-                    <ul class="carousel-indicators smail-properties list-inline nav nav-justified ">
+                    <!-- <ul class="carousel-indicators smail-properties list-inline nav nav-justified ">
                         <li class="list-inline-item active">
                             <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#propertiesDetailsSlider">
                                 <img src="{{$filter->photo->photo2}}" class="img-fluid" alt="property-4">
@@ -331,7 +331,7 @@
                         </li>
 
                         
-                    </ul>
+                    </ul> -->
                 </div>
                 <!-- Search area start -->
                 <div class="search-area widget-2 d-lg-none d-xl-none">
@@ -345,8 +345,6 @@
                                 <p>here</p>
                                     <img src="{{url('/')}}/{{$aP->image}}" alt="{{$aP->user_name}}" style="height: 275px; width: 288px; border: 1px solid gainsboro;">
                                 @else
-                                
-
                                 <img src="{{url('public/edenfortDocs/assets/profile_img/default.png.png')}}" alt="{{$aP->user_name}}" style="height: 275px; width: 288px; border: 1px solid gainsboro;">
                                 <span class="compnay_img"><img src="{{url('/public/edenfortDocs/assets/images/smallLogo.png')}}" alt="eden fort real estate" style="margin-top: -25%; margin-left: 1px; background-color: #f1f1f1; height: 45px;"></span><br>
                                 @endif
@@ -533,7 +531,7 @@
                                                                 <li class="bdr"><label class="left bld">Mobile: </label><a href="tel:+971-55-12345678" class="phone"> {{$aP->Phone}}</a></li>
                                                                 <li class="bdr"><label class="left bld">Refer#</label><span class="right refer_no ucfirst"> {{$aP->refrence}}</span></li>
                                                                 <li class="bdr"><label class="left bld">Agent</label><span class="right agentName ucfirst">{{strtoupper($aP->First_name)}} {{strtoupper($aP->Last_name)}} - At Edenfort Real Estate</span></li>
-                                                                <li class="ref-info" style="    font-size: 14px;">Please quote property reference<span class="bold block refer_no"> Core -  317-Ha-R-2942 </span>when calling us.</li>
+                                                                <li class="ref-info" style="    font-size: 14px;">Please quote property reference &nbsp;<span class="bold block refer_no"> Core -  317-Ha-R-2942 </span>&nbsp;when calling us.</li>
                                                                 <br>
                                                             </ul>
                                                         </div>
@@ -688,28 +686,13 @@
                 <div class="col-md-4">
                     <div class="property-box-4">
                         <!-- Property Img -->
-                        <div class="property-thumbnail">
-                            <a href="{{url('property'.$filter->id)}}" class="property-img">
+                        <div class="property-thumbnail" data-prop-id ="{{$filter->id}}" style="cursor: pointer;">
+                            <a href="{{url('property/'.$filter->id)}}" class="property-img">
                                 <img src="{{$filter->photo->photo1}}" alt="property-3" class="img-fluid" style="height: 285px;">
                             </a>
-                            <!-- <div class="property-overlay">
-                                <a href="{{url('property'.$filter->id)}}" class="overlay-link">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <a class="overlay-link property-video" title="Test Title">
-                                    <i class="fa fa-video-camera"></i>
-                                </a>
-                                <div class="property-magnify-gallery">
-                                    <a href="assets/img/property-3.jpg" class="overlay-link">
-                                        <i class="fa fa-expand"></i>
-                                    </a>
-                                    <a href="assets/img/property-1.jpg" class="hidden"></a>
-                                    <a href="assets/img/property-4.jpg" class="hidden"></a>
-                                </div>
-                            </div> -->
                                 <div class="text">
                                 <div class="pull-left">
-                                    <a href="{{url('property'.$filter->id)}}">{{$filter->title_en}}</a>
+                                    <a href="{{url('property/'.$filter->id)}}">{{$filter->title_en}}</a>
                                 </div>
                                 <div class="pull-right price">
                                     AED {{$filter->price_yearly}}
@@ -997,6 +980,17 @@
                     })
                 }
             })
+        }
+    })
+
+
+    $('.call-btn').on('click', function(){
+        var refer_no = $(this).attr('data-referno');
+        if(refer_no != '' || typeof refer_no != 'undefined' || refer_no != null){
+
+            $(".refer_no").empty();
+
+            $(".refer_no").append(refer_no);
         }
     })
 </script>

@@ -80,7 +80,7 @@ $agentEmail=$request->agetEmail;
 	  $done=Mail::send('email.mailView', ['msg' => $message,'name'=>$name,'phone'=>$phone,'type'=>$type,'email'=>$email], function ($m) use ($email,$name,$agentEmail) {
             $m->from($email, $name);
 
-            $m->to('rasad6649@gmail.com')->subject('Edenfort Client!');
+            $m->to($agentEmail)->subject('Edenfort Client!');
         });
  
 	return 'true';

@@ -381,7 +381,7 @@
                     $('#myform')[0].reset();
                     $.toast({
                         heading: 'Success',
-                        text: 'Your email is received. Agent will get you back soon.',
+                        text: 'Your email is received. Agent will get back to you soon.',
                         icon: 'success',
                         position: 'top-right',
                         loader: true,        // Change it to false to disable loader

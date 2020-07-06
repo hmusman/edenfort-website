@@ -6,7 +6,7 @@
 
     $con = mysqli_connect($server,$username,$pass,$dbname);
 
-    $xml = simplexml_load_file('https://edenfort.mycrm.com/feed/privatesite/3e9d4c952d93c6ed55548f161375ef61');
+    $xml = simplexml_load_file('https://app.airlist.com/v1.1/website.asmx/Generic?ac=20200226090618662&gc=12688');
   $count = count($xml);
 echo $count;
  foreach($xml as $fetch){

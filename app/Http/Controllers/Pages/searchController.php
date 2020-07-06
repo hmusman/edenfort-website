@@ -20,8 +20,8 @@ class searchController extends Controller
 //single property detail
 public function singleProperty($id){
    $propertyDetail=property::find($id);
-     $filter=property::find($id);
-    
+     $filter=property::where('id', $id)->first();
+    // dd($filter);
      $sameAreaProperties=property::where(['community'=>$filter->community])->orderBy('updated_at', 'desc')->take(4)->get();
      
       $agentName=explode(' ',$filter->agentName);
