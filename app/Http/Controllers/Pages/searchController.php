@@ -24,9 +24,9 @@ public function singleProperty($id){
     // dd($filter);
      $sameAreaProperties=property::where(['community'=>$filter->community])->orderBy('updated_at', 'desc')->take(4)->get();
      
-      $agentName=explode(' ',$filter->agentName);
+      $agentEmail=$filter->agentEmail;
       //dd($agentName['0']);
-     $agentPic=user::where('First_name', 'LIKE', "%{$agentName['0']}%")->get();
+     $agentPic=user::where('Email',$agentEmail)->get();
      // dd($agentPic);
      $current = Carbon::now();
      $recent_properties = property::where('created_at','<=',$current)->join('photo','photo.reference_number','property.reference_number')->orderBy('created_at','DESC')->take(5)->get();
@@ -56,7 +56,7 @@ $filtered = $filtered->orderBy('bedroom', 'DESC')->paginate(10);
 }
 
 }else{
-  $filtered = $filtered->paginate(10);
+  $filtered = $filtered->orderBy('updated_at', 'DESC')->paginate(10);
 }
 
   //end sorting
@@ -67,7 +67,7 @@ public function menuSearch()
     $propertyType=$_GET['propertyType'];
 	$offering_type2=$_GET['offering_type2'];
 	//dd($type,$category);
-	$filtered=property::where(['offering_type1'=>$propertyType])->where(['offering_type2'=>$offering_type2]);
+	$filtered=property::where(['offering_type'=>$propertyType])->where(['offering_type2'=>$offering_type2]);
 	  //sorting
   if(isset($_GET['sortby'])){
    if($_GET['sortby']=="Newest"){
@@ -83,7 +83,7 @@ $filtered = $filtered->orderBy('bedroom', 'DESC')->paginate(10);
 }
 
 }else{
-  $filtered = $filtered->paginate(9);
+  $filtered = $filtered->orderBy('updated_at', 'DESC')->paginate(9);
 }
 
   //end sorting

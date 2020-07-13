@@ -421,7 +421,7 @@
                 <!-- Property description start -->
                 <div class="property-description mb-60">
                     <h3 class="heading">Property Description</h3><hr>
-                    <pre class="pre">{{$filter->description_en}}</pre>
+                    <pre class="pre"><?php echo strip_tags($filter->description_en,'<br>'); ?></pre>
                 </div>
 
                 <!-- Property details start -->
