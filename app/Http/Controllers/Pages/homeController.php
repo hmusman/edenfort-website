@@ -20,12 +20,12 @@ class homeController extends Controller {
          $properties_sale_row3 = property::where('offering_type','sale')->orWhere('offering_type2','sale')->join('photo','photo.reference_number','=','property.reference_number')->orderBy('updated_at', 'DESC')->skip(6)->take(3)->get();
         // dd($properties_sale_row3);
 
-         $properties_rent_row1 = property::where('offering_type','rent')->join('photo','photo.reference_number','=','property.reference_number')->orderBy('updated_at', 'DESC')->take(3)->get();
+         $properties_rent_row1 = property::where('offering_type','rent')->orWhere('offering_type2','rent')->join('photo','photo.reference_number','=','property.reference_number')->orderBy('updated_at', 'DESC')->take(3)->get();
          // dd($properties_rent_row1);
-         $properties_rent_row2 = property::where('offering_type','rent')->join('photo','photo.reference_number','=','property.reference_number')->orderBy('updated_at', 'DESC')->skip(3)->take(3)->get();
+         $properties_rent_row2 = property::where('offering_type','rent')->orWhere('offering_type2','rent')->join('photo','photo.reference_number','=','property.reference_number')->orderBy('updated_at', 'DESC')->skip(3)->take(3)->get();
          // dd($properties_rent_row2);
 
-         $properties_rent_row3 = property::where('offering_type','rent')->join('photo','photo.reference_number','=','property.reference_number')->orderBy('updated_at', 'DESC')->skip(6)->take(3)->get();
+         $properties_rent_row3 = property::where('offering_type','rent')->orWhere('offering_type2','rent')->join('photo','photo.reference_number','=','property.reference_number')->orderBy('updated_at', 'DESC')->skip(6)->take(3)->get();
          // dd($properties_rent_row3);
 
          $agents = user::whereNotNull('image')->take(4)->get();
