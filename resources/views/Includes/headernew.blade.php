@@ -576,7 +576,7 @@ body{
 <div class="search-tabmenu">
                     <!-- Tabmenu Navigation -->
             <ul class="" style="width: 200px">
-                        <li class="show-hide"  style="  padding-left: 17px; font-family: Poppins, sans-serif;">SEARCH PROPERTY <i class="fa fa-search " style="margin-left: 10px;padding: 4px;float:right;"></i></li>  
+                        <li class="show-hide"  style="  padding-left: 17px; font-family: Poppins, sans-serif;">SEARCH PROPERTY <i class="fa fa-search " style="margin-left: 10px;padding: 2px;float:right;"></i></li>  
              </ul>
                  <div class="search-inner">
 

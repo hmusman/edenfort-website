@@ -79,7 +79,7 @@
         <li data-target="#multi-item-example" data-slide-to="2"></li>
       </ol>
       <!--/.Indicators-->
-
+    @if(empty($properties_sale_row1))
     <h5 class="slide_heading" style="font-weight: bold;">Properties For Sale in Dubai</h5><hr>
       <!--Slides-->
       <div class="carousel-inner" role="listbox">
@@ -330,7 +330,7 @@
 
       </div>
       <!--/.Slides-->
-
+    @endif
     </div>
     <!--/.Carousel Wrapper-->
 
