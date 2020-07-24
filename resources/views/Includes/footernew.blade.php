@@ -115,7 +115,7 @@
                   <a href="http://www.edenforthomes.com/search?for=rent&city=Mg%3D%3D" title="Properties for rent  in  Sharjah">Properties for rent  in  Sharjah</a>
                 </li> -->
                 <li><strong>Email: </strong>info@edenfort.ae</li>
-                <li><strong>Phone:</strong> +971502296968</li>
+                <li><strong>Phone:</strong> +971 4 323 0688</li>
                 <!-- <li><strong>Landline:</strong> +97143230688</li> -->
                 <!-- <li> 
                   <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D&type=Commercial-office" title="Offices for rent  in  Ajman">Offices for rent  in  Ajman</a>

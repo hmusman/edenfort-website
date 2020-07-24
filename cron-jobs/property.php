@@ -21,7 +21,7 @@
                 $price_yearly = $fetch->Price;
                 $city = $fetch->Emirate;
                 $community = $fetch->Community;
-                $sub_community = $fetch->sub_community;
+                // $sub_community = $fetch->sub_community;
                 $property_name = $fetch->Property_Name;
                 $location_id = $fetch->location_id;
                 $title_en = $fetch->Property_Title;
@@ -40,7 +40,7 @@
                 $cheques=$fetch->cheques;				 
 			//location will be create by combining the PropertyName,SubComunity,Comunity and city
                if($property_name){		    
-				$location=$property_name.','.$sub_community.','.$community.','.$city;
+				$location=$property_name.','.$community.','.$city;
 			   }else{
 				   
 				    if($sub_community){
@@ -159,7 +159,7 @@
 echo 'price_yearly# '.$price_yearly.'<br>';
 echo 'city# '.$city.'<br>';
 echo 'community# '.$community.'<br>';
-echo 'sub_community# '.$sub_community.'<br>';
+// echo 'sub_community# '.$sub_community.'<br>';
 echo 'property_name# '.$property_name.'<br>';
 echo 'location_id# '.$location_id.'<br>';
 echo 'title_en# '.$title_en.'<br>';
@@ -207,7 +207,7 @@ $exist = "SELECT * FROM property WHERE  reference_number='$referance_number' ";
    
 if(mysqli_num_rows($verified) == 1){
 
-	$query = "UPDATE `property` SET `permit_number`='$permit_number',`offering_type`='$offering_type',`offering_type1`='',`offering_type2`='$offering_type2',`property_type`='$property_type',`price_on_application`= '$price_on_application',`price_yearly`='$price_yearly',`city`='$city',`community`='$community',`sub_community`='$sub_community',`property_name`='$property_name',`location_id`='$location_id',`title_en`='$title_en',`description_en`='$description10',`private_amenities`='$private_amenities',`size`='$size',`bedroom`='$bedroom',`bathroom`='$bathroom',`furnished`='$furnished',`agentName`='$agentName',`agentEmail`='$agentEmail',`agentPhone`='$agentPhone',`geopointLongitude`='$geopointLongitude',`geopointLatitude`='$geopointLatitude',`location`='$location',`cheques`='$cheques' WHERE reference_number = '$referance_number'";
+	$query = "UPDATE `property` SET `permit_number`='$permit_number',`offering_type`='$offering_type',`offering_type1`='',`offering_type2`='$offering_type2',`property_type`='$property_type',`price_on_application`= '$price_on_application',`price_yearly`='$price_yearly',`city`='$city',`community`='$community',`sub_community`=' ',`property_name`='$property_name',`location_id`='$location_id',`title_en`='$title_en',`description_en`='$description10',`private_amenities`='$private_amenities',`size`='$size',`bedroom`='$bedroom',`bathroom`='$bathroom',`furnished`='$furnished',`agentName`='$agentName',`agentEmail`='$agentEmail',`agentPhone`='$agentPhone',`geopointLongitude`='$geopointLongitude',`geopointLatitude`='$geopointLatitude',`location`='$location',`cheques`='$cheques' WHERE reference_number = '$referance_number'";
 
 		print_r($query);
         $result = mysqli_query($con,$query);
