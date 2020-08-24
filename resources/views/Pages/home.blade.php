@@ -3,6 +3,12 @@
 
 <style type="text/css">
 @media only screen and (max-width: 600px) {
+    .display{
+        display: none !important;
+    }
+    .no-display{
+        margin-left: 88% !important;
+    }
 	.show-hide,.form-toggle {
 		display: none ;
 			}
@@ -65,7 +71,7 @@
     <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
       <!--Controls-->
-      <div class="controls-top" style="text-align: right;margin-bottom: 10px;position: absolute;
+      <div class="controls-top display" style="text-align: right;margin-bottom: 10px;position: absolute;
     margin-left: 93%;">
         <a class="btn-floating f_slide_ind_l" style="padding: 10px;background: #0f6fb9;color: white;" href="#multi-item-example" data-slide="prev"><i  class="fa fa-chevron-left"></i></a>
         <a class="btn-floating f_slide_ind_r" href="#multi-item-example" style="padding: 10px;background: #0f6fb9;color: white;
@@ -343,7 +349,7 @@
     <div id="multi-item-example1" class="carousel slide carousel-multi-item" data-ride="carousel">
 
       <!--Controls-->
-      <div class="controls-top" style="text-align: right;margin-bottom: 10px;position: absolute;
+      <div class="controls-top no-display" style="text-align: right;margin-bottom: 10px;position: absolute;
     margin-left: 93%;">
         <a class="btn-floating f_slide_ind_l" style="padding: 10px;background: #0f6fb9;color: white;" href="#multi-item-example1" data-slide="prev"><i  class="fa fa-chevron-left"></i></a>
         <a class="btn-floating f_slide_ind_r" href="#multi-item-example1" style="padding: 10px;background: #0f6fb9;color: white;" data-slide="next"><i class="fa fa-chevron-right"></i></a>

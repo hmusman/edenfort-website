@@ -41,7 +41,13 @@
 <link rel="stylesheet" href="{{url('public/jQuery-autoComplete-master/jquery.auto-complete.css')}}">
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
    <style type="text/css">
+    @media only screen and (max-width: 600px){
+        .search-tabmenu {
+            width: 100% !important;
+        }
+    }
 @media (max-width: 768px){
+
     .banner img {
         height: 270px !important;
     }
