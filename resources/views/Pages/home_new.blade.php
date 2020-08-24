@@ -66,7 +66,7 @@
 
       <!--Controls-->
       <div class="controls-top" style="text-align: right;margin-bottom: 10px;position: absolute;
-    margin-left: 93%;">
+    margin-left: 90%;">
         <a class="btn-floating f_slide_ind_l" style="padding: 10px;background: #0f6fb9;color: white;" href="#multi-item-example" data-slide="prev"><i  class="fa fa-chevron-left"></i></a>
         <a class="btn-floating f_slide_ind_r" href="#multi-item-example" style="padding: 10px;background: #0f6fb9;color: white;
     " data-slide="next"><i class="fa fa-chevron-right"></i></a>
@@ -344,7 +344,7 @@
 
       <!--Controls-->
       <div class="controls-top" style="text-align: right;margin-bottom: 10px;position: absolute;
-    margin-left: 93%;">
+    margin-left: 90%;">
         <a class="btn-floating f_slide_ind_l" style="padding: 10px;background: #0f6fb9;color: white;" href="#multi-item-example1" data-slide="prev"><i  class="fa fa-chevron-left"></i></a>
         <a class="btn-floating f_slide_ind_r" href="#multi-item-example1" style="padding: 10px;background: #0f6fb9;color: white;" data-slide="next"><i class="fa fa-chevron-right"></i></a>
       </div>
