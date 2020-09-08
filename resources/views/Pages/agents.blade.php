@@ -129,30 +129,21 @@
         	@if(isset($agentPic))
             @if(count($agentPic)>0)
             @foreach($agentPic as $agent)
+            @if($agent->image != NULL || !empty($agent->image))
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                 <div class="agent-2">
                     <div class="agent-photo">
-                        @if($agent->image != NULL || !empty($agent->image))
                         <a href="{{url('agent/'.$agent->id)}}">
                             <img class="agent-img" src="{{url('/')}}/{{$agent->image}}" alt="{{$agent->user_name}}" class="img-fluid">
                         </a>
                         <img class="img-responsive" alt="Eden Fort Real Estate" src="public/edenfortDocs/assets/images/smallLogo.png" style="height: 43px;width: 85px;margin-left: 67%;margin-top: -27%;background-color: #ffffff00;" >
-                        @else
-                        <a href="{{url('agent/'.$agent->id)}}">
-                            <img class="agent-img" src="{{url('public/edenfortDocs/assets/profile_img/default.png.png')}}" alt="{{$agent->user_name}}" class="img-fluid">
-                        </a>
-                        <img class="img-responsive" alt="Eden Fort Real Estate" src="public/edenfortDocs/assets/images/smallLogo.png" style="height: 43px;width: 85px;margin-left: 67%;margin-top: -27%;background-color: #ffffff00;">
-                        @endif
                     </div>
                     <div class="agent-details" style="margin-top: -11%;">
                         <h5 style="font-weight: 900;"><a href="{{url('agent/'.$agent->id)}}">{{$agent->First_name}} {{$agent->Last_name}}</a></h5>
-                        <p class="position" style="margin-top: -5%;">@if($agent->role == 1) ADMIN @elseif($agent->role == 2) Owner @elseif($agent->role == 3) AGENT @elseif($agent->role == 4) SuperAgent @endif</p>
-                        <!-- <ul class="social-list clearfix">
-                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
-                        </ul> -->
+                        <p class="position" style="margin-top: -5%;">
+                           {{--  @if($agent->role == 1) ADMIN @elseif($agent->role == 2) Owner @elseif($agent->role == 3) AGENT @elseif($agent->role == 4) SuperAgent @endif  --}}
+                           {{$agent->designation}}
+                        </p>
                     </div>
                     <div class="user-details" style="margin-left: 11%;">
 						<div class="detail">
@@ -176,13 +167,10 @@
 							<div class="number num-r"style="font-weight: bold; margin-left: 50%;">0</div> 
 							<div class="title tt-r" style="margin-left: 32%; margin-top: -5%; font-size: 15px;">for sale</div>
 						</div> 
-						<!-- <div class="numbers-commercial">
-							<div class="number">5</div> 
-							<div class="title">Commercial</div>
-						</div> --> 
 					</div>
                 </div>
             </div>
+            @endif
              @endforeach
              @else
              <div class="item property-item property-archive col-xs-4 col-lg-4 list-group-item">
@@ -217,7 +205,7 @@
         setTimeout(function(){
             $.toast({
                 heading: 'Important Notice!',
-                text: 'Sheharyar Ahsen and Ali Ahmed Abbasi are not working with us',
+                text: 'Sheharyar Ahsen, Ali Ahmed Abbasi, Quaid Johar and  Amir Hussain are not working with us',
                 icon: 'info',
                 position: 'top-right',
                 loader: false,        // Change it to false to disable loader

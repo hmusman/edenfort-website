@@ -15,7 +15,7 @@ class agentsController extends Controller
 
       $query=user::query();
 
-      $total=user::count();
+      $total=user::where('status',1)->count();
       // dd($total);
       // dd($agentPic);
       $agentname = $r->get('agent-name');
@@ -23,7 +23,7 @@ class agentsController extends Controller
       if(isset($agentname)){
         $agentPic = $query->where('user_name', 'like', '%' . $agentname . '%')->paginate(12);
       }else{
-        $agentPic = $query->orderBy('updated_at', 'DESC')->paginate(12);
+        $agentPic = $query->where('status',1)->orderBy('updated_at', 'DESC')->paginate(12);
       }
     	return view('Pages.agents',compact('agentPic','total', 'agentname')); 
     }
