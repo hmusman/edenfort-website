@@ -1,17 +1,25 @@
 <?php
   	$server   = "localhost";
-    $username = "edenfort_web";
-    $pass     = "4[zQev}L9#z)";
-    $dbname   = "edenfort_web";
+    $username = "root";
+    $pass     = "";
+    $dbname   = "eden_web";
 
     $con = mysqli_connect($server,$username,$pass,$dbname);
     
+    $date = date('Y-m-d H:i:s');
    
+
+    $del_query = "DELETE FROM `property`";
+    $run= mysqli_query($con, $del_query);
+    if($run){
+    	echo '<h1>Previous record deleted successfully.</h1>';
+    }
+
 	$xml = simplexml_load_file('https://app.airlist.com/v1.1/website.asmx/Generic?ac=20200226090618662&gc=12688');
-  //print_r($xml);
-  $count = count($xml);
-  echo $count;
-  foreach($xml as $fetch){
+  	//print_r($xml);
+  	$count = count($xml);
+  	echo $count;
+  	foreach($xml as $fetch){
 	
                $referance_number = $fetch->Property_Ref_No;    
                 $permit_number = $fetch->Permit_Number;
@@ -148,37 +156,37 @@
 		   
 		//end of converting proerty short name to full abbrivation   
 				
- echo '<h2> Property# </h2>';
- echo 'Ref# '.$referance_number.'<br>';
- echo 'Permit# '.$permit_number.'<br>';
- echo 'offering_type# '.$offering_type.'<br>';
-  // echo 'offering_type1# '.$offering_type1.'<br>';
-   // echo 'offering_type2# '.$offering_type2.'<br>';
- echo 'property_type# '.$property_type.'<br>'; 
-  echo 'price_on_application# '.$price_on_application.'<br>';
-echo 'price_yearly# '.$price_yearly.'<br>';
-echo 'city# '.$city.'<br>';
-echo 'community# '.$community.'<br>';
-// echo 'sub_community# '.$sub_community.'<br>';
-echo 'property_name# '.$property_name.'<br>';
-echo 'location_id# '.$location_id.'<br>';
-echo 'title_en# '.$title_en.'<br>';
-echo 'description_en# '.$description_en.'<br>';
-print_r($description_en);
+		echo '<h2> Property# </h2>';
+		echo 'Ref# '.$referance_number.'<br>';
+		echo 'Permit# '.$permit_number.'<br>';
+		echo 'offering_type# '.$offering_type.'<br>';
+		  // echo 'offering_type1# '.$offering_type1.'<br>';
+		   // echo 'offering_type2# '.$offering_type2.'<br>';
+		echo 'property_type# '.$property_type.'<br>'; 
+		echo 'price_on_application# '.$price_on_application.'<br>';
+		echo 'price_yearly# '.$price_yearly.'<br>';
+		echo 'city# '.$city.'<br>';
+		echo 'community# '.$community.'<br>';
+		// echo 'sub_community# '.$sub_community.'<br>';
+		echo 'property_name# '.$property_name.'<br>';
+		echo 'location_id# '.$location_id.'<br>';
+		echo 'title_en# '.$title_en.'<br>';
+		echo 'description_en# '.$description_en.'<br>';
+		print_r($description_en);
 
-echo 'private_amenities# '.$private_amenities.'<br>';
-echo 'size# '.$size.'<br>';
-echo 'bedroom# '.$bedroom.'<br>';
-echo 'bathroom# '.$bathroom.'<br>';
-echo 'agentName# '.$agentName.'<br>';
-echo 'agentEmail# '.$agentEmail.'<br>';
-echo 'agentPhone# '.$agentPhone.'<br>';
+		echo 'private_amenities# '.$private_amenities.'<br>';
+		echo 'size# '.$size.'<br>';
+		echo 'bedroom# '.$bedroom.'<br>';
+		echo 'bathroom# '.$bathroom.'<br>';
+		echo 'agentName# '.$agentName.'<br>';
+		echo 'agentEmail# '.$agentEmail.'<br>';
+		echo 'agentPhone# '.$agentPhone.'<br>';
 
-echo 'furnished# '.$furnished.'<br>';
-echo 'geopoints# '.$geopointLongitude.','.$geopointLatitude.'<br>';
+		echo 'furnished# '.$furnished.'<br>';
+		echo 'geopoints# '.$geopointLongitude.','.$geopointLatitude.'<br>';
 
-echo 'location#'.$location.'<br>';
-echo 'cheques#'.$cheques.'<br>';
+		echo 'location#'.$location.'<br>';
+		echo 'cheques#'.$cheques.'<br>';
 //map Points
 	 // $mapPoints=explode(',',$geopoints);
 		// 		// print_r($mapPoints);
@@ -214,25 +222,25 @@ if(mysqli_num_rows($verified) == 1){
 
         if ($result) {
 
-            echo "<br><br>record updated successfully!";
+            echo "<br><br><h1>record updated successfully!</h1>";
         }
         else{
-            echo "<br><br>something went wrong!";
+            echo "<br><br><h1>something went wrong!</h1>";
 
         }
 }else{		
 	
-	 $query = "INSERT INTO property (reference_number, permit_number, offering_type,offering_type1,offering_type2,property_type,price_on_application,price_yearly, city, community,sub_community,property_name,location_id,title_en,description_en,private_amenities,size,bedroom,bathroom,agentName,agentEmail,agentPhone,furnished,geopointLongitude,geopointLatitude,location,cheques) VALUES ('$referance_number','$permit_number', '$offering_type', '', '$offering_type2', '$property_type', '$price_on_application','$price_yearly','$city','$community','$sub_community','$property_name','$location_id','$title_en','$description10','$private_amenities','$size','$bedroom','$bathroom','$agentName','$agentEmail','$agentPhone','$furnished', '$geopointLongitude','$geopointLatitude','$location','$cheques')";
+	 $query = "INSERT INTO property (reference_number, permit_number, offering_type,offering_type1,offering_type2,property_type,price_on_application,price_yearly, city, community,sub_community,property_name,location_id,title_en,description_en,private_amenities,size,bedroom,bathroom,agentName,agentEmail,agentPhone,furnished,geopointLongitude,geopointLatitude,location,cheques) VALUES ('$referance_number','$permit_number', '$offering_type', '', '$offering_type2', '$property_type', '$price_on_application','$price_yearly','$city','$community',' ','$property_name','$location_id','$title_en','$description10','$private_amenities','$size','$bedroom','$bathroom','$agentName','$agentEmail','$agentPhone','$furnished', '$geopointLongitude','$geopointLatitude','$location','$cheques')";
 
      print_r($query);
                 $result = mysqli_query($con,$query);
 
                 if ($result) {
 
-                    echo "<br><br>not error";
+                    echo "<br><br><h1>Not Error.Record added successfully.</h1>";
                 }
                 else{
-                    echo "<br><br>error";
+                    echo "<br><br><h1>Query Error</h1>";
 
                 }
   

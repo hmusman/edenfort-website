@@ -1,15 +1,21 @@
 <?php
     $server   = "localhost";
-    $username = "edenfort_web";
-    $pass     = "4[zQev}L9#z)";
-    $dbname   = "edenfort_web";
+    $username = "root";
+    $pass     = "";
+    $dbname   = "eden_web";
 
     $con = mysqli_connect($server,$username,$pass,$dbname);
 
+    $del_query = "DELETE FROM `photo`";
+    $run= mysqli_query($con, $del_query);
+    if($run){
+    	echo '<h1>Previous record deleted successfully.</h1>';
+    }
+
     $xml = simplexml_load_file('https://app.airlist.com/v1.1/website.asmx/Generic?ac=20200226090618662&gc=12688');
-  $count = count($xml);
-echo $count;
- foreach($xml as $fetch){
+ 	$count = count($xml);
+	echo $count;
+ 	foreach($xml as $fetch){
 	
                $reference_number = $fetch->Property_Ref_No;    
 			   echo '<h2><b>'.$reference_number.'</b></h2><br>';
