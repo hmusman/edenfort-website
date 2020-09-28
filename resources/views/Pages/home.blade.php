@@ -39,9 +39,13 @@
 <div class="banner" id="banner">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
+            <!-- <div class="carousel-item active">
+                <img class="d-block w-100" src="{{url('public/assets/img/banner-4.jpg')}}" height=""  alt="banner" style="height: 900px;width: 100%;">
+             
+            </div> -->
             <div class="carousel-item active">
-                <img class="d-block w-100" src="{{url('public/edenfortDocs/assets/images/d185dd.jpg')}}" height="" alt="banner" style="height: 900px;width: 100%;">
- 
+                <img class="d-block w-100" src="{{url('public/assets/img/banner-1.jpg')}}" height=""  alt="banner" style="height: 900px;width: 100%;">
+             
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="{{url('public/assets/img/banner-2.jpg')}}" height=""  alt="banner" style="height: 900px;width: 100%;">

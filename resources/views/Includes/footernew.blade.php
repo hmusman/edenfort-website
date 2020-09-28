@@ -25,41 +25,41 @@
                           <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Villa / House&offering_type2=sale&city=Arabian Ranches')}}" title="Villas for sale  in  Arabian Ranches">Villas for sale  in  Arabian Ranches</a>
                         </li>
                     </ul>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-4">
-                <div class="footer-item">
-                    <h4 style="border-bottom:1px solid;">
-                        Popular Searches For Rent</h4>
-                    <ul class="footer-menu">
-                        <li> 
-                            <a style="border-bottom:1px solid" href="{{url('footerFilter?propertyType=Apartment / Flat&offering_type2=rent&city=Dubai')}}" title="Apartments for rent  in  Dubai">Apartments for rent  in  Dubai</a>
-                        </li>
-                        <li> 
-                          <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Apartment / Flat&offering_type2=rent&city=Dubai Marina')}}" title="Apartments for rent  in  Dubai Marina">Apartments for rent  in  Dubai Marina</a>
-                        </li>
-                        <li> 
-                          <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Apartment / Flat&offering_type2=rent&city=Downtown Dubai')}}" title="Apartments for rent  in  Downtown Dubai">Apartments for rent  in  Downtown Dubai</a>
-                        </li>
-                        <li> 
-                          <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Villa / House&offering_type2=rent&city=Dubai')}}" title="Villas for rent  in  Dubai">Villas for rent  in  Dubai</a>
-                        </li>
-                        <li> 
-                          <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Villa / House&offering_type2=rent&city=Arabian Ranches')}}" title="Villas for rent  in  Arabian Ranches">Villas for rent  in  Arabian Ranches</a>
-                        </li>
-                        
-                        <!-- <li> 
-                          <a href="http://www.edenforthomes.com/search?for=rent&city=Ng%3D%" title="Apartments for rent  in  Abu Dhabi">Apartments for rent  in  Abu Dhabi</a>
-                        </li>
-                        <li> 
-                          <a href="http://www.edenforthomes.com/search?for=rent&city=Ng%3D%3D&area=NT" title="Apartments for rent  in  Al Reem Island">Apartments for rent  in  Al Reem Island</a>
-                        </li>
-                        <li> 
-                          <a href="http://www.edenforthomes.com/search?for=rent&city=Ng%3D%3D&area=NT" title="Apartments for rent  in  Al Raha Beach">Apartments for rent  in  Al Raha Beach</a>
-                        </li> -->
-                    </ul>
-                    
                 </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                    <div class="footer-item">
+                        <h4 style="border-bottom:1px solid;">
+                            Popular Searches For Rent</h4>
+                        <ul class="footer-menu">
+                            <li> 
+                                <a style="border-bottom:1px solid" href="{{url('footerFilter?propertyType=Apartment / Flat&offering_type2=rent&city=Dubai')}}" title="Apartments for rent  in  Dubai">Apartments for rent  in  Dubai</a>
+                            </li>
+                            <li> 
+                              <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Apartment / Flat&offering_type2=rent&city=Dubai Marina')}}" title="Apartments for rent  in  Dubai Marina">Apartments for rent  in  Dubai Marina</a>
+                            </li>
+                            <li> 
+                              <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Apartment / Flat&offering_type2=rent&city=Downtown Dubai')}}" title="Apartments for rent  in  Downtown Dubai">Apartments for rent  in  Downtown Dubai</a>
+                            </li>
+                            <li> 
+                              <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Villa / House&offering_type2=rent&city=Dubai')}}" title="Villas for rent  in  Dubai">Villas for rent  in  Dubai</a>
+                            </li>
+                            <li> 
+                              <a style="border-bottom:1px solid;" href="{{url('footerFilter?propertyType=Villa / House&offering_type2=rent&city=Arabian Ranches')}}" title="Villas for rent  in  Arabian Ranches">Villas for rent  in  Arabian Ranches</a>
+                            </li>
+                            
+                            <!-- <li> 
+                              <a href="http://www.edenforthomes.com/search?for=rent&city=Ng%3D%" title="Apartments for rent  in  Abu Dhabi">Apartments for rent  in  Abu Dhabi</a>
+                            </li>
+                            <li> 
+                              <a href="http://www.edenforthomes.com/search?for=rent&city=Ng%3D%3D&area=NT" title="Apartments for rent  in  Al Reem Island">Apartments for rent  in  Al Reem Island</a>
+                            </li>
+                            <li> 
+                              <a href="http://www.edenforthomes.com/search?for=rent&city=Ng%3D%3D&area=NT" title="Apartments for rent  in  Al Raha Beach">Apartments for rent  in  Al Raha Beach</a>
+                            </li> -->
+                        </ul>
+                        
+                    </div>
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="footer-item">
@@ -99,32 +99,33 @@
                     
                 </div>
             </div>
+            <div class="col-md-8">
+                 <h4  style="border-bottom:1px solid;">Edenfort Real Estate</h4>
+                    <ul class="footer-menu">
+                        <!-- <li> 
+                          <a href="http://www.edenforthomes.com/search?for=sale&city=Mw%3D%3D" title="Properties for sale  in  Ajman">Properties for sale  in  Ajman</a>
+                        </li> -->
+                        <li><strong>Address: </strong>Office 05- Blue Matrix buisness center, floor 27, prime tower, buisness bay.</li>
+                        <!-- <li> 
+                          <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D" title="Properties for rent  in  Ajman">Properties for rent  in  Ajman</a>
+                        </li>
+                        <li> 
+                          <a href="http://www.edenforthomes.com/search?for=rent&city=Mg%3D%3D" title="Properties for rent  in  Sharjah">Properties for rent  in  Sharjah</a>
+                        </li> -->
+                        <li><strong>Email: </strong>info@edenfort.ae</li>
+                        <li><strong>Phone:</strong> +971 4 323 0688</li>
+                        <!-- <li><strong>Landline:</strong> +97143230688</li> -->
+                        <!-- <li> 
+                          <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D&type=Commercial-office" title="Offices for rent  in  Ajman">Offices for rent  in  Ajman</a>
+                        </li>
+                        <li> 
+                          <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D&type=Commercial-shop" title="Shops for rent  in  Ajman">Shops for rent  in  Ajman</a>
+                        </li> -->
+                        <li><strong>Fax: </strong> xxxx-xxxxxx-xxxxxxx</li>
+                    </ul>
+                
+            </div>
         </div>
-    </div>
-    <div class="conatiner footer-inner col-md-4 company" style="margin-left: 100px;">
-         <h4  style="border-bottom:1px solid;">Edenfort Real Estate</h4>
-            <ul class="footer-menu">
-                <!-- <li> 
-                  <a href="http://www.edenforthomes.com/search?for=sale&city=Mw%3D%3D" title="Properties for sale  in  Ajman">Properties for sale  in  Ajman</a>
-                </li> -->
-                <li><strong>Address: </strong>Office 05- Blue Matrix buisness center, floor 27, prime tower, buisness bay.</li>
-                <!-- <li> 
-                  <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D" title="Properties for rent  in  Ajman">Properties for rent  in  Ajman</a>
-                </li>
-                <li> 
-                  <a href="http://www.edenforthomes.com/search?for=rent&city=Mg%3D%3D" title="Properties for rent  in  Sharjah">Properties for rent  in  Sharjah</a>
-                </li> -->
-                <li><strong>Email: </strong>info@edenfort.ae</li>
-                <li><strong>Phone:</strong> +971 4 323 0688</li>
-                <!-- <li><strong>Landline:</strong> +97143230688</li> -->
-                <!-- <li> 
-                  <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D&type=Commercial-office" title="Offices for rent  in  Ajman">Offices for rent  in  Ajman</a>
-                </li>
-                <li> 
-                  <a href="http://www.edenforthomes.com/search?for=rent&city=Mw%3D%3D&type=Commercial-shop" title="Shops for rent  in  Ajman">Shops for rent  in  Ajman</a>
-                </li> -->
-                <li><strong>Fax: </strong> xxxx-xxxxxx-xxxxxxx</li>
-            </ul>
     </div>
 
 </footer>

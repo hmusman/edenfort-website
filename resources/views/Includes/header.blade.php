@@ -152,7 +152,7 @@
 				           <!--  <div class="login" style="">Login</div>-->
 							<div class="right dropdown dd-hide form" style="display: none;">
 								<div class="login-section">
-																			<a href="#" onclick="window.open('https://www.facebook.com/v2.6/dialog/oauth?client_id=113307665950447&amp;state=e6eb8d595c3bb0a652025a516227ad62&amp;response_type=code&amp;sdk=php-sdk-5.0.0&amp;redirect_uri=http%3A%2F%2Fwww.edenforthomes.com%2Fuser_authentication&amp;scope=email', 'facebook', 'width=640,height=480');"><button class="primary-btn fb" id="fb-login-button">Sign in with Facebook</button></a>
+									<a href="#" onclick="window.open('https://www.facebook.com/v2.6/dialog/oauth?client_id=113307665950447&amp;state=e6eb8d595c3bb0a652025a516227ad62&amp;response_type=code&amp;sdk=php-sdk-5.0.0&amp;redirect_uri=http%3A%2F%2Fwww.edenforthomes.com%2Fuser_authentication&amp;scope=email', 'facebook', 'width=640,height=480');"><button class="primary-btn fb" id="fb-login-button">Sign in with Facebook</button></a>
 																		
 									<form method="post" class="pos-rel" id="login-frm" novalidate="novalidate">
 										<div class="ajax-loader dis-none"></div>
